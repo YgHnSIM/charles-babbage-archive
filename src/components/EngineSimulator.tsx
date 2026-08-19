@@ -99,11 +99,11 @@ export default function EngineSimulator() {
             <span className={`text-2xl transition-transform duration-500 ${isRotating ? 'rotate-180 text-brass-400' : 'text-brass-500'}`}>
               ⚙️
             </span>
-            <h3 className="font-display font-bold text-xl text-brass-300">
-              차분기관 유한차분법(Method of Differences) 인터랙티브 시뮬레이터
+            <h3 className="font-display font-bold text-xl text-brass-300 break-keep">
+              차분기관 유한차분법(Method of Differences)<br className="hidden sm:inline" /> 인터랙티브 시뮬레이터
             </h3>
           </div>
-          <p className="text-xs text-gray-400 mt-1">
+          <p className="text-xs text-gray-400 mt-1 break-keep">
             곱셈이나 나눗셈 없이 오직 '덧셈 톱니바퀴의 회전'만으로 다항식 함수표를 오차 없이 연속 생성합니다.
           </p>
         </div>

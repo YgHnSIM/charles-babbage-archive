@@ -96,11 +96,11 @@ export default function BernoulliTrace() {
         <div>
           <div className="flex items-center gap-2">
             <span className="text-xl text-purple-400">📜</span>
-            <h3 className="font-display font-bold text-lg text-brass-300">
-              에이다 러브레이스의 1843년 Note G 알고리즘 추적기 (The First Program)
+            <h3 className="font-display font-bold text-lg text-brass-300 break-keep">
+              에이다 러브레이스의 1843년<br className="hidden sm:inline" /> Note G 알고리즘 추적기 (The First Program)
             </h3>
           </div>
-          <p className="text-xs text-gray-400 mt-1">
+          <p className="text-xs text-gray-400 mt-1 break-keep">
             해석기관의 변수 카드(Variable Cards)와 연산 카드(Operation Cards)가 베르누이 수(Bernoulli Numbers)를 구하는 과정입니다.
           </p>
         </div>
