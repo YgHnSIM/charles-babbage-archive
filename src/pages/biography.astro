@@ -1,0 +1,271 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const timelineEvents = [
+  {
+    year: "1791",
+    date: "1791년 12월 26일",
+    category: "생애",
+    categoryColor: "blue",
+    title: "런던 서더크(Southwark)에서 탄생",
+    description: "부유한 은행가 벤저민 배비지(Benjamin Babbage)의 장남으로 출생. 어릴 적부터 기계 완구의 분해와 오토마타(Automata)에 깊은 호기심을 보임."
+  },
+  {
+    year: "1810",
+    date: "1810년 10월",
+    category: "학술",
+    categoryColor: "purple",
+    title: "케임브리지 대학교 트리니티 칼리지 입학",
+    description: "독학으로 프랑스 대륙의 라크루아(Lacroix) 미적분학 교재를 섭렵한 후, 케임브리지 대학의 낡은 뉴턴식 유율법(Fluxions) 중심 교육에 큰 실망을 느낌."
+  },
+  {
+    year: "1812",
+    date: "1812년",
+    category: "학술",
+    categoryColor: "purple",
+    title: "해석학회(Analytical Society) 결성",
+    description: "존 허셜(John Herschel), 조지 피콕(George Peacock)과 함께 라이프니츠의 미분 표기법(d-notation)을 도입하기 위한 '해석학회'를 결성. 영국 수학의 대륙 르네상스를 이끎."
+  },
+  {
+    year: "1814",
+    date: "1814년 7월",
+    category: "생애",
+    categoryColor: "blue",
+    title: "조지아나 휫모어(Georgiana Whitmore)와 결혼",
+    description: "아버지의 반대를 무릅쓰고 조지아나와 결혼. 케임브리지 피터하우스(Peterhouse)에서 학사 학위를 수여받음."
+  },
+  {
+    year: "1816",
+    date: "1816년 3월",
+    category: "학술",
+    categoryColor: "purple",
+    title: "왕립학회(Royal Society) 펠로우 선출",
+    description: "함수 방정식론(Calculus of Functions)과 대륙 미적분학 번역 성과를 인정받아 24세의 젊은 나이에 영국 왕립학회 회원(FRS)으로 선출됨."
+  },
+  {
+    year: "1820",
+    date: "1820년",
+    category: "학술",
+    categoryColor: "purple",
+    title: "왕립천문학회(Royal Astronomical Society) 창립 주도",
+    description: "존 허셜 등과 함께 왕립천문학회를 공동 창립하고 초대 총무로 활동. 천문 계산표의 심각한 오류 문제를 직시함."
+  },
+  {
+    year: "1822",
+    date: "1822년 6월 14일",
+    category: "발명",
+    categoryColor: "amber",
+    title: "차분기관(Difference Engine) 최초 제안 논문 발표",
+    description: "왕립천문학회에 『천문학 및 수학 수표 계산에 기계를 적용하는 것에 관한 소고』를 발표. 유한차분법으로 덧셈만을 사용하여 수표를 계산·인쇄하는 원리를 증명함."
+  },
+  {
+    year: "1823",
+    date: "1823년",
+    category: "발명",
+    categoryColor: "amber",
+    title: "영국 정부의 차분기관 개발 지원금 승인",
+    description: "영국 재무부(Treasury)로부터 1,500파운드의 초기 연구 개발비를 승인받고, 최고의 정밀 기계 엔지니어 조셉 클레먼트(Joseph Clement)와 시제품 제작 착수."
+  },
+  {
+    year: "1827",
+    date: "1827년",
+    category: "생애",
+    categoryColor: "blue",
+    title: "가족의 비극과 유럽 대륙 여행",
+    description: "아버지, 아내 조지아나, 그리고 두 아들이 잇달아 사망하는 비극을 겪음. 건강 회복과 산업 조사를 위해 유럽 대륙(이탈리아, 프랑스, 독일)을 여행함."
+  },
+  {
+    year: "1828",
+    date: "1828–1839년",
+    category: "학술",
+    categoryColor: "purple",
+    title: "케임브리지 루카스 석좌교수(Lucasian Professor) 역임",
+    description: "아이작 뉴턴이 역임했던 케임브리지 대학 수학과 루카스 석좌교수로 임명되어 11년간 직을 유지함."
+  },
+  {
+    year: "1830",
+    date: "1830년",
+    category: "저술",
+    categoryColor: "emerald",
+    title: "『영국 과학의 쇠퇴에 관한 고찰』 출간",
+    description: "영국 과학계의 귀족주의적 매너리즘과 왕립학회의 무능을 통렬히 비판하며 전문 과학자 양성과 국가 지원 시스템을 촉구함."
+  },
+  {
+    year: "1832",
+    date: "1832년",
+    category: "저술",
+    categoryColor: "emerald",
+    title: "『기계 및 제조업의 경제학』 출간과 배비지 원칙",
+    description: "산업 혁명기 공장 시스템과 분업의 원리를 집대성한 저작 출간. 숙련도별 노동 세분화를 제시한 '배비지 원칙(Babbage Principle)'을 확립."
+  },
+  {
+    year: "1832",
+    date: "1832년",
+    category: "발명",
+    categoryColor: "amber",
+    title: "차분기관 1호의 작동 시제품(Trial Model) 완성",
+    description: "약 2,000개의 부품으로 구성된 차분기관 1호의 축소 작동 모델 완성. 3열의 톱니바퀴로 2차 다항식을 정확히 계산하여 런던 사교계에 센세이션을 일으킴."
+  },
+  {
+    year: "1833",
+    date: "1833년 6월 5일",
+    category: "생애",
+    categoryColor: "blue",
+    title: "에이다 바이런(Ada Byron, 훗날의 러브레이스)과의 운명적 만남",
+    description: "17세의 에이다가 배비지의 살롱에서 차분기관 시제품의 작동을 목격하고 기계의 수학적 본질을 직관적으로 이해하면서 평생의 지적 동반자 관계가 시작됨."
+  },
+  {
+    year: "1834",
+    date: "1834년",
+    category: "발명",
+    categoryColor: "amber",
+    title: "해석기관(Analytical Engine)의 구상 시작",
+    description: "단순한 수표 계산기를 넘어, 자카드 직기의 천공카드로 제어되며 연산부(Mill)와 저장부(Store)를 갖춘 '프로그래밍 가능한 범용 컴퓨터'를 착상함."
+  },
+  {
+    year: "1837",
+    date: "1837년",
+    category: "저술",
+    categoryColor: "emerald",
+    title: "『제9 브리지워터 논문(The Ninth Bridgewater Treatise)』 출간",
+    description: "자연신학 논쟁에 참여하여, 계산 기계의 불연속적 상태 전이를 비유로 들어 기적(Miracles) 또한 더 높은 차원의 자연 법칙에 의해 예정된 것임을 변증함."
+  },
+  {
+    year: "1840",
+    date: "1840년 9월",
+    category: "학술",
+    categoryColor: "purple",
+    title: "토리노 과학자 대회에서 해석기관 강연",
+    description: "이탈리아 토리노에서 유럽 석학들을 대상으로 해석기관의 메커니즘을 최초로 공개 강연함. 젊은 공병 장교 루이지 메나브레아가 이를 기록함."
+  },
+  {
+    year: "1842",
+    date: "1842년 11월",
+    category: "발명",
+    categoryColor: "amber",
+    title: "영국 정부, 차분기관 1호 프로젝트 공식 취소",
+    description: "로버트 필 총리 정부가 20년간 17,000파운드의 국고가 투입된 차분기관 1호 개발 프로젝트를 공식 종료 선언함."
+  },
+  {
+    year: "1843",
+    date: "1843년 8월",
+    category: "발명",
+    categoryColor: "amber",
+    title: "에이다 러브레이스의 번역 논문 및 주석(Notes A–G) 발표",
+    description: "메나브레아의 논문을 영역하며 본문 분량의 3배가 넘는 주석(Notes)을 추가. Note G에 베르누이 수 계산 알고리즘을 수록하여 세계 최초의 컴퓨터 프로그램을 완성함."
+  },
+  {
+    year: "1847",
+    date: "1847–1849년",
+    category: "발명",
+    categoryColor: "amber",
+    title: "차분기관 2호(Difference Engine No. 2)의 설계 완성",
+    description: "해석기관 연구를 통해 축적된 노하우를 바탕으로 부품 수를 1/3로 줄인(약 8,000개) 혁신적인 차분기관 2호의 완전한 설계 도면을 완성함."
+  },
+  {
+    year: "1864",
+    date: "1864년",
+    category: "저술",
+    categoryColor: "emerald",
+    title: "자서전 『철학자의 생애에서 발췌한 구절들(Passages)』 출간",
+    description: "자신의 생애, 기계 발명 비화, 사회비판, 거리 소음(오르간 악사) 반대 운동의 기록을 집대성한 공식 회고록 출간."
+  },
+  {
+    year: "1871",
+    date: "1871년 10월 18일",
+    category: "생애",
+    categoryColor: "blue",
+    title: "런던 메릴본(Marylebone)에서 서거 (향년 79세)",
+    description: "평생을 기계식 컴퓨터의 설계에 바쳤으나 완성된 실물을 보지 못한 채 켄살 그린 묘지(Kensal Green Cemetery)에 안장됨."
+  },
+  {
+    year: "1991",
+    date: "1991년 (사후 120년)",
+    category: "현대",
+    categoryColor: "purple",
+    title: "런던 과학박물관, 차분기관 2호 실물 제작 완성",
+    description: "도론 스웨이드(Doron Swade) 큐레이터 연구팀이 배비지의 1849년 도면 그대로 8,000개 부품을 가공·조립하여 완벽하게 작동하는 차분기관 2호 실물 제작에 성공함."
+  },
+  {
+    year: "2002",
+    date: "2002년",
+    category: "현대",
+    categoryColor: "purple",
+    title: "차분기관 2호의 조판 인쇄 장치(Printer) 완성",
+    description: "배비지가 설계했던 3.5톤 무게의 활판 조판 및 인쇄 메커니즘을 완성하여 7차 다항식의 계산과 수표 인쇄가 오차 없이 성공함을 전 세계에 실증함."
+  }
+];
+---
+
+<Layout title="생애 연표 (1791–1871) - 찰스 배비지 아카이브">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-500/30 bg-blue-950/30 text-blue-300 text-xs font-mono mb-4">
+        CHRONOLOGY & BIOGRAPHY
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-display font-bold text-white mb-4">
+        찰스 배비지의 생애와 마일스톤
+      </h1>
+      <p class="text-sm sm:text-base text-gray-400 max-w-2xl mx-auto font-body-serif">
+        1791년 출생부터 1871년 서거, 그리고 1991년 런던 과학박물관의 역사적 실물 복원까지의 전 기록입니다.
+      </p>
+
+      {/* Category Badges Legend */}
+      <div class="flex flex-wrap justify-center gap-3 mt-8 text-xs font-mono">
+        <span class="px-3 py-1 rounded-full bg-blue-950/50 border border-blue-500/40 text-blue-300">● 생애 & 가족</span>
+        <span class="px-3 py-1 rounded-full bg-purple-950/50 border border-purple-500/40 text-purple-300">● 학술 & 협회</span>
+        <span class="px-3 py-1 rounded-full bg-amber-950/50 border border-amber-500/40 text-amber-300">● 기계 & 발명</span>
+        <span class="px-3 py-1 rounded-full bg-emerald-950/50 border border-emerald-500/40 text-emerald-300">● 저술 & 경제학</span>
+        <span class="px-3 py-1 rounded-full bg-pink-950/50 border border-pink-500/40 text-pink-300">● 현대적 복원</span>
+      </div>
+    </div>
+
+    {/* Timeline Container */}
+    <div class="relative border-l border-gray-800 ml-4 sm:ml-32 space-y-12">
+      {timelineEvents.map((ev) => {
+        let badgeColor = "border-blue-500/40 bg-blue-950/40 text-blue-300";
+        let dotColor = "bg-blue-400";
+        if (ev.categoryColor === 'amber') {
+          badgeColor = "border-amber-500/40 bg-amber-950/40 text-amber-300";
+          dotColor = "bg-amber-400 shadow-amber-500/50 shadow-md";
+        } else if (ev.categoryColor === 'purple') {
+          badgeColor = "border-purple-500/40 bg-purple-950/40 text-purple-300";
+          dotColor = "bg-purple-400";
+        } else if (ev.categoryColor === 'emerald') {
+          badgeColor = "border-emerald-500/40 bg-emerald-950/40 text-emerald-300";
+          dotColor = "bg-emerald-400";
+        }
+
+        return (
+          <div class="relative pl-8 sm:pl-10 group">
+            {/* Year marker on left for larger screens */}
+            <div class="hidden sm:block absolute -left-32 top-1 text-right w-24 font-mono font-bold text-base text-brass-400">
+              {ev.year}
+            </div>
+
+            {/* Timeline node circle */}
+            <div class={`absolute -left-[9px] top-1.5 w-4 h-4 rounded-full border-2 border-[#0f1115] ${dotColor} group-hover:scale-125 transition-transform`}></div>
+
+            {/* Event Card */}
+            <div class="bg-[#12161f] border border-gray-800 hover:border-gray-700 rounded-xl p-5 sm:p-6 transition-all">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                <span class="sm:hidden font-mono font-bold text-sm text-brass-400">{ev.year}년</span>
+                <span class={`text-[11px] font-mono px-2.5 py-0.5 rounded-full border ${badgeColor}`}>
+                  {ev.category} • {ev.date}
+                </span>
+              </div>
+
+              <h3 class="text-lg sm:text-xl font-display font-bold text-white mb-2 group-hover:text-brass-300 transition-colors">
+                {ev.title}
+              </h3>
+
+              <p class="text-xs sm:text-sm text-gray-300 leading-relaxed font-body-serif">
+                {ev.description}
+              </p>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</Layout>

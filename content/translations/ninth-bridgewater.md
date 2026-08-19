@@ -1,0 +1,52 @@
+---
+title: "The Ninth Bridgewater Treatise: A Fragment (Excerpts)"
+titleKorean: "제9 브릿지워터 논문: 단편 (자연신학과 기계적 기적론)"
+author: "Charles Babbage"
+year: 1837
+sourceId: "SRC-PHIL-01"
+originalPublisher: "John Murray, Albemarle Street, London (2nd ed. 1838)"
+---
+
+# The Ninth Bridgewater Treatise (1837)
+### 기계적 기적론과 대기의 물리적 기억 사료 해제 및 정밀 번역
+
+> **사료 메타데이터 (Metadata)**
+> - **저자**: 찰스 배비지 (Charles Babbage, Esq.)
+> - **출판연도**: 1837년 5월 (제2판 1838년)
+> - **출판지/출판사**: 런던 (John Murray)
+> - **사료 분류**: 1차 사료 (자연신학, 과학철학, 물리적 결정론)
+> - **식별자**: `SRC-PHIL-01`
+
+---
+
+## 제2장 및 제8장: 기적의 본질과 계산 기계 (On the Nature of Miracles)
+
+### 1. 1억 번의 규칙성과 단 한 번의 돌연한 도약 (The Thought Experiment of 100,000,001)
+
+| 빅토리아조 원문 (Original Victorian English) | 국문 정밀 번역 (Korean Translation) |
+| :--- | :--- |
+| **"Let the reader imagine an engine so constructed as to calculate and print a series of integers: 1, 2, 3, 4, 5, and so on. Let him watch the engine until a million, or a hundred million numbers have succeeded each other in strict natural succession. He will be irresistibly led to conclude that the law of the machine is to produce the series of natural numbers indefinitely. Yet, at the hundred million and second turn of the wheel, instead of 100,000,002, the machine suddenly presents 100,010,002, and continues with a new series governed by a triangular law: $x^2 + x + 41$. To the uninformed observer, this single discontinuity appears as a violation of the natural order—a miracle. Yet to the maker who adjusted the wheels, this apparent violation was foreseen and determined from the very start as part of a far deeper and grander law."** *(Chapter II, pp. 33-38)* | **"독자들에게 정수 수열 1, 2, 3, 4, 5 등을 순차적으로 계산하고 인쇄하도록 제작된 엔진을 상상해보라 권하고 싶다. 그가 기계를 지켜보는 동안 100만 개, 아니 1억 개의 숫자가 엄격한 자연적 연속성에 따라 차례로 나타난다고 하자. 그는 이 기계의 법칙이 자연수 수열을 무한히 생성하는 것이라는 결론에 저항할 수 없이 도달하게 될 것이다. 그러나 1억 2번째 휠의 회전에서, 기계는 100,000,002 대신 돌연 100,010,002를 제시하며, 이후 $x^2 + x + 41$이라는 삼각수 법칙에 지배받는 완전히 새로운 수열을 계속해서 출력해낸다. 내막을 알지 못하는 관찰자에게 이 단 한 번의 불연속성은 자연 질서의 파괴, 즉 '기적'으로 보일 것이다. 그러나 톱니바퀴를 조율한 제작자(창조주)에게 이 겉보기상의 파괴는 훨씬 더 심오하고 장대한 법칙의 일환으로서 태초부터 이미 예견되고 결정되어 있던 동작일 뿐이다."** |
+
+---
+
+### 2. 전지전능한 신적 프로그래머 대 땜질하는 기계공 (God as the Omniscient Architect)
+
+| 빅토리아조 원문 (Original Victorian English) | 국문 정밀 번역 (Korean Translation) |
+| :--- | :--- |
+| **"Which of the two constructors is entitled to the highest praise: he who makes an engine so imperfect that he must constantly step in with his own hand to alter its gears and rectify its errors, or he who, possessing infinite foresight, has so wonderfully adjusted the initial laws and mechanisms that every apparent anomaly, every so-called miracle throughout all the ages of time, was completely provided for and silently contained in the original construction?"** *(Chapter VIII, pp. 92-94)* | **"두 명의 제작자 중 과연 누가 더 높은 찬사를 받아 마땅한가? 기계를 너무나 불완전하게 제작하여 톱니바퀴를 교체하고 오류를 수정하기 위해 끊임없이 자신의 손으로 직접 개입해야만 하는 제작자인가? 아니면 무한한 예지력을 지니고 있어 초기 법칙과 메커니즘을 너무나 놀랍도록 조율해놓았기에, 영겁의 세월 동안 발생할 모든 겉보기상의 변칙과 이른바 기적이라 불리는 모든 사건들조차 태초의 설계 속에 온전히 대비되고 묵묵히 내포되도록 만든 제작자인가?"** |
+
+> **철학적 분석 (Philosophical Insight)**:
+> 배비지는 계산 기계의 상태 기계(State Machine) 모델을 신학에 적용하여, 기적을 '버그를 고치기 위한 외적 패치'가 아니라 '우주 프로그램에 미리 컴파일된 예외 처리 루틴'으로 완벽하게 논증했습니다.
+
+---
+
+## 제9장: 말과 행동의 영구적 각인 (Permanent Impression upon the Globe)
+
+### 3. 인류의 모든 음성을 기록한 거대한 도서관으로서의 대기 (The Atmosphere as a Vast Library)
+
+| 빅토리아조 원문 (Original Victorian English) | 국문 정밀 번역 (Korean Translation) |
+| :--- | :--- |
+| **"The air itself is one vast library, on whose pages are for ever written all that man has ever said or woman whispered. There, in their mutable but unerring characters, mixed with the earliest as well as the latest sighs of mortality, stand for ever recorded, vows unredeemed, promises broken, the parting wish, and the dying curse, all registered by the ceaseless vibrations of its particles."** *(Chapter IX, pp. 111-113)* | **"대기(공기) 그 자체는 남자가 내뱉은 모든 말과 여자가 속삭인 모든 밀어가 그 페이지 위에 영원히 기록되는 거대한 도서관이다. 그곳에는 가변적이지만 결코 오류가 없는 글자들로, 인류의 가장 오랜 탄식과 가장 최근의 한숨이 뒤섞인 채, 이행되지 않은 맹세, 깨어진 약속, 작별의 소원, 그리고 죽어가는 자의 저주가 기체 입자들의 끊임없는 진동에 의해 영원토록 등록되어 있다."** |
+
+> **물리학 및 정보 이론적 의의 (Physics & Information Theory)**:
+> 파동 역학과 분자 운동론을 기반으로 우주 내 정보 보존(Conservation of Information)과 물리적 결정론(Physical Determinism)을 장엄한 빅토리아 문체로 정식화했습니다.

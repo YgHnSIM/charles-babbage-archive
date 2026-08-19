@@ -1,0 +1,53 @@
+# Sources & Primary Documents Registry
+
+찰스 배비지 프로젝트에서 수집, 인용, 분석하는 1차 사료(Primary Sources) 및 2차 연구(Secondary Literature)의 공식 메타데이터 원장입니다. 모든 1차 사료 원본 PDF 및 전문 텍스트는 로컬 `sources/` 및 웹 배포용 `public/sources/`에 안전하게 영구 아카이빙되었습니다.
+
+---
+
+## 1. 수학 및 초기 생애 (Mathematics & Early Life)
+
+| ID | 저자 / 연도 | 문서명 | 분류 | 로컬 파일 경로 / 용량 | MD5 체크섬 | 출처 아카이브 및 사료 해제 |
+|---|---|---|---|---|---|---|
+| `SRC-MATH-01` | S. F. Lacroix / C. Babbage, J. Herschel, G. Peacock (1816) | *An Elementary Treatise on the Differential and Integral Calculus* | 1차 사료 (번역/해제) | `sources/math/1816_Lacroix_Differential_Calculus_Babbage_Herschel.pdf` (19.05 MB) | `5ae0165210f03a3ab07efc68563d78b8` | [Archive.org: `anelementarytre00babbgoog`](https://archive.org/details/anelementarytre00babbgoog)<br>영국 수학계의 뉴턴 유율법(dot-notation) 탈피 및 라이프니츠 미분 표기법(d-notation) 도입 선언서 |
+| `SRC-MATH-02` | C. Babbage (1815) | *An Essay towards the Calculus of Functions* | 1차 사료 (논문) | `sources/math/1815_Babbage_An_Essay_towards_the_Calculus_of_Functions.pdf` (2.44 MB) | `6131f36c2febf235cf20723e87bdea8e` | [Philosophical Transactions of the Royal Society / Archive.org: `jstor-107377`](https://archive.org/details/jstor-107377)<br>함수 방정식 및 함수 계산법의 기초를 정립한 배비지의 초기 핵심 수학 논문 |
+| `SRC-MATH-03` | C. Babbage (1820) | *Examples of the Solutions of Functional Equations* | 1차 사료 (단행본) | `sources/math/1820_Babbage_Examples_of_the_Solutions_of_Functional_Equations.pdf` (2.22 MB) | `7e369e7500db75e2d6bfd9d584d518a7` | [Cambridge University Press / Archive.org: `examplesofsoluti00babbrich`](https://archive.org/details/examplesofsoluti00babbrich)<br>해석학회 시리즈의 일환으로 출간된 고차 함수방정식 풀이 예제집 |
+
+---
+
+## 2. 차분기관 (Difference Engine)
+
+| ID | 저자 / 연도 | 문서명 | 분류 | 로컬 파일 경로 / 용량 | MD5 체크섬 | 출처 아카이브 및 사료 해제 |
+|---|---|---|---|---|---|---|
+| `SRC-DIFF-01` | C. Babbage (1822) | *A Letter to Sir Humphry Davy... on the Application of Machinery to the Purpose of Calculating and Printing Mathematical Tables* | 1차 사료 (최초 공표) | `sources/diff_engine/1822_Babbage_Letter_to_Sir_Humphry_Davy_Difference_Engine.pdf` (0.75 MB) | `640b86979a4bb9d88ad437324d1b5e3a` | [Archive.org: `TO0E039268_TO0324_PNI-1546_000000`](https://archive.org/details/TO0E039268_TO0324_PNI-1546_000000)<br>왕립학회 회장 험프리 데이비 경에게 차분기관의 원리와 정부 지원을 요청한 최초의 공식 공표 문서 |
+| `SRC-DIFF-02` | D. Lardner (1834) | *Babbage's Calculating Engine* (*Edinburgh Review*, Vol. 59, No. 120, pp. 263–307) | 1차 사료 (동시대 해제) | `sources/diff_engine/1834_Edinburgh_Review_Vol_59_No_120_Lardner_Babbages_Calculating_Engine.pdf` (57.39 MB) | `37cdb49095eb485dc3c4eafda05473ee` | [Edinburgh Review Vol. 59 / Archive.org: `sim_edinburgh-review-critical-journal_1834-07_59_120`](https://archive.org/details/sim_edinburgh-review-critical-journal_1834-07_59_120)<br>차분기관 1호의 유한차분법 기계 구현, 캐리 전달 메커니즘, 활판 인쇄 장치 및 사회적 의의를 집대성한 당대 최고의 해설 논문 |
+| `SRC-DIFF-03` | D. Swade (1991/2002) | *The Cogwheel Brain / The Difference Engine No. 2 Project* | 2차 사료 (현대 실증) | `docs/secondary_literature.md` 인용 | `reference` | 런던 과학박물관의 차분기관 2호(부품 8,000개, 중량 5톤) 실물 완공 및 오차 없는 계산·수표 인쇄 성공 실증 보고서 |
+
+---
+
+## 3. 해석기관 & 에이다 러브레이스 (Analytical Engine & Ada Lovelace)
+
+| ID | 저자 / 연도 | 문서명 | 분류 | 로컬 파일 경로 / 용량 | MD5 체크섬 | 출처 아카이브 및 사료 해제 |
+|---|---|---|---|---|---|---|
+| `SRC-ANAL-01` | L. F. Menabrea (1842) | *Notions sur la machine analytique de M. Charles Babbage* | 1차 사료 (불어 원본) | `sources/analytical_engine/1842_Menabrea_Notions_sur_la_machine_analytique.pdf` (2.05 MB) | `d6d39cd89301cfb56089940fb24956c2` | [*Bibliothèque Universelle de Genève*, No. 82 / Archive.org: `TO01056056`](https://archive.org/details/TO01056056)<br>배비지의 1840년 토리노 강연을 바탕으로 메나브레아가 집필한 해석기관 최초의 공식 인쇄 논문 |
+| `SRC-ANAL-02` | L. F. Menabrea / Ada Augusta Lovelace (1843) | *Sketch of the Analytical Engine Invented by Charles Babbage, with Notes by the Translator* (*Scientific Memoirs*, Vol. 3, Art. XXIX, pp. 666–731) | 1차 사료 (필수 원전) | `sources/analytical_engine/1843_Scientific_Memoirs_Vol_3_Lovelace_Menabrea.pdf` (41.45 MB)<br>`sources/analytical_engine/1843_Lovelace_Menabrea_Sketch_Analytical_Engine_Notes.html` (0.19 MB) | `d80049fe6351d8184eaa1956becc5ab7`<br>`ab664e4c09243c7acecf66ed3977352a` | [Richard Taylor's *Scientific Memoirs* / Archive.org: `india.history.resource.53369` / Fourmilab](https://archive.org/details/india.history.resource.53369)<br>해석기관의 아키텍처(Mill/Store/Cards), 기호 연산의 보편 과학(Note A), 베르누이 수 알고리즘 프로그램(Note G) 수록 |
+| `SRC-ANAL-03` | C. Babbage (1837) | *On the Mathematical Powers of the Calculating Engine* | 1차 사료 (원고) | Oxford History of Science Museum (Buxton MS 49) / B. Randell (1973) | `archived` | 해석기관의 연산 메커니즘, 자카드 카드 제어 방식, 마이크로프로그래밍 배럴 구조를 상세히 기록한 1837년 12월 미발표 원고 |
+| `SRC-ANAL-04` | British Association (1878) | *Report of the Committee... appointed to consider the advisability and to estimate the expense of constructing Mr. Babbage's Analytical Machine* | 1차 사료 (역사적 보고서) | `sources/analytical_engine/1878_BAAS_Report_on_Babbages_Analytical_Engine.html` (0.04 MB) | `36d192a6dd30a758a1e2667fde8d9837` | [BAAS 1878 / Fourmilab](https://www.fourmilab.ch/babbage/baas.html)<br>아서 케일리, 윌리엄 파 등이 위원으로 참여하여 해석기관의 이론적 완결성과 제작 타당성을 검토한 왕립 과학협회 보고서 |
+| `SRC-ANAL-05` | H. P. Babbage (1888/1910) | *Babbage's Analytical Engine* (British Association 1888 / Monthly Notices of the RAS 1910) | 1차 사료 (유작 실증) | `sources/analytical_engine/1888_HP_Babbage_Analytical_Engine_Paper.html` (0.04 MB)<br>`sources/analytical_engine/1910_HP_Babbage_Babbages_Analytical_Engine.html` (0.01 MB) | `842661088937e233b99f2a8c4f0c94a0`<br>`ca14e70e63d6f249bbff1422591b32f8` | [Fourmilab Babbage Collection](https://www.fourmilab.ch/babbage/)<br>배비지의 아들 헨리 P. 배비지가 해석기관 연산부(Mill)의 일부를 실물 제작하고 원주율($\pi$) 계산 인쇄를 실증한 논문 |
+
+---
+
+## 4. 산업경제학 및 경영철학 (Economy & Management)
+
+| ID | 저자 / 연도 | 문서명 | 분류 | 로컬 파일 경로 / 용량 | MD5 체크섬 | 출처 아카이브 및 사료 해제 |
+|---|---|---|---|---|---|---|
+| `SRC-ECON-01` | C. Babbage (1832/1835) | *On the Economy of Machinery and Manufactures* (London: Charles Knight, 1832 / 4th ed. 1835) | 1차 사료 (단행본 완본) | `sources/economy/1832_Babbage_Economy_of_Machinery_and_Manufactures.pdf` (35.55 MB)<br>`sources/economy/1832_Babbage_Economy_of_Machinery_and_Manufactures.txt` (0.61 MB) | `a2f183e89c63c2d7dda3fff791103baa`<br>`37ce54fa89376bffad6b646107430f92` | [Archive.org: `oneconomyofmac00babb` / Project Gutenberg #4238](https://archive.org/details/oneconomyofmac00babb)<br>숙련도별 임금 최적화 이론(배비지 원칙), 가스파르 드 프로니의 정신 노동 분업 체계, 대량 생산 및 핀 제조 공정 분석 |
+
+---
+
+## 5. 자서전, 철학 및 사회 비판 (Autobiography & Philosophy)
+
+| ID | 저자 / 연도 | 문서명 | 분류 | 로컬 파일 경로 / 용량 | MD5 체크섬 | 출처 아카이브 및 사료 해제 |
+|---|---|---|---|---|---|---|
+| `SRC-AUTO-01` | C. Babbage (1864) | *Passages from the Life of a Philosopher* (London: Longman, Green, Longman, Roberts, & Green, 1864) | 1차 사료 (공식 자서전) | `sources/philosophy/1864_Babbage_Passages_from_the_Life_of_a_Philosopher.pdf` (17.21 MB)<br>`sources/philosophy/1864_Babbage_Passages_from_the_Life_of_a_Philosopher_fulltext.txt` (0.96 MB) | `d4b03991a97a1c5aeabc7886b3da05e4`<br>`a6e7f723607128643614a716c4a49e4a` | [Archive.org: `bub_gb_8rtdVgQNCuwC` / British Library](https://archive.org/details/bub_gb_8rtdVgQNCuwC)<br>배비지의 공식 생애 회고록: 차분기관 개발사(제5장), 해석기관 설계(제8장), 에이다 러브레이스와의 협업(제11장), 거리 소음 퇴치 운동(제26장) |
+| `SRC-PHIL-01` | C. Babbage (1837/1838) | *The Ninth Bridgewater Treatise: A Fragment* (London: John Murray, 1837 / 2nd ed. 1838) | 1차 사료 (자연신학/기계철학) | `sources/philosophy/1838_Babbage_The_Ninth_Bridgewater_Treatise.pdf` (4.22 MB)<br>`sources/philosophy/1838_Babbage_The_Ninth_Bridgewater_Treatise_Ed2_fulltext.txt` (0.26 MB) | `946efc2100def4095cc111cec61e1b34`<br>`fa7d514b5866438a9273f684f9549b48` | [Archive.org: `in.ernet.dli.2015.49255` / John Murray 2nd Ed](https://archive.org/details/in.ernet.dli.2015.49255)<br>1억 1번째에 발생하는 불연속 상태 변화 사고실험을 통한 기적(Miracle)의 법칙성 변호, '우주의 입법자로서의 신', 대기 분자의 영구적 음파 기억론 |
+

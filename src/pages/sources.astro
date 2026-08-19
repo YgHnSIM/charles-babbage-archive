@@ -1,0 +1,220 @@
+---
+import Layout from '../layouts/Layout.astro';
+import passagesData from '../../content/translations/passages-autobiography.json';
+import lovelaceData from '../../content/translations/ada-lovelace-notes.json';
+import economyData from '../../content/translations/economy-of-machinery.json';
+import bridgewaterData from '../../content/translations/ninth-bridgewater.json';
+
+const documents = [
+  {
+    id: "passages",
+    sourceId: "SRC-AUTO-01",
+    title: "Passages from the Life of a Philosopher (1864)",
+    titleKorean: "철학자의 생애에서 발췌한 구절들 (찰스 배비지 공식 자서전)",
+    author: "Charles Babbage",
+    year: "1864",
+    category: "자서전 / 회고록",
+    pdfPath: "/sources/philosophy/1864_Babbage_Passages_from_the_Life_of_a_Philosopher.pdf",
+    archiveUrl: "https://archive.org/details/bub_gb_8rtdVgQNCuwC",
+    description: "배비지가 남긴 공식 회고록. 차분기관 1호의 착상(제5장), 해석기관의 아키텍처(제8장), 에이다 러브레이스와의 베르누이 수 알고리즘 협업(제11장), 런던 거리 소음과의 투쟁(제26장)을 망라한 핵심 사료.",
+    sections: passagesData.sections || []
+  },
+  {
+    id: "lovelace",
+    sourceId: "SRC-ANAL-01",
+    title: "Sketch of the Analytical Engine with Notes (1843)",
+    titleKorean: "찰스 배비지가 발명한 해석기관에 관한 소고 및 주석",
+    author: "L. F. Menabrea / Ada Augusta Lovelace",
+    year: "1843",
+    category: "해석기관 / 프로그래밍",
+    pdfPath: "/sources/analytical_engine/1843_Scientific_Memoirs_Vol_3_Lovelace_Menabrea.pdf",
+    archiveUrl: "https://archive.org/details/india.history.resource.53369",
+    description: "이탈리아 공병 장교 메나브레아의 프랑스어 논문을 에이다 러브레이스가 영역하며 7편의 주석(Notes A~G)을 덧붙인 역사적 문헌. 세계 최초의 컴퓨터 프로그램(Note G) 수록.",
+    sections: lovelaceData.sections || []
+  },
+  {
+    id: "economy",
+    sourceId: "SRC-ECON-01",
+    title: "On the Economy of Machinery and Manufactures (1832)",
+    titleKorean: "기계 및 제조업의 경제학",
+    author: "Charles Babbage",
+    year: "1832",
+    category: "산업경제학 / 분업론",
+    pdfPath: "/sources/economy/1832_Babbage_Economy_of_Machinery_and_Manufactures.pdf",
+    archiveUrl: "https://archive.org/details/oneconomyofmac00babb",
+    description: "산업혁명기 공장제 기계 공업의 경제학적 분석을 집대성한 명저. 숙련도별 노동 세분화를 주장한 '배비지 원칙(Babbage Principle)'과 정신 노동의 분업론을 체계화함.",
+    sections: economyData.sections || []
+  },
+  {
+    id: "bridgewater",
+    sourceId: "SRC-PHIL-01",
+    title: "The Ninth Bridgewater Treatise: A Fragment (1837)",
+    titleKorean: "제9 브리지워터 논문: 단편",
+    author: "Charles Babbage",
+    year: "1837",
+    category: "자연신학 / 기계철학",
+    pdfPath: "/sources/philosophy/1838_Babbage_The_Ninth_Bridgewater_Treatise.pdf",
+    archiveUrl: "https://archive.org/details/bub_gb_2nRgNWqyMjoC",
+    description: "계산 기계의 불연속적 상태 전이(State Transition)를 비유로 들어 기적(Miracles) 또한 더 높은 차원의 자연 법칙에 의해 예정된 것임을 변증한 독창적 과학 철학서.",
+    sections: bridgewaterData.sections || []
+  },
+  {
+    id: "diff1822",
+    sourceId: "SRC-DIFF-01",
+    title: "A Letter to Sir Humphry Davy... on the Application of Machinery (1822)",
+    titleKorean: "수학 수표 계산 및 인쇄 기계 적용에 관하여 험프리 데이비 경에게 보낸 서한",
+    author: "Charles Babbage",
+    year: "1822",
+    category: "차분기관 / 최초 제안",
+    pdfPath: "/sources/diff_engine/1822_Babbage_Letter_to_Sir_Humphry_Davy_Difference_Engine.pdf",
+    archiveUrl: "https://archive.org/details/TO0E039268_TO0324_PNI-1546_000000",
+    description: "왕립학회 회장 험프리 데이비에게 유한차분법 기계의 원리와 천문 수표 자동 계산·인쇄 가능성을 최초로 공표하여 영국 정부의 R&D 지원금을 이끌어낸 역사적 서한.",
+    sections: []
+  },
+  {
+    id: "lacroix1816",
+    sourceId: "SRC-MATH-01",
+    title: "An Elementary Treatise on the Differential and Integral Calculus (1816)",
+    titleKorean: "미분과 적분학 입문 (라크루아 원저, 번역 및 해제)",
+    author: "S. F. Lacroix / C. Babbage, J. Herschel, G. Peacock",
+    year: "1816",
+    category: "수학 / 해석학회",
+    pdfPath: "/sources/math/1816_Lacroix_Differential_Calculus_Babbage_Herschel.pdf",
+    archiveUrl: "https://archive.org/details/anelementarytre00babbgoog",
+    description: "케임브리지 대학 시절 해석학회를 설립한 배비지, 허셜, 피콕이 영국 수학계에 라이프니츠의 미분 표기법(d-notation)을 보급하기 위해 번역 출간한 기념비적 저작.",
+    sections: []
+  }
+];
+---
+
+<Layout title="1차 사료 도서관 (Primary Source Library) - 찰스 배비지 아카이브">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    {/* Page Header */}
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brass-500/30 bg-brass-950/30 text-brass-300 text-xs font-mono mb-4">
+        DIGITAL PRIMARY SOURCE ARCHIVE
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-display font-bold text-white mb-4">
+        1차 사료 원본 도서관 & 정밀 대조 해제
+      </h1>
+      <p class="text-sm sm:text-base text-gray-400 font-body-serif leading-relaxed">
+        19세기 빅토리아조 당시 출간된 찰스 배비지와 에이다 러브레이스의 원문 PDF 문헌을 직접 열람하고, 주요 챕터의 영문-한글 대조 번역 및 역사적 해제를 제공합니다.
+      </p>
+    </div>
+
+    {/* Document Cards List */}
+    <div class="space-y-16">
+      {documents.map((doc) => (
+        <div id={doc.id} class="bg-[#12161f] border border-gray-800 rounded-2xl p-6 sm:p-8 shadow-xl">
+          {/* Header info */}
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-gray-800 pb-6 mb-6">
+            <div>
+              <div class="flex flex-wrap items-center gap-2 mb-2">
+                <span class="px-2.5 py-0.5 rounded text-[11px] font-mono font-bold bg-brass-500/20 text-brass-300 border border-brass-500/30">
+                  {doc.sourceId}
+                </span>
+                <span class="px-2.5 py-0.5 rounded text-[11px] font-mono text-gray-400 bg-gray-800/60">
+                  {doc.category}
+                </span>
+                <span class="text-xs text-gray-400 font-mono">
+                  발행: {doc.year}년
+                </span>
+              </div>
+
+              <h2 class="text-xl sm:text-2xl font-display font-bold text-white mb-1">
+                {doc.title}
+              </h2>
+              <p class="text-sm font-body-serif text-brass-300">
+                {doc.titleKorean}
+              </p>
+              <div class="text-xs text-gray-400 font-mono mt-1">
+                저자: {doc.author}
+              </div>
+            </div>
+
+            {/* Action Buttons */}
+            <div class="flex flex-wrap gap-2">
+              <a
+                href={doc.pdfPath}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="px-4 py-2 rounded-lg bg-gradient-to-r from-brass-600 to-brass-500 hover:from-brass-500 hover:to-brass-400 text-iron-950 font-bold text-xs flex items-center gap-1.5 shadow-md transition-all"
+              >
+                <span>📥 원문 PDF 열람/다운로드</span>
+              </a>
+              <a
+                href={doc.archiveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="px-3 py-2 rounded-lg bg-[#1a202c] hover:bg-[#252e3d] text-gray-300 border border-gray-700 text-xs flex items-center gap-1 transition-all"
+              >
+                <span>🔗 Archive.org</span>
+              </a>
+            </div>
+          </div>
+
+          <p class="text-xs sm:text-sm text-gray-300 font-body-serif leading-relaxed mb-6">
+            {doc.description}
+          </p>
+
+          {/* Side-by-Side Excerpts */}
+          {doc.sections && doc.sections.length > 0 && (
+            <div class="space-y-6 pt-4 border-t border-gray-800/80">
+              <h3 class="text-xs font-mono uppercase text-brass-400 tracking-wider">
+                📜 주요 챕터 정밀 번역 및 사료 해제
+              </h3>
+
+              {doc.sections.map((sec: any) => (
+                <div class="bg-[#0d1015] border border-gray-800/90 rounded-xl p-5 space-y-4">
+                  <div class="flex flex-wrap items-center justify-between gap-2 border-b border-gray-800/60 pb-3">
+                    <div>
+                      <span class="text-xs font-mono text-purple-400 font-bold mr-2">{sec.chapterNumber || sec.noteLetter}</span>
+                      <span class="text-sm font-bold text-white">{sec.chapterTitleKorean || sec.noteTitleKorean || sec.titleKorean}</span>
+                    </div>
+                    <span class="text-[11px] font-mono text-gray-500">{sec.chapterTitle || sec.noteTitle || sec.title}</span>
+                  </div>
+
+                  {sec.summary && (
+                    <div class="text-xs text-gray-400 font-body-serif bg-[#141923] p-3 rounded border border-gray-800">
+                      <span class="font-bold text-brass-300">요약: </span>{sec.summary}
+                    </div>
+                  )}
+
+                  {sec.excerpts && sec.excerpts.map((ex: any) => (
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 text-xs font-body-serif pt-3">
+                      {/* Left: Original English */}
+                      <div class="bg-[#141820] border border-gray-800/80 rounded-lg p-4">
+                        <div class="text-[10px] font-mono text-gray-500 mb-2 flex justify-between">
+                          <span>🇬🇧 VICTORIAN ENGLISH ORIGINAL</span>
+                          <span>{ex.page || ex.pageNumber}</span>
+                        </div>
+                        <p class="text-gray-300 italic leading-relaxed whitespace-pre-line font-serif">
+                          "{ex.originalEnglish}"
+                        </p>
+                      </div>
+
+                      {/* Right: Korean Translation */}
+                      <div class="bg-[#171c26] border border-brass-500/20 rounded-lg p-4">
+                        <div class="text-[10px] font-mono text-brass-400 mb-2">
+                          🇰🇷 한국어 정밀 대조 번역
+                        </div>
+                        <p class="text-brass-100 leading-relaxed whitespace-pre-line">
+                          {ex.koreanTranslation}
+                        </p>
+                        {ex.commentary && (
+                          <div class="mt-3 pt-2 border-t border-gray-800 text-[11px] text-gray-400">
+                            <span class="text-brass-400 font-bold">💡 학술 해제: </span>{ex.commentary}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</Layout>

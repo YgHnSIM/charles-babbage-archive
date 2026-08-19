@@ -1,0 +1,845 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<link rel="stylesheet" href="babbage.css" type="text/css" />
+<title>The Analytical Engine</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="/documents/styles/standard_screen.css" type="text/css" />
+<meta name="keywords" content="Babbage, analytical, engine, computer, report, committee, baas" />
+<meta name="description" content="Babbage's Analytical Engine" />
+<meta name="author" content="British Association for the Advancement of Science" />
+<meta name="robots" content="index, follow" />
+<style type="text/css">
+    li, dd {
+    	text-align: justify;
+    }
+    
+    dt {
+    	margin-top: 1ex;
+    }
+    
+    ol li {
+    	margin-top: 1ex;
+    }
+    
+    span.n {
+    	font-variant: small-caps;
+    }
+    
+    table.opcards td {
+    	vertical-align: top;
+    }
+    
+    table.opcards td.t {
+    	text-align: justify;
+	line-height: 130%;
+    }
+    
+    table.opcards td.t sub, table.opcards td.t sup {
+    	line-height: 0px;
+    }
+</style>
+</head>
+<body>
+
+<center>
+<h1><img src="figures/aetitlewt.png" width="513" height="51" alt="The Analytical Engine" /></h1>
+<h3>
+<em>Report of the Committee, consisting of</em>
+    Professor <span class="n">Cayley</span>,
+    Dr. <span class="n">Farr</span>,
+    Mr. J. W. L. <span class="n">Glaisher</span>,
+    Dr. <span class="n">Pole</span>,
+    Professor <span class="n">Fuller</span>,
+    Professor A. B. W. <span class="n">Kennedy</span>,
+    Professor <span class="n">Clifford</span>,
+    and Mr. C. W. <span class="n">Merrifield</span>,
+<em>appointed to consider the advisability and to estimate the
+expense of constructing</em>
+<span class="n">Mr. Babbage's</span> <em>Analytical Machine, and of
+printing Tables by its means.  Drawn up by</em>
+Mr. <span class="n">Merrifield</span>.
+
+<br />
+
+1878
+</h3>
+</center>
+
+<center>
+<img src="figures/scrule.png" width="448" height="16"
+    alt="----------------------------------------" />
+</center>
+
+<p>
+We desire in the first place to record our obligations to General
+Henry Babbage for the frank and liberal manner in which he has
+assisted the Committee, not only by placing at their disposal all the
+information within his reach, but by exhibiting and explaining to
+them, at no small loss of time and sacrifice of personal convenience,
+the machinery and papers left by his father, the late Mr. Babbage.
+Without the valuable aid thus kindly rendered to them by General
+Babbage it would have been simply impossible for the Committee to have
+come to any definite conclusions, or to present any useful report.
+</p>
+
+<p>
+We refer to <a href="lpae.html">the chapter in Mr. Babbage's
+&lsquo;Passages from the Life of a Philosopher,&rsquo;</a> and to General
+Menabrea's paper, translated and annotated by Lady Lovelace, in the
+third volume of Taylor's &lsquo;Scientific Memoirs,&rsquo; for a general
+description of the Analytical Engine.
+</p>
+
+
+<center>
+<h3>I. <em>The General Principles of Calculating Engines.</em></h3>
+</center>
+
+<p>
+The application of arithmetic to calculating machines differs from
+ordinary clockwork, and from geometrical construction, in that it is
+essentially discontinuous.  In common clockwork, if two wheels are
+geared together so as to have a velocity ratio of 10 to 1 (say), when
+the faster wheel moves through the space of one tooth, the angular
+space moved through by the slower wheels is one tenth of a tooth.  Now
+in a calculating machine, which is to work with actual figures and to
+print them, this is exactly what we <em>don't</em> want.  We require
+the second wheel not to move at all until it has to make a complete
+step, and then we require that step to be taken all at once.  The time
+can be very easily read from the hands of a clock, and so can the gas
+consumption from an ordinary counter; but a moment's reflection will
+show what a mess any such machinery would make of an attempt at
+printing.
+</p>
+
+<p>
+This necessity of jumping discontinuously from one figure to another
+is the fundamental distinction between calculating and numbering
+machines on the one hand, and millwork or clockwork on the other.  A
+parallel distinction is found in pure mathematics, between the theory
+of numbers on the one hand, and the doctrine of continuous variation,
+of which the Differential Calculus is the type, on the other.  A
+calculating machine may exist in either case.  The common slide-rule
+is, in fact, a very powerful calculating machine in which the
+continuous process is used, and the planimeter is another.
+</p>
+
+<p>
+Geometrical construction, being essentially continuous, would be quite
+out of place in the calculating machine which has to print its
+results.  Linkwork also, for the same reason, is out of place as an
+auxiliary in any form to the calculation.  It may be of service in
+simplifying the construction of the machine; but it must not enter
+into the work as an equivalent for arithmetical computation.
+</p>
+
+<table align="right" style="margin-left: 5px;">
+<tr><td align="center">
+<img src="figures/baasf1.jpg" width="320" height="195" alt="Discontinuous train gearing" />
+</td></tr>
+<tr><td align="center">
+<font size="-1">Fig. 1.</font>
+</td></tr>
+</table>
+
+<p>
+The primary movement of calculating engines is the <em>discontinuous
+train</em>, of which one form is sketched in the accompanying diagram
+(fig.  1):&mdash;B is the follower, an ordinary spur wheel with (say) 10
+teeth; A is its driver, and this has only a single tooth.  With a
+suitable proportion of parts, the single tooth of A only moves B one
+interval for a whole revolution of A; for it only gears with B by
+means of this single tooth.  When that is not in gear, A simply slips
+past the teeth of B without moving the latter.
+</p>
+
+<p>
+All the other machinery of calculating engines leads up to and makes
+use of this, or of some transformation of it, as its means of dealing
+with units of whatever decimal rank, instead of allowing indefinite
+fractions of units to appear in the result which has to be printed
+from.
+</p>
+
+<p>
+The primary operation of calculation is counting: the secondary
+operation is addition, with its counterpart, subtraction.  The
+addition and subtraction are in reality effected by means of counting,
+which still remains the primary operation; but the necessity for
+economising labour and time forces upon us devices for performing the
+counting processes in a summary manner, and for allowing several of
+them to go on simultaneously in the calculating engine.  For, if we
+use simple counting as our only operation, and suppose our engine set
+to 2312 (say), then, in order to add 3245 to it by mere repetition, we
+have 3245 unit operations to perform, and this is practically
+intolerable.  If, however, we can separate the counting, so as to
+count on units to units only, tens to tens only, hundreds to hundreds
+only, and so forth, we shall only have
+<br class="cr" />
+</p>
+
+<center>
+                 3 + 2 + 4 + 5 = 14
+</center>
+
+<p>
+turns of the handle, as against 3245 turns.  In general terms the
+number of operations will be measured by the sum of the digits of the
+number, instead of by the actual number itself.  This is exactly
+analogous to what we should do ourselves in ordinary arithmetic in
+working an addition sum, if we had not learnt the addition table, but
+had to count on our fingers in order to add.  This statement of the
+work is, however, incomplete. In the first place the convenience of
+machinery obliges us to provide 10 steps for each figure, whatever it
+may be, and there must be an arrangement by which the setting of the
+figure to be added shall cause a wheel to <em>gain ground</em> by so
+many steps as the number indicates, and to <em>mark time</em> without
+gaining ground for the other steps up to 10.  Thus, in adding 7 our
+driver must make a complete turn or 10 steps, equivalent to 1 step of
+the follower; but only 7 of these steps of the driver must be
+effective steps, the others being skipped steps.  There are various
+devices for this.  One of the simplest and most direct is that used in
+Thomas's &lsquo;Arithmom&egrave;tre;&rsquo;<a href="#note1">&sup1;</a> another is the Reducing
+Bar used by Mr. Babbage.<a href="#note2">&sup2;</a> In the second place,
+the <em>carrying</em> has to be provided for just as in ordinary
+addition of numbers.  Taking account of all this, it follows that by
+separating the counting on the whole into counting, on figure by
+figure, the number of separate steps is reduced from that expressed by
+the number itself to eleven times the number of its digits; that is to
+say, for example, the addition of the number 73592 to any other number
+is reduced from 73592 to 55 steps, and although of this latter some
+are slipped, there is no gain of time thereby, except in so far as
+several of the steps may be made simultaneously.  The ordinary engines
+beat the human calculator in respect of adding all the figures
+simultaneously; but Mr. Babbage was the first to devise a method of
+performing all the carrying simultaneously too.
+</p>
+
+<p>
+Mechanical invention has not yet gone beyond the reduction of the
+distinct steps involved in the addition of a number consisting of
+<em>n</em> digits to less than 11<em>n</em>; practically, from the
+necessity of accompanying the carrying with a <em>warning</em> step,
+rather more are required.
+</p>
+
+<p>
+In all the calculating machines at present known, including Mr.
+Babbage's analytical engine, multiplication is really effected by
+repeated addition.  It is true that, by a multiplication of parts,
+more than one addition may be going on simultaneously; but it yet
+remains true, as a matter of mechanism, that the process is purely one
+of iterated addition.
+</p>
+
+<p>
+By means of reversing wheels or trains, subtraction is as easily and
+directly performed as addition, and that without becoming in any
+degree a tentative process.  But it is important to observe that the
+process can be made tentative, so as to give notice when a minuend is,
+or is about to become, exhausted.  This is the necessary preparation
+for division, which is thus essentially a tentative process.  That
+does not take it out of the power of the machine, because the machine
+may be, and is, so devised as to accept and act upon the notice.
+Nevertheless it is a step <em lang="la" xml:lang="la">alieni
+generis</em> from the direct processes of addition, multiplication,
+and subtraction.  It need hardly be stated that the process of
+obtaining a quotient consists in counting the number of subtractions
+employed, up to the machine giving notice of the minuend being
+exhausted.
+</p>
+
+<p>
+Another essentially distinct train is involved in the decimal shift of
+the unit, in all the four elementary rules.  This is most simply and
+most commonly effected by the sliding of an axis or frame
+longitudinally, after the manner of a common sliding-scale or rule, so
+as to bring either the figures, or the teeth which represent them,
+against those to which their decimal places correspond, and to no
+others.  In multiplication and division, this means a shift for each
+step of the multiplication and division.
+</p>
+
+<center>
+<h3>II. <em>Special Characteristics of Mr. Babbage's Analytical Engine.</em></h3>
+</center>
+
+<ol>
+<li><em>The mill</em>.&mdash;The fundamental operation of Mr. Babbage's
+analytical engine is simple addition.  This and the other elementary
+rules of subtraction, multiplication, and division, and all
+combinations of these, are performed in what is called &ldquo;<em>the
+mill</em>.&rdquo; All the shifts which have to take place, such as changing
+addition into subtraction by throwing a reversing train into gear, or
+the shift of the decimal place, carrying and borrowing, and so forth,
+are effected by a system of rotating cams acting upon or actuated by
+bell-cranks, tangs, and other similar devices commonly used in
+shifting machinery, sometimes under the name of clutches or
+escapements.  These clutches and bell cranks control the purely
+additive and carrying processes effected in the additive trains
+described in the note to &sect; I., and, <em>being themselves suitably
+directed</em>, secure that the proper processes shall be performed
+upon the proper subject-matter of operation, and duly recorded, or
+used, as may be required.</li>
+
+<li><em>The store.</em>&mdash;A series of columns, each containing a series
+of wheels, constitutes the store.  This store, which may be in three
+or more dimensions, both receives the results of operations performed
+in the mill, and serves as a store for the numbers which are to be
+used in the mill, whether as original or as fresh subjects of
+operation in it.  Each column in the store corresponds to a definite
+number, to which it is set either automatically or by hand, and the
+number of digits in this number is limited by the number of wheels
+carried on the shaft of the column.  The wheels gear into a series of
+racks, which can be thrown into or out of gear by means of the cards.</li>
+
+<li><em>Variable cards.</em>&mdash;All the numbers which are the subject of
+operation in the mill, whether they are the result of previous
+operations therein, or new numbers to be operated upon for the first
+time, are introduced to it in the form of Jacquard<a
+href="#note3">&sup3;</a> cards, such as are used in weaving.  One set of
+wires or axes transfers the numbers on these cards to the subject of
+operation in the mill, exactly as similar cards direct which of the
+warp threads are to be pushed up, and which down, in the Jacquard
+loom.  The mill itself punches such cards when required.</li>
+
+<li><em>Operation cards.</em>&mdash;A different set of cards selects and
+prescribes the sequence of operations.  These act, not upon the number
+wheels of the mill or store, but upon the cams and clutches which
+direct the gearing of these wheels and trains.  <a class="i" name="formula">Thus</a>, in such an
+operation as (<em>a</em> <em>b</em> + <em>c</em>) <em>d</em>, we
+should require:&mdash;
+
+<table class="opcards">
+<tr>
+<td>1st,</td> <td class="t">4 variable cards with the numbers <em>a</em>, <em>b</em>,
+<em>c</em>, <em>d</em>.</td>
+</tr>
+
+<tr>
+<td>2nd,</td> <td class="t">an operation card directing the machine to multiply
+   <em>a</em> and <em>b</em> together.</td>
+</tr>
+
+<tr>
+<td>3rd,</td> <td class="t">a record of the result, namely the product <em>ab</em> =
+   <em>p</em>, as a fifth variable card.</td>
+</tr>
+
+<tr>
+<td>4th,</td> <td class="t">an operation card directing the addition of <em>p</em>
+   and <em>c</em>.</td>
+</tr>
+
+<tr>
+<td>5th,</td> <td class="t">a record of the result, namely the sum
+   <em>p</em>+<em>c</em>=<em>q</em>, as a 6th variable card,</td>
+</tr>
+
+<tr>
+<td>6th,</td> <td class="t">an operation card directing the machine to multiply
+   <em>q</em> and <em>d</em> together.</td>
+</tr>
+
+<tr>
+<td>7th,</td> <td class="t">a record of the result, namely the product
+   <em>qd</em>=<em>p</em><sub>2</sub>, either printed as a final
+   result or punched in a seventh variable card.</td>
+</tr>
+
+</table>
+</li>
+</ol>
+
+
+<center>
+<h3>III. <em>Capability of the Engine</em></h3>
+</center>
+
+<p>
+It has already been remarked that the direct work of the engine is a
+combination and repetition of the processes of addition and
+subtraction.  But in leading up to any given datum by these
+combinations, there is no difficulty in ascertaining tentatively when
+this datum is reached, or about to be reached.  This is strictly a
+tentative process, and it appears probable that each such
+<em lang="la" xml:lang="la">tentamen</em> requires to be specially
+provided for, so as to be duly noted in the subsequent operations of
+the machine.  There is, however, no necessary restriction to any
+particular process, such as division; but any direct combination of
+arithmetic, such as the formation of a polynomial, can be made to lead
+up to a given value in such a manner as to yield the solution of the
+corresponding equation. In any such process, however, it is evident
+that there can be only (to choose a simile from mechanism) one degree
+of freedom; otherwise the problem would yield a locus, indeterminate
+alike in common arithmetic, and as regards the capabilities of the
+machine.  The possibility of several roots would be a difficulty of
+exactly the same character as that which presents itself in Horner's
+solution of equations, and the same may be said of imaginary roots
+differing but little from equality.  These, however, are extreme
+cases, with which it is usually possible to deal specially as they
+arise, and they need not be considered as detracting materially from
+the value of the engine. Theoretically, the grasp of the engine
+appears to include the whole synthesis of arithmetic, together with
+one degree of freedom tentatively.  Its capability thus extends to any
+system of operations or equations which leads to a single numerical
+result.
+</p>
+
+<p>
+It appears to have been primarily designed with the following general
+object in view&mdash;to be coextensive with numerical synthesis and
+solution, without any special adaptation to a particular class of
+work, such as we see in the difference engine.  It includes that
+<em lang="la" xml:lang="la">&agrave; majori</em>, and it can either
+calculate any single result, or tabulate any consecutive series of
+results just as well.  But the absence of any speciality of adaptation
+is one of the leading features of the design.
+</p>
+
+<p>
+Mr. Babbage had also considered the indication of the passage through
+infinity as well as through zero, and also the approach to imaginary
+roots.  For details upon these points we must refer to his
+<a href="lpae.html">&lsquo;Passages
+from the Life of a Philosopher.&rsquo;</a>
+</p>
+
+<center>
+<h3>IV. <em>Present state of the Design.</em></h3>
+</center>
+
+<p>
+The only part of the Analytical engine which has yet been put together
+is a small portion of &ldquo;the mill,&rdquo; sufficient to show the
+methods of addition and subtraction, and of what Mr. Babbage called
+his &ldquo;anticipating carriage.&rdquo;  It is understood that
+General Babbage will (independently of this report) publish a full
+account of this method. No further mention of it will therefore be
+made here.
+</p>
+
+<p>
+A small portion of the work is in gun-metal wheels and cranks, mounted
+for the most part on steel shafts.  But the greater part of the wheels
+are in a sort of pewter hardened with zinc.  This was adopted from
+motives of economy.  They are for the most part not cast, but moulded
+by pressure, and the moulds of most of them are in existence.
+</p>
+
+<p>
+<a class="i" name="drawings">A large number</a> of drawings of the machinery are
+also in existence.  It is supposed that these are complete to the
+extent of giving an account of every particular movement essential to
+the design of the engine; but, for the most part, they are not
+<em>working drawings</em>, that is to say, they are not drawings
+suited to be sent straight to the pattern or fitting shop, to be
+rendered in metal. There are also drawings for the erection of the
+engine, and there appears to be a complete set of descriptive notes of
+it in Mr. Babbage's &ldquo;mechanical notation.&rdquo;  There remains,
+however, a great deal to be done in the way of calculating quantities
+and proportions, and in the preparation of working drawings, before
+any work could actually be set in hand, even if the design be really
+complete.  There is some doubt on this point as the matter stands, and
+it certainly would be unsafe to rely upon the design being really
+complete, until the working drawings had been got out.  Mechanical
+engineers are well aware that no complex design can be trusted without
+this test, at least.
+</p>
+
+<p>
+It was Mr. Babbage's rule, in designing mechanism, in the first place
+to work to his object, in utter disregard of any questions of
+complexity.  This is a good rule in all devising of methods, whether
+analytical, mechanical, or administrative.  But it leaves in doubt,
+until the design finally leaves the inventor's hands in a finished
+state, whether it really represents what is meant to be rendered in
+metal, or whether it is simply a provisional solution, to be
+afterwards simplified.
+</p>
+
+<center>
+<h3>V. <em>Probable Cost</em>.</h3>
+</center>
+
+<p>
+It has not been possible for us to form any exact conclusion as to the
+cost.  Nevertheless there are some data in existence which appear to
+fix a lower limit to the cost.  Mr. Babbage, in his published papers,
+talks of having 1,000 columns of wheels, each containing 50 distinct
+wheels; this apparently refers to his <em>store</em>.  Besides the
+many thousand moulded pewter wheels for these, and the axes on which
+they are mounted, there is the <em>mill</em>, also consisting of a
+series of columns of wheels and of a vast machinery of cams, clutches,
+and cranks for their control and connection, so as to bring them
+within the directing power of the Jacquard systems of variable cards
+and operation cards.  Without attempting any exact estimate, we may
+say that it would surprise us very much if it were found possible to
+obtain tenders for less than 10,000<em>l</em>., while it would pretty
+certainly cost a considerable sum to put the design in a fit state for
+obtaining tenders.  On the other hand, it would not surprise us if the
+cost were to reach three or four times the amount above suggested.
+</p>
+
+<p>
+It is understood that towards the close of his life Mr. Babbage had
+contemplated carrying out the manufacture of the engine on a smaller
+scale, confining himself to 25 figures instead of 50, and to 200
+columns instead of 1000 or more.  This would of course reduce the
+amount of the metal-work proportionately, but we do not think that it
+would materially reduce the charge which we anticipate for bringing
+the design into working order.
+</p>
+
+<center>
+<h3>VI. <em>Strength and Durability.</em></h3>
+</center>
+
+<p>
+The questions of strength and durability had by no means escaped Mr.
+Babbage's attention, and a great deal of his detail bears marks of
+having been designed with especial reference to these two points.
+That was essential in a large and complex engine with some thousands
+of wheels, all requiring at some time or other, although not
+simultaneously, to be driven by the means of one shaft.  This
+necessarily throws a great deal of pressure, and also a great deal of
+wear and tear, on the main driving shaft and the gear immediately
+connected with it.  We have no means of knowing, in the present state
+of the design, to what extent Mr. Babbage had succeeded in reducing
+this, or whether he had always been successful in arranging his cams
+and cranks so as to secure the best working angles, and to avoid their
+being jammed at dead points or otherwise.  Giving him full credit for
+being quite aware of the importance of this, we cannot but doubt
+whether the design was ever in a sufficiently forward state to enable
+him, or any one else, to speak with certainty on this point.  Several
+of the existing calculating machines show signs of weakness in the
+driving-pinions.
+</p>
+
+<p>
+One of the movements apparently necessary to the tentative processes
+of the engine is, when the spur-wheels on a given shaft have been
+brought into certain definite positions depending on previous
+operations, to bring up a sharp straight edge against them in a plane
+passing through the axis of the shaft.  This pushes some to right and
+others to left, according to the position of the crown of the tooth
+relatively to the straight edge.  This operation is necessary to
+secure that the clearance of the different parts of the machinery,
+whether originally provided in order to allow it to work smoothly, or
+whether afterwards increased by working, shall not introduce a
+numerical error into the result.  The principle of this operation is
+used generally throughout the analytical engine.  Its consequent
+effect, both in respect of the work which it throws upon the main
+driving gear, and of the wear of the parts which it pushes, forms an
+important element in considering the durability of the machine.  This
+bar also serves the purpose of locking part of the machine when
+required.
+</p>
+
+<p>
+On the other hand, it is to be remarked, that the use of springs has
+been wholly discarded by Mr. Babbage, as directors of motion,
+although he occasionally uses them for return motions.
+</p>
+
+<center>
+<h3>VII. <em>Probable utilization of the Analytical Engine.</em></h3>
+</center>
+
+<p>
+It has been already remarked that one of the main features of the
+engine is, that its function is coextensive with numerical synthesis
+and solution, and that there is an absence of any special adaptation.
+In thus widening the sphere of its capability, it is made to diverge
+from the general tendency of mechanical design, which is towards the
+selection and particularization of the work to be performed, and the
+restriction of the machinery to one particular cycle of operation,
+usually within close numerical limits, as well as limited in kind.
+Nevertheless, modern engineering practice finds ample room for
+&ldquo;universal&rdquo; drills, shaping tools, and other machines having very
+general adjustments and applications.  But it remains practically true
+that each step of freedom of adjustment is also a step in diminution
+of special aptitude.
+</p>
+
+<p>
+While the analytical engine is capable of turning out a single result,
+as the combination of a complex series of numbers and operations
+performed upon them, it can also yield a series of such results in a
+consecutive form, and thus give tabulated results.  Only it is not
+restricted, as is the difference engine, to the special method of
+tabulation by finite differences, nor is tabulation its primary
+function or intention.  If its actual capabilities are found to
+realize the intentions of its inventor, it will tabulate all functions
+which are within the reach of numerical synthesis, and those direct
+inversions of it which are known under the name of solutions.  It deals,
+however, with number, and not with analytical form.
+</p>
+
+<p>
+Theoretically it might supersede the difference engine,
+<em lang="la" xml:lang="la">&agrave; majori</em>; but for reasons
+already stated, the specialization of the difference engine would
+probably give it an advantage over the more powerful engine, when the
+work was specially suited to finite differences.
+</p>
+
+<p>
+There would remain much work, tabular and other, for which differences
+are not very directly suited.  Among these may be mentioned the
+determination of heavy series of constants and of definite functions
+of them, such as Bernoulli's numbers,
+&Sigma;<em>x</em><sup>&minus;<em>n</em></sup>, coefficients of
+various expansions of functions, and inversions of known expansions,
+solutions of simultaneous equations with large numerical coefficients
+and many variables, including, as a particular, but important case,
+the practical correction of observations by the method of least
+squares.  If all sorts of heavy work of this kind could be easily and
+quickly, as well as certainly, done, by merely selecting or punching a
+few Jacquard cards and turning a handle, not only much saving of
+labour would result, but much which is now out of human possibility
+would be brought within easy reach.
+</p>
+
+<p>
+If intelligently directed and saved from wasteful use, such a machine
+might mark an era in the history of computation, as decided as the
+introduction of logarithms in the seventeenth century did in
+trigonometrical and astronomical arithmetic.  Care might be required
+to guard against misuse, especially against the imposition of
+Sisyphean tasks upon it by influential sciolists.  This, however, is
+no more than has happened in the history of logarithms.  Much work has
+been done with them which could more easily have been done without
+them, and the old reproach is probably true, that more work has been
+spent upon making tables than has been saved by their use.  Yet, on
+the whole, there can be no reasonable doubt that the first
+calculation of logarithmic tables was an expenditure of capital which
+has repaid itself over and over again.  So probably would the
+analytical engine, whatever its cost, if we could be assured of its
+success.
+</p>
+
+<center>
+<h3><a class="i" name="modify">VIII.</a> <em>Possible Modification of the Engine.</em></h3>
+</center>
+
+<p>
+Without prejudging the general question referred to us as to the
+advisability of completing Mr. Babbage's engine in the exact shape in
+which it exists in the machinery and designs left by its inventor, it
+is open to consideration whether some modification of it, to the
+sacrifice of some portion of its generality, would not reduce the
+cost, and simplify the machinery, so as to bring it within the range
+of both commercial and mechanical certainty.  The &ldquo;mill,&rdquo; for example,
+is an exceedingly good mechanical arrangement for the operations of
+addition and subtraction, and with a slight modification, with or
+without store-columns, for multiplication.  We have already called
+attention to the imperfection of the existing machines, which show
+weakness and occasional uncertainty.  It is at least worth
+consideration whether a portion of the analytical engine might not
+thus be advantageously specialized, so as to furnish a better
+multiplying machine than we at present possess.  This, we have reason
+to believe, is a great desideratum both in public and private offices,
+as well as in aid of mathematical calculators.
+</p>
+
+<p>
+Another important desideratum to which the machine might be adapted,
+without the introduction of any tentative processes (out of which the
+complications of the machinery chiefly arise) is the solution of
+simultaneous equations containing many variables.  This would include
+a large part of the calculations involved in the practical application
+of the method of least squares.  The solution of such equations can
+always be expressed as the quotient of two determinants, and the
+obtaining this quotient is a final operation, which may be left to the
+operator to perform by ordinary arithmetic, or which may be the
+subject of a separate piece of machinery so that the more direct work
+of forming the determinant, which is a mere combination of the three
+direct operations of addition, subtraction, and multiplication, may be
+entirely freed from the tentative process of division, which would
+thus be prevented from complicating the direct machinery.  In the
+absence of a special engine for the purpose, the solution of large
+sets of simultaneous equations is a most laborious task, and a very
+expensive process indeed, when it has to be paid for, in the cases in
+which the result is imperatively needed.  An engine that would do this
+work at moderate cost would place a new and most valuable computing
+power at the disposal of analysts and physicists.
+</p>
+
+<p>
+Other special modifications of the engine might also find a fair field
+for reproductive employment.  We do not think it necessary to go into
+these questions at any great length, because they involve a departure,
+in the way of restriction and specialization, from Mr. Babbage's
+idea, of which generality was the leading feature.  Nevertheless, we
+think that we should be guilty of an omission, if we were to fail to
+suggest them for consideration.
+</p>
+
+<center>
+<h3><a class="i" name="conclude">IX.</a> <em>General Conclusions, and Recommendation</em>.</h3>
+</center>
+
+<ol>
+<li>We are of opinion that the labours of Mr. Babbage, firstly on his
+Difference Engine, and secondly on his Analytical Engine, are a marvel
+of mechanical ingenuity and resource.</li>
+
+<li>We entertain no doubt as to the utility of such an engine as was
+in his contemplation when he undertook the invention of his analytical
+engine, supposing it to be successfully constructed and maintained in
+efficiency.</li>
+
+<li>We do not consider that the possibilities of its misuse are any
+serious drawback to its use or value.</li>
+
+<li>Apart from the question of its saving labour in operations now
+possible, we think the existence of such an instrument would place within
+reach much which, if not actually impossible, has been too close to the
+limits of human skill and endurance to be practically available.</li>
+
+<li>We have come to the conclusion that in the present state of the
+design of the engine it is not possible for us to form any reasonable
+estimate of its cost, or of its strength and durability.</li>
+
+<li>We are also of opinion that, in the present state of the design,
+it is not more than a theoretical possibility; that is to say, we do not
+consider it a certainty that it could be constructed and put together so as
+to run smoothly and correctly, and to do the work expected of it.</li>
+
+<li>We think that there remains much detail to be worked out, and
+possibly some further invention needed, before the design can be brought
+into a state in which it would be possible to judge whether it would
+really so work.</li>
+
+<li>We think that a further cost would have to be incurred in order
+to bring the design to this stage, and that it is just possible that a
+mechanical failure might cause this expenditure to be lost.</li>
+
+<li>While we are unable to frame any exact estimates, we have reason
+to think that the cost of the engine, after the drawings are completed,
+would be expressed in tens of thousands of pounds at least.</li>
+
+<li>We think there is even less possibility of forming an opinion as
+to its strength and durability than as to its feasibility or cost.</li>
+
+<li>Having regard to all these considerations, we have come, not
+without reluctance, to the conclusion, that we cannot advise the
+British Association to take any steps, either by way of recommendation
+or otherwise, to procure the construction of Mr. Babbage's Analytical
+Engine and the printing tables by its means.</li>
+
+<li>We think it, however, a question for further consideration
+whether some specialized modification of the engine might not be worth
+construction, to serve as a simple multiplying machine, and another
+modification of it arranged for the calculation of determinants, so as to
+serve for the solution of simultaneous equations. This, however,
+inasmuch as it involves a departure from the general idea of the inventor, we
+regard as lying outside the terms of reference, and therefore perhaps
+rather for the consideration of Mr. Babbage's representatives than ours.
+We accordingly confine ourselves to the mere mention of it by way of
+suggestion.</li>
+</ol>
+
+<h3>Footnotes</h3>
+
+<center>
+<table>
+<tr><td align="center">
+<img src="figures/baasf2.jpg" width="631" height="235"
+    alt="Thomas's Arithmom&egrave;tre Mechanism" />
+</td></tr>
+<tr><td align="center">
+<font size="-1">Fig. 2.</font>
+</td></tr>
+</table>
+</center>
+
+<ol start="1">
+<li><a class="i" name="note1">Let</a>  ZO (fig. 2) be a plate with ten
+ribs of different lengths, A<em>a</em>, B<em>b</em>, .  .  .  .
+K<em>k</em> soldered on it.  Let M<em>m</em> be a square axis on which
+the wheel N is made to slide by the fork P. Then, supposing N to have
+teeth which can engage in the ribs A<em>a</em>, &amp;c., when the plate is
+pushed past the wheel N, the number of teeth through which the wheel
+N, carrying with it the shaft M<em>m</em>, is made to rotate, depends
+upon the number of ribs in which it engages, and this depends upon how
+far along the axis N is made to slide by means of the fork P. If this
+fork is set opposite the line marked 3, M<em>m</em> will turn through
+a space equivalent to 3 teeth.  If a wheel, keyed to the shaft
+M<em>m</em>, be geared to other wheels, this enables us to add any
+digit to any number at a single motion of the plate, by simply
+changing the position of P to suit the digit required.  This is the
+principle used in Thomas's arithmom&egrave;tre, only that there the
+traversing plate is replaced by a rotating cylinder.</li>
+</ol>
+
+<center>
+<table>
+<tr><td align="center">
+<img src="figures/baasf3.jpg" width="631" height="305"
+    alt="Babbage's Reducing Bar" />
+</td></tr>
+<tr><td align="center">
+<font size="-1">Fig. 3.</font>
+</td></tr>
+</table>
+</center>
+
+<ol start="2">
+<li><a class="i" name="note2">Suppose</a> A<em>a</em>, B<em>b</em>, .  .
+.  .  F<em>f</em> (fig. 3) to be a series of racks passing through
+mortices in a plate <em>xz</em>, and meeting a series of spur-wheels
+mounted loose on a shaft, so that each wheel gears with one of the
+racks at the line <em>pq</em>, and that all the whole series can be
+thrown in or out of gear together.  Starting with them out of gear,
+let the racks be drawn out through the plate <em>xy</em> as indicated.
+Next throw the shaft <em>pq</em> into gear, and then press a plate PQ
+against the ends of the tacks, pushing them back until the plates PQ
+and <em>xy</em> meet.  The each wheel on <em>pq</em> will turn through
+the number of teeth corresponding to the original projection of the
+racks.  In this way, if the wheels on <em>pq</em> stood at any given
+number, say 543243, we should have added 314236 to them, and they
+would then stand at the sum of these two numbers, namely, 857479.
+This, it will be observed, makes no provision for carrying.  PQ is the
+reducing bar.  In practice the arrangement is usually circular, the
+bar PQ revolving about an axis parallel to itself instead of sliding.
+If the numbers on the wheels <em>pq</em> are placed one way we get
+addition; if reversed, subtraction.  Otherwise we may reverse by
+introducing an additional set of wheels between the wheels <em>pq</em>
+and the racks.
+
+<p />
+
+This is the bare principle, admitting of many transformations, and
+making, like the other, no provision for carrying.</li>
+
+<li><a class="i" name="note3">In</a> a letter written by Mr. Babbage to
+Arago in December 1839, the following explanation of the use of these
+cards is given.  It probably conveys the idea in the fewest words
+possible.  It is only necessary to add that their twofold employment
+embodies the separation of the symbols of operation from those of
+quantity.  &ldquo;You are aware that the system of cards which Jacquard
+invented are the means by which we can communicate to a very ordinary
+loom orders to weave any pattern that may be desired.  Availing myself
+of the same beautiful invention, I have by similar means communicated
+to my calculating engine orders to calculate my formula however
+complicated; but I have also advanced one stage further, and I have
+communicated through the same means orders to follow certain laws in
+the use of those cards, and thus the calculating engine can solve any
+equations, eliminate between any number of variables, and perform the
+highest operations of analysis.&rdquo;</li>
+
+</ol>
+
+<p />
+<center>
+<img src="figures/scrule.png" width="448" height="16"
+    alt="----------------------------------------" />
+</center>
+
+<h3><a href="contents.html">Table of Contents</a></h3>
+</body>
+</html>

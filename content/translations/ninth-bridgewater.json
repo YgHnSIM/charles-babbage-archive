@@ -1,0 +1,59 @@
+{
+  "documentId": "ninth-bridgewater",
+  "sourceId": "SRC-PHIL-01",
+  "title": "The Ninth Bridgewater Treatise: A Fragment",
+  "titleKorean": "제9 브릿지워터 논문: 단편 (자연신학과 기계적 기적론)",
+  "author": "Charles Babbage (찰스 배비지)",
+  "year": 1837,
+  "originalPublisher": "John Murray, Albemarle Street, London (2nd ed. 1838)",
+  "description": "윌리엄 휴얼(William Whewell)의 수학 폄하에 맞서 배비지가 자비로 출간한 자연신학 저작. 계산 기계의 불연속적 상태 전이를 비유로 들어 '기적(Miracle)'이란 자연 법칙의 파괴가 아니라 신(神)이 태초의 프로그램에 내장한 '고차원 법칙의 발현'임을 논증하고, 대기 중 음파의 영구 보존을 통한 도덕적 책임론을 제시한 1차 사료.",
+  "sections": [
+    {
+      "id": "chap-nature-of-miracles",
+      "chapterNumber": "Chapter II & VIII",
+      "chapterTitle": "On the Nature of Miracles and the Calculating Engine",
+      "chapterTitleKorean": "제2장 및 제8장: 기적의 본질과 계산 기계",
+      "summary": "1부터 1억까지 1씩 증가하다가 1억 1번째에 돌연 다른 수열을 산출하는 계산 엔진 사고실험을 통해, 인간이 '기적'이라 부르는 예외적 사건이 사실은 태초에 프로그래밍된 더 높은 상위 법칙의 필연적 결과임을 수학적으로 변호함.",
+      "historicalContext": "1830년대 영국의 브릿지워터 백작 유산으로 발간된 8권의 공식 자연신학 논총 중 윌리엄 휴얼은 연역 수학자들이 신의 섭리를 이해하는 데 둔감하다고 비판했다. 이에 분개한 배비지는 공식 위촉 없이 독자적으로 '제9권'을 자처하며 계산 기계를 신학적 유비의 정점으로 활용했다.",
+      "excerpts": [
+        {
+          "id": "one-hundred-million-experiment",
+          "heading": "The Thought Experiment of 100,000,001 (1억 번의 규칙성과 단 한 번의 돌연한 도약)",
+          "page": "Chapter II, pp. 33-38",
+          "originalEnglish": "Let the reader imagine an engine so constructed as to calculate and print a series of integers: 1, 2, 3, 4, 5, and so on. Let him watch the engine until a million, or a hundred million numbers have succeeded each other in strict natural succession. He will be irresistibly led to conclude that the law of the machine is to produce the series of natural numbers indefinitely. Yet, at the hundred million and second turn of the wheel, instead of 100,000,002, the machine suddenly presents 100,010,002, and continues with a new series governed by a triangular law: $x^2 + x + 41$. To the uninformed observer, this single discontinuity appears as a violation of the natural order—a miracle. Yet to the maker who adjusted the wheels, this apparent violation was foreseen and determined from the very start as part of a far deeper and grander law.",
+          "koreanTranslation": "독자들에게 정수 수열 1, 2, 3, 4, 5 등을 순차적으로 계산하고 인쇄하도록 제작된 엔진을 상상해보라 권하고 싶다. 그가 기계를 지켜보는 동안 100만 개, 아니 1억 개의 숫자가 엄격한 자연적 연속성에 따라 차례로 나타난다고 하자. 그는 이 기계의 법칙이 자연수 수열을 무한히 생성하는 것이라는 결론에 저항할 수 없이 도달하게 될 것이다. 그러나 1억 2번째 휠의 회전에서, 기계는 100,000,002 대신 돌연 100,010,002를 제시하며, 이후 $x^2 + x + 41$이라는 삼각수 법칙에 지배받는 완전히 새로운 수열을 계속해서 출력해낸다. 내막을 알지 못하는 관찰자에게 이 단 한 번의 불연속성은 자연 질서의 파괴, 즉 '기적'으로 보일 것이다. 그러나 톱니바퀴를 조율한 제작자(창조주)에게 이 겉보기상의 파괴는 훨씬 더 심오하고 장대한 법칙의 일환으로서 태초부터 이미 예견되고 결정되어 있던 동작일 뿐이다.",
+          "commentary": "배비지는 계산 기계의 기계적 상태 전이(State Transition)를 통해 기적을 '신이 자연 법칙을 위반하여 즉흥적으로 개입하는 것'이 아니라, '초기 조건과 거대한 알고리즘 속에 이미 인코딩되어 있던 불연속 함수'로 재정의했다. 이는 신을 '최고의 우주 프로그래머(The Supreme Programmer)'로 묘사한 것이다.",
+          "keyTerms": ["engine so constructed", "natural succession", "violation of the natural order", "miracle", "far deeper and grander law"]
+        },
+        {
+          "id": "god-as-divine-programmer",
+          "heading": "God as the Omniscient Architect vs Tinkering Mechanic (전지전능한 신적 프로그래머 대 땜질하는 기계공)",
+          "page": "Chapter VIII, pp. 92-94",
+          "originalEnglish": "Which of the two constructors is entitled to the highest praise: he who makes an engine so imperfect that he must constantly step in with his own hand to alter its gears and rectify its errors, or he who, possessing infinite foresight, has so wonderfully adjusted the initial laws and mechanisms that every apparent anomaly, every so-called miracle throughout all the ages of time, was completely provided for and silently contained in the original construction?",
+          "koreanTranslation": "두 명의 제작자 중 과연 누가 더 높은 찬사를 받아 마땅한가? 기계를 너무나 불완전하게 제작하여 톱니바퀴를 교체하고 오류를 수정하기 위해 끊임없이 자신의 손으로 직접 개입해야만 하는 제작자인가? 아니면 무한한 예지력을 지니고 있어 초기 법칙과 메커니즘을 너무나 놀랍도록 조율해놓았기에, 영겁의 세월 동안 발생할 모든 겉보기상의 변칙과 이른바 기적이라 불리는 모든 사건들조차 태초의 설계 속에 온전히 대비되고 묵묵히 내포되도록 만든 제작자인가?",
+          "commentary": "신이 기적을 행하기 위해 물리 법칙을 깨뜨려야 한다는 전통적 기적관을 '조잡한 엔지니어의 버그 수정'에 빗대어 비판하고, 모든 예외 처리가 완벽히 설계된 절대적 섭리(Higher-Order Law)의 숭고함을 역설했다.",
+          "keyTerms": ["two constructors", "constantly step in", "infinite foresight", "original construction"]
+        }
+      ]
+    },
+    {
+      "id": "chap-permanent-impression-words",
+      "chapterNumber": "Chapter IX",
+      "chapterTitle": "On the Permanent Impression of our Words and Actions upon the Globe",
+      "chapterTitleKorean": "제9장: 말과 행동의 영구적 각인 (대기의 물리적 기억)",
+      "summary": "우리가 내뱉은 모든 말과 행동이 대기 속 기체 분자의 연쇄 충돌을 통해 영원히 보존된다는 물리학적 정보 보존 이론을 통해, 인간 행위의 절대적 도덕적 책임을 규명함.",
+      "historicalContext": "열역학 및 에너지 보존 법칙이 정립되던 19세기 전반, 배비지는 기체 역학과 파동론을 도덕 철학 및 종교적 심판의 근거로 연결시켰다.",
+      "excerpts": [
+        {
+          "id": "atmosphere-as-vast-library",
+          "heading": "The Atmosphere as a Vast Library of All Human Utterances (인류의 모든 음성을 기록한 거대한 도서관으로서의 대기)",
+          "page": "Chapter IX, pp. 111-113",
+          "originalEnglish": "The air itself is one vast library, on whose pages are for ever written all that man has ever said or woman whispered. There, in their mutable but unerring characters, mixed with the earliest as well as the latest sighs of mortality, stand for ever recorded, vows unredeemed, promises broken, the parting wish, and the dying curse, all registered by the ceaseless vibrations of its particles.",
+          "koreanTranslation": "대기(공기) 그 자체는 남자가 내뱉은 모든 말과 여자가 속삭인 모든 밀어가 그 페이지 위에 영원히 기록되는 거대한 도서관이다. 그곳에는 가변적이지만 결코 오류가 없는 글자들로, 인류의 가장 오랜 탄식과 가장 최근의 한숨이 뒤섞인 채, 이행되지 않은 맹세, 깨어진 약속, 작별의 소원, 그리고 죽어가는 자의 저주가 기체 입자들의 끊임없는 진동에 의해 영원토록 등록되어 있다.",
+          "commentary": "빅토리아 시대 문학적 수사의 정점으로 꼽히는 대목이다. 물리학의 결정론(Determinism)과 정보 보존 원리를 바탕으로, 지워지지 않는 우주의 물리적 기록을 '거대한 라이브러리'로 형상화했다.",
+          "keyTerms": ["vast library", "for ever written", "sighs of mortality", "ceaseless vibrations of particles"]
+        }
+      ]
+    }
+  ]
+}

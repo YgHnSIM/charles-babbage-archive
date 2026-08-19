@@ -1,0 +1,96 @@
+{
+  "documentId": "ada-lovelace-notes",
+  "sourceId": "SRC-ANAL-01",
+  "title": "Sketch of the Analytical Engine Invented by Charles Babbage, with Notes by the Translator",
+  "titleKorean": "찰스 배비지가 발명한 해석기관의 스케치 및 역자 주석",
+  "author": "L. F. Menabrea / Ada Augusta Lovelace (에이다 러브레이스)",
+  "year": 1843,
+  "originalPublisher": "Taylor's Scientific Memoirs, Vol. 3, London, pp. 666-731",
+  "description": "루이지 메나브레아의 1842년 프랑스어 강연록을 에이다 러브레이스가 영역하고 7개의 심층 주석(Notes A~G)을 부가한 논문. 기호 계산의 보편성(Note A), 차분기관과 해석기관의 본질적 차이(Note D), 그리고 베르누이 수 계산을 위한 인류 최초의 컴퓨터 프로그램(Note G)을 수록한 컴퓨터 과학사 불멸의 기념비적 1차 사료.",
+  "sections": [
+    {
+      "id": "note-a-symbolic-computation",
+      "chapterNumber": "Note A",
+      "chapterTitle": "The Science of Operations and General Symbolic Calculation",
+      "chapterTitleKorean": "주석 A: 연산의 과학과 일반 기호 계산의 태동",
+      "summary": "해석기관이 단순한 산술 계산기를 넘어 임의의 기호(음악, 논리, 대수)를 처리할 수 있는 범용 기호 처리 장치임을 규명하고, 자카드 직조기 원리를 통한 프로그래밍의 본질을 선언함.",
+      "historicalContext": "1843년 당시 사람들은 계산 기계를 단순한 주판이나 톱니바퀴 덧셈 기계의 연장선으로 보았다. 에이다는 수(Number)와 연산(Operation)을 분리하여 기계가 조작하는 대상이 '추상적 관계' 전체로 확장될 수 있음을 최초로 통찰했다.",
+      "excerpts": [
+        {
+          "id": "jacquard-algebraic-patterns",
+          "heading": "The Jacquard Loom and Algebraic Weaving (자카드 직조기와 대수적 직조)",
+          "page": "p. 696",
+          "originalEnglish": "The distinctive characteristic of the Analytical Engine, and that which has rendered it possible to endow mechanism with such extensive faculties as bid fair to make it the executive right-hand of abstract algebra, is the introduction into it of the principle which Jacquard devised for regulating, by means of punched cards, the most complicated patterns in the fabrication of brocaded stuffs. We may say most aptly that the Analytical Engine weaves algebraical patterns just as the Jacquard-loom weaves flowers and leaves.",
+          "koreanTranslation": "해석기관의 독보적인 특징이자, 이 기계 메커니즘에 추상대수학의 충실한 집행자 역할을 수행할 수 있을 만큼 광범위한 기능을 부여할 수 있게 만든 핵심은, 자카드(Jacquard)가 견직물 제조에서 가장 복잡한 무늬를 천공 카드로 제어하기 위해 고안했던 원리를 기계에 도입한 데 있다. 가장 적절히 표현하자면, '자카드 직조기가 꽃과 나뭇잎을 짜내듯, 해석기관은 대수적 패턴을 직조해낸다'고 말할 수 있다.",
+          "commentary": "컴퓨터 과학 역사상 가장 유명한 문장 중 하나로, 하드웨어(직조기/기계 메커니즘)와 소프트웨어(천공 카드 패턴/프로그램)의 분리를 극적으로 은유하고 있다.",
+          "keyTerms": ["Analytical Engine", "Jacquard-loom", "punched cards", "weaves algebraical patterns"]
+        },
+        {
+          "id": "engine-acting-on-other-things",
+          "heading": "Beyond Numbers: Music, Logic, and Non-Numerical Entities (수를 넘어선 기호 연산: 음악과 비수치적 대상)",
+          "page": "p. 694",
+          "originalEnglish": "The Analytical Engine is an embodying of the science of operations, constructed with peculiar reference to abstract number as the subject of those operations. But the engine might act upon other things besides number, were objects found whose mutual fundamental relations could be expressed by those of the abstract science of operations, and which should be also susceptible of adaptations to the action of the operating notation and mechanism of the engine. Supposing, for instance, that the fundamental relations of pitched sounds in the science of harmony and of musical composition were susceptible of such expression and adaptations, the engine might compose elaborate and scientific pieces of music of any degree of complexity or extent.",
+          "koreanTranslation": "해석기관은 연산의 과학(Science of Operations)을 구체화한 실체로서, 그러한 연산의 대상으로서 특히 '추상적인 수'를 염두에 두고 제작되었다. 그러나 만약 상호 간의 근본적 관계가 추상 연산 과학으로 표현될 수 있고 기계의 연산 표기법 및 메커니즘에 적응될 수 있는 대상이 존재한다면, 이 기계는 '수(Number)' 이외의 다른 사물들에도 작용할 수 있을 것이다. 예컨대 화성학과 작곡 과학에서 음조를 지닌 소리들의 근본적 관계가 그러한 표현과 적응을 허용한다고 가정한다면, 이 엔진은 임의의 복잡성과 규모를 지닌 정교하고 과학적인 악곡을 작곡해낼 수도 있을 것이다.",
+          "commentary": "튜링 기계와 현대 디지털 컴퓨터의 범용 기호 조작(Universal Symbolic Manipulation) 개념을 1843년에 완벽히 예견한 대목이다. 컴퓨터가 단순 수치 계산기가 아니라 디지털 미디어(음악, 그래픽, 텍스트)를 생성하는 정보 처리기임을 통찰했다.",
+          "keyTerms": ["science of operations", "abstract number", "other things besides number", "compose elaborate pieces of music"]
+        }
+      ]
+    },
+    {
+      "id": "note-d-difference-vs-analytical",
+      "chapterNumber": "Note D",
+      "chapterTitle": "The Fundamental Distinction between the Difference Engine and the Analytical Engine",
+      "chapterTitleKorean": "주석 D: 차분기관과 해석기관의 본질적·구조적 차이",
+      "summary": "차분기관이 오직 가산(덧셈)에 기반한 다항식 차분표 작성에 한정된 특수 기계인 반면, 해석기관은 모든 수학적 해석 수식을 전개하고 실행할 수 있는 무제한의 범용 기계임을 수학적으로 증명함.",
+      "historicalContext": "당대 대중과 정부 관료들은 해석기관을 단지 '더 크고 복잡한 차분기관'으로 오해했다. 에이다는 두 기계의 수학적 성격과 작동 패러다임이 완전히 다름을 주석 D에서 명확한 경계로 논증했다.",
+      "excerpts": [
+        {
+          "id": "bounds-of-arithmetic-outstepped",
+          "heading": "Outstepping the Bounds of Arithmetic (산술의 한계를 뛰어넘다)",
+          "page": "pp. 706-707",
+          "originalEnglish": "The Difference Engine is the embodiment of one particular and rather limited set of operations, viz. that of addition (the subtraction being only addition with inverted signs)... The Analytical Engine, on the contrary, is not merely adapted for tabulating the results of one particular function and of no other, but for developing and tabulating any function whatever. In fact the engine may be described as being the material representation of any function. The bounds of arithmetic were outstepped the moment the idea of applying the cards had occurred; and the Analytical Engine does not occupy common ground with mere 'calculating machines.'",
+          "koreanTranslation": "차분기관은 하나의 특수하고 다소 제한된 일련의 연산, 즉 덧셈(뺄셈은 부호가 반전된 덧셈에 불과함)만을 구체화한 기계이다... 반면에 해석기관은 어느 하나의 특정한 함수 결과만을 표로 작성하는 데 국한되지 않고, 임의의 모든 함수를 전개하고 표로 작성할 수 있도록 적응되어 있다. 사실상 이 엔진은 '어떠한 수학적 함수라도 물질적으로 체현할 수 있는 기계'로 묘사될 수 있다. 천공 카드를 적용한다는 착상이 떠오른 그 순간 산술의 한계는 이미 뛰어넘어졌다. 따라서 해석기관은 단순한 '계산 기계(Calculating Machines)'들과 같은 범주에 머무르지 않는다.",
+          "commentary": "특수 목적 계산 하드웨어(ASIC)와 튜링 완전 범용 프로세서(General-Purpose CPU)의 차이를 명확히 가르는 정의이다. '천공 카드에 의한 제어'가 연산의 지평을 산술에서 일반 대수로 혁명화했음을 갈파했다.",
+          "keyTerms": ["Difference Engine", "Analytical Engine", "material representation of any function", "bounds of arithmetic outstepped"]
+        },
+        {
+          "id": "symbolic-representation-and-variables",
+          "heading": "Algebraic Symbols and Variable Manipulation (대수적 기호와 변수의 기계적 조작)",
+          "page": "pp. 708-709",
+          "originalEnglish": "The engine can arrange and combine its numerical quantities exactly as if they were letters or any other general symbols; and in fact it might bring out its results in algebraical notation, were vibrations of a needle or some other such apparatus furnished with symbols instead of digits, to be selected for receiving the impressions.",
+          "koreanTranslation": "이 엔진은 수치 수량들을 마치 문자나 임의의 일반 기호인 것처럼 정확하게 배열하고 조합할 수 있다. 실제로 만약 자침의 진동이나 숫자 대신 기호가 장착된 인쇄 장치가 그 결과를 받아 새기도록 선택된다면, 이 기계는 자신의 산출물을 대수적 표기법 그 자체로 출력해낼 수도 있을 것이다.",
+          "commentary": "기계 내부의 수치 연산 상태를 기호 대수학(Symbolic Algebra)의 변수와 등가로 치환하는 개념으로, 오늘날의 컴파일러와 기호 수학 소프트웨어(Computer Algebra Systems)의 원리를 함축하고 있다.",
+          "keyTerms": ["numerical quantities", "general symbols", "algebraical notation"]
+        }
+      ]
+    },
+    {
+      "id": "note-g-bernoulli-algorithm",
+      "chapterNumber": "Note G",
+      "chapterTitle": "The Bernoulli Numbers Algorithm, Execution Trace, and Machine Limitations",
+      "chapterTitleKorean": "주석 G: 베르누이 수 계산 알고리즘, 실행 추적표, 그리고 기계 지능의 한계",
+      "summary": "점화식을 이용하여 베르누이 수 $B_n$을 계산하는 완전한 알고리즘(25단계 연산 흐름표)을 제시하고, 루프와 변수 재사용 기법을 설명하며, '기계는 스스로 생각을 시작할 수 없다'는 유명한 기계 지능의 한계론을 정립함.",
+      "historicalContext": "Note G의 끝에 수록된 대형 접지 도표(Table 1 / Diagram for the computation by the Engine of the Numbers of Bernoulli)는 세계 최초의 완전한 컴퓨터 프로그램(코드, 변수 매핑, 제어 흐름 추적)이다. 앨런 튜링은 1950년 인공지능 논문 'Computing Machinery and Intelligence'에서 에이다의 주장을 '레이디 러브레이스의 반론(Lady Lovelace's Objection)'으로 명명하고 집중 논박했다.",
+      "excerpts": [
+        {
+          "id": "bernoulli-formula-and-looping",
+          "heading": "The Bernoulli Numbers Recurrence and Cycle Backing (베르누이 수 점화식과 카드의 후진 루프)",
+          "page": "pp. 722-726",
+          "originalEnglish": "The problem we have selected for an illustration is the computation of the Numbers of Bernoulli. The formula being: $0 = -\\frac{1}{2}\\frac{2n-1}{2n+1} + B_1 \\frac{2n}{2} + B_3 \\frac{2n(2n-1)(2n-2)}{2\\cdot 3\\cdot 4} + \\dots + B_{2n-1}$. The operations are grouped in cycles, and by the backing mechanism, the group of cards from 13 to 23 are repeated for each successive term until the index $n$ is reached. In this calculation we have a complete illustration of the manner in which the engine can be made to act upon itself, and to modify its future actions by the results of its own past operations.",
+          "koreanTranslation": "우리가 기계의 실례를 들기 위해 선택한 문제는 '베르누이 수(Numbers of Bernoulli)'의 계산이다. 그 수식은 다음과 같다: $0 = -\\frac{1}{2}\\frac{2n-1}{2n+1} + B_1 \\frac{2n}{2} + B_3 \\frac{2n(2n-1)(2n-2)}{2\\cdot 3\\cdot 4} + \\dots + B_{2n-1}$. 연산들은 주기적 사이클(Cycles)로 묶이며, 카드 후진 메커니즘(Backing Mechanism)에 의해 13번부터 23번까지의 카드 그룹은 지표 $n$에 도달할 때까지 매 연속 항마다 반복 실행된다. 이 계산을 통해 우리는 엔진이 어떻게 스스로에게 작용하고, 과거 연산의 결과를 바탕으로 미래의 동작을 스스로 수정하도록(조건부 반복 루프) 제어될 수 있는지를 완벽하게 보여준다.",
+          "commentary": "현대 프로그래밍의 중첩 루프(Nested Loop), 변수 갱신(Variable Mutation), 메모리 레지스터 재할당, 조건부 루프 탈출 조건이 상세한 기계 사이클로 표현되어 있다.",
+          "keyTerms": ["Numbers of Bernoulli", "cycles", "backing mechanism", "act upon itself", "modify future actions"]
+        },
+        {
+          "id": "lovelace-objection-machine-intelligence",
+          "heading": "Lady Lovelace's Objection: The Limits of Machine Origin (레이디 러브레이스의 반론: 기계의 기원적 한계)",
+          "page": "p. 722",
+          "originalEnglish": "The Analytical Engine has no pretensions whatever to originate anything. It can do whatever we know how to order it to perform. It can follow analysis; but it has no power of anticipating any analytical relations or truths. Its province is to assist us in making available what we are already acquainted with; but there is no ground for supposing that it can replace the powers of human discovery.",
+          "koreanTranslation": "해석기관은 무언가를 '스스로 창안해낸다(Originate)'는 그 어떠한 가식도 부리지 않는다. 기계는 우리가 '명령을 내리는 방법(How to order it)'을 알고 있는 일이라면 무엇이든 실행할 수 있다. 기계는 수학적 해석을 따를 수 있지만, 어떠한 대수적 관계나 진리를 스스로 예견할 수 있는 능력은 지니고 있지 않다. 기계의 본령은 우리가 이미 파악하고 있는 지식을 유용하게 활용하도록 돕는 데 있을 뿐이며, 인간 고유의 창조적 발견 능력을 기계가 대체할 수 있다고 가정할 그 어떠한 근거도 없다.",
+          "commentary": "이 문장은 인공지능 철학에서 '레이디 러브레이스의 반론'으로 영구히 각인되었다. 튜링(Turing, 1950)은 이 명제를 기계 학습과 강화 학습의 관점에서 재검토하며 AI의 가능성을 역으로 변호했다.",
+          "keyTerms": ["no pretensions to originate", "how to order it to perform", "follow analysis", "Lady Lovelace's Objection"]
+        }
+      ]
+    }
+  ]
+}

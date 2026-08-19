@@ -1,0 +1,68 @@
+{
+  "documentId": "economy-of-machinery",
+  "sourceId": "SRC-ECON-01",
+  "title": "On the Economy of Machinery and Manufactures",
+  "titleKorean": "기계와 제조업의 경제학",
+  "author": "Charles Babbage (찰스 배비지)",
+  "year": 1832,
+  "originalPublisher": "Charles Knight, Pall Mall East, London (4th ed. 1835)",
+  "description": "찰스 배비지가 1832년에 출간한 산업경제학 및 경영학의 고전. 아담 스미스의 핀 공장 분업론을 지적 작업으로 확장한 '정신 노동의 분업(Division of Mental Labour)'과, 직무 숙련도별 임금 최적화 이론인 '배비지 원칙(Babbage Principle)'을 정립한 1차 사료.",
+  "sections": [
+    {
+      "id": "chap-division-of-mental-labour",
+      "chapterNumber": "Chapter XIX / XX",
+      "chapterTitle": "On the Division of Mental Labour",
+      "chapterTitleKorean": "제19장/제20장: 정신 노동의 분업에 관하여",
+      "summary": "프랑스 혁명기 가스파르 드 프로니(Gaspard de Prony)가 아담 스미스의 국부론에 착안하여 거대한 대수·삼각함수표(Tables du Cadastre) 제작에 3단계 분업 체계를 도입한 사례를 분석하고, 최하단의 단순 덧셈 노동을 기계로 대체할 수 있음을 역설함.",
+      "historicalContext": "프랑스 정부는 미터법 도입에 따른 새로운 토지 지적도 및 항해용 표(Tables du Cadastre)를 제작하고자 했다. 방대한 계산량에 절망하던 드 프로니는 우연히 아담 스미스의 《국부론》 제1장을 읽고 핀 공장의 분업을 수학 계산에 적용했다.",
+      "excerpts": [
+        {
+          "id": "prony-three-tier-division",
+          "heading": "Gaspard de Prony's Three Sections of Mathematical Labour (드 프로니의 3단계 수학 분업 구조)",
+          "page": "Sections 241-244",
+          "originalEnglish": "M. de Prony was tasked by the French Government to construct extensive logarithmic and trigonometric tables. Finding the work beyond human power by ordinary means, he happened to open Smith's 'Wealth of Nations' at the chapter on the division of labour. He immediately resolved to manufacture logarithms as one manufactures pins. He established three distinct sections of workers: The first section composed of five or six eminent mathematicians (including Legendre) who selected the analytical formulas. The second section consisting of seven or eight persons of mathematical knowledge who converted these formulas into numbers and calculated the differences. The third section comprised sixty to eighty individuals who possessed no knowledge beyond simple addition and subtraction, executing nothing but purely mechanical arithmetic.",
+          "koreanTranslation": "드 프로니(M. de Prony)는 프랑스 정부로부터 방대한 로그 및 삼각함수 표를 제작하라는 과업을 부여받았다. 통상적인 방식으로는 인간의 능력을 초과하는 작업임을 깨달은 그는, 우연히 아담 스미스의 《국부론》에서 분업을 다룬 장을 펼치게 되었다. 그는 핀을 제조하듯 로그를 제조하기로 결심했다. 그는 세 개의 뚜렷한 작업자 분과를 설립했다. 제1분과는 르장드르(Legendre)를 포함한 5~6명의 저명한 수학자들로 구성되어 가장 적합한 해석적 공식을 선정했다. 제2분과는 수학적 지식을 갖춘 7~8명의 인원으로 구성되어 이 공식들을 수치로 변환하고 초기 차분값을 계산했다. 제3분과는 단순한 덧셈과 뺄셈 외에는 아무런 수학 지식이 없는 60~80명의 개인들로 구성되어, 오로지 순수하게 기계적인 산술 계산만을 수행했다.",
+          "commentary": "지적 활동(Intellectual Activity) 역시 고도의 창의적 작업과 단순 반복 작업으로 분해될 수 있음을 증명한 사례이다. 특히 제3분과의 인원 중 다수는 프랑스 혁명 이후 가발 수요가 사라져 실직한 미용사들이었다.",
+          "keyTerms": ["M. de Prony", "Wealth of Nations", "manufacture logarithms as pins", "three sections of workers"]
+        },
+        {
+          "id": "replacement-of-third-section-by-engine",
+          "heading": "Substitution of the Third Section by Iron Machinery (제3분과의 기계적 대체와 차분기관)",
+          "page": "Sections 245-246",
+          "originalEnglish": "The third and largest class of calculators required no intellectual skill whatever; they were mere mechanical agents performing additions. It is precisely this third section of labour which can be more rapidly, more accurately, and more economically performed by the calculating engine. The engine not only executes the additions with unerring precision, but mechanically stamps the results upon metal plates, thus superseding both the unthinking human calculator and the fallible compositor.",
+          "koreanTranslation": "계산원들 중 가장 규모가 컸던 제3분과는 그 어떠한 지적 기술도 필요로 하지 않았다. 그들은 단지 덧셈을 수행하는 기계적 대리인에 불과했다. 바로 이 제3분과의 노동이야말로 계산 기계(Calculating Engine)에 의해 더욱 신속하고, 더욱 정확하며, 더욱 경제적으로 수행될 수 있는 영역이다. 기계는 결코 오류가 없는 정밀함으로 덧셈을 수행할 뿐만 아니라, 그 결과를 활판 인쇄용 금속판에 기계적으로 직접 압인하여 새겨넣음으로써 생각할 필요 없는 인간 계산원과 실수를 범하기 쉬운 인쇄 식자공 모두를 완전히 대체한다.",
+          "commentary": "배비지가 차분기관을 발명하게 된 경제학적·조직론적 필연성을 설명하는 대목이다. 단순 지적 반복 노동의 자동화라는 20~21세기 컴퓨터화(Computerization)의 근본 동기가 명시되어 있다.",
+          "keyTerms": ["mechanical agents", "calculating engine", "unerring precision", "superseding human calculator"]
+        }
+      ]
+    },
+    {
+      "id": "chap-babbage-principle",
+      "chapterNumber": "Chapter XIX / Section 201",
+      "chapterTitle": "The Principle of the Division of Labour (The Babbage Principle)",
+      "chapterTitleKorean": "제19장: 분업의 원리 (배비지 원칙)",
+      "summary": "작업을 세분화하여 각 공정에 필요한 정확한 수준의 기술과 완력만을 구매함으로써 전체 생산 비용을 극소화하는 산업 경제학의 핵심 '배비지 원칙' 정립.",
+      "historicalContext": "아담 스미스는 분업의 이점으로 숙련도 향상, 작업 전환 시간 절약, 기계 발명 촉진의 세 가지를 제시했다. 배비지는 여기에 더해 '노동력의 적정 임금 매칭'이라는 결정적인 네 번째 경제적 이점을 최초로 이론화했다.",
+      "excerpts": [
+        {
+          "id": "babbage-principle-formulation",
+          "heading": "The Master Formulation of the Babbage Principle (배비지 원칙의 정식화)",
+          "page": "Section 201, pp. 175-176",
+          "originalEnglish": "That the master manufacturer, by dividing the work to be executed into different processes, each requiring different degrees of skill or of force, can purchase exactly that precise quantity of both which is necessary for each process; whereas, if the whole work were executed by one workman, that person must possess sufficient skill to perform the most difficult, and sufficient strength to execute the most laborious, of the operations into which the art is divided.",
+          "koreanTranslation": "공장주는 수행해야 할 작업을 각각 상이한 수준의 기술이나 완력을 요구하는 여러 세부 공정으로 분할함으로써, 각 공정에 정확히 필요한 만큼의 기술과 완력만을 구매할 수 있다. 반면에 만약 전체 작업이 단 한 명의 직공에 의해 수행된다면, 그 사람은 그 기술을 구성하는 공정들 중 가장 어려운 작업을 수행할 수 있는 충분한 기술과, 가장 힘든 작업을 수행할 수 있는 충분한 완력을 모두 지니고 있어야만 한다.",
+          "commentary": "알프레드 마셜(Alfred Marshall)과 후대 경제학자들이 '배비지 원칙(Babbage Principle)'이라 명명한 불후의 명제이다. 고임금 숙련공에게 단순 작업을 시키는 데서 발생하는 자원 낭비를 방지하고 직무별 임금 격차를 합리화하는 현대 인적자원관리(HRM) 및 소프트웨어 엔지니어링 롤 분담의 모태가 되었다.",
+          "keyTerms": ["master manufacturer", "different degrees of skill", "precise quantity", "Babbage Principle"]
+        },
+        {
+          "id": "economic-waste-of-monolithic-skill",
+          "heading": "The Economic Waste of Monolithic Artisanship (단일 장인 체제의 경제적 낭비)",
+          "page": "Section 202, pp. 176-178",
+          "originalEnglish": "If the master manufacturer is obliged to pay for the whole time of a skilled workman at the highest rate which that workman's skill commands, and if a large portion of that time is employed in performing operations which could be equally well executed by a person of far inferior skill and receiving far lower wages, the manufacturer incurs a needless expenditure which raises the cost of production.",
+          "koreanTranslation": "만약 공장주가 숙련공의 전체 노동 시간에 대해 그 숙련도가 요구하는 최고 수준의 임금을 지불해야 하는데, 그 시간의 상당 부분이 훨씬 낮은 숙련도를 지니고 훨씬 적은 임금을 받는 사람에 의해서도 똑같이 잘 수행될 수 있는 작업에 투입된다면, 공장주는 불필요한 비용을 지출하게 되며 이는 제품의 생산 단가를 불필요하게 상승시킨다.",
+          "commentary": "고숙련 엔지니어에게 데이터 입력이나 단순 잡무를 맡기는 조직적 비효율을 19세기 공장제 수공업과 초기 공장 시스템의 데이터로 명쾌히 논파하고 있다.",
+          "keyTerms": ["skilled workman", "inferior skill", "lower wages", "cost of production"]
+        }
+      ]
+    }
+  ]
+}

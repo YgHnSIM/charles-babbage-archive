@@ -1,0 +1,164 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="해석기관 (Analytical Engine) - 범용 컴퓨터의 기원과 아키텍처">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    {/* Page Header */}
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-purple-500/30 bg-purple-950/30 text-purple-300 text-xs font-mono mb-4">
+        TURING-COMPLETE GENERAL PURPOSE COMPUTER
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-display font-bold text-white mb-4">
+        해석기관: 범용 컴퓨터 아키텍처의 탄생
+      </h1>
+      <p class="text-sm sm:text-base text-gray-400 font-body-serif leading-relaxed">
+        1834년 착상된 해석기관은 연산부(Mill)와 저장부(Store)를 분리하고, 자카드 천공카드를 통해 조건 분기와 루프를 제어한 역사상 최초의 범용 튜링 완전 기계식 컴퓨터입니다.
+      </p>
+    </div>
+
+    {/* Section 1: The Conceptual Leap */}
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+      <div class="bg-[#12161f] border border-gray-800 rounded-xl p-6 sm:p-8">
+        <h2 class="text-xl font-display font-bold text-white mb-3 text-purple-300">
+          차분기관에서 해석기관으로의 거대한 도약
+        </h2>
+        <p class="text-xs sm:text-sm text-gray-300 font-body-serif leading-relaxed space-y-3">
+          차분기관이 오직 다항식의 덧셈만을 수행하는 '특수 목적 계산기(ASIC)'였다면, 해석기관은 어떤 임의의 수학 공식이나 기호 논리도 프로그램 카드에 따라 실행할 수 있는 '범용 컴퓨터(General-Purpose CPU)'였습니다.
+          <br /><br />
+          배비지는 프랑스 조제프 마리 자카르(Joseph Marie Jacquard)의 직기가 천공카드의 구멍 패턴에 따라 복잡한 비단 문양을 자동으로 짜내는 방식에서 영감을 얻어, 수학적 연산 순서를 천공카드로 기계에 주입하는 혁명적인 발상을 이루어냈습니다.
+        </p>
+      </div>
+
+      <div class="bg-[#12161f] border border-gray-800 rounded-xl p-6 sm:p-8 flex flex-col justify-between">
+        <h2 class="text-xl font-display font-bold text-white mb-3 text-purple-300">
+          해석기관의 4대 핵심 구성 요소
+        </h2>
+        <div class="grid grid-cols-2 gap-3 text-xs font-mono">
+          <div class="bg-[#181e28] p-3 rounded border border-gray-700/60">
+            <div class="text-purple-300 font-bold mb-1">1. 스토어 (Store)</div>
+            <div class="text-gray-400 text-[11px]">1,000개의 50자리 10진수 휠 (현대의 RAM/레지스터)</div>
+          </div>
+          <div class="bg-[#181e28] p-3 rounded border border-gray-700/60">
+            <div class="text-purple-300 font-bold mb-1">2. 밀 (Mill)</div>
+            <div class="text-gray-400 text-[11px]">사칙연산 및 제곱근을 수행하는 연산 코어 (현대의 ALU)</div>
+          </div>
+          <div class="bg-[#181e28] p-3 rounded border border-gray-700/60">
+            <div class="text-purple-300 font-bold mb-1">3. 제어기 (Cards)</div>
+            <div class="text-gray-400 text-[11px]">명령어/변수 천공카드 판독 및 분기 기구 (Control Unit)</div>
+          </div>
+          <div class="bg-[#181e28] p-3 rounded border border-gray-700/60">
+            <div class="text-purple-300 font-bold mb-1">4. 입출력 (I/O)</div>
+            <div class="text-gray-400 text-[11px]">천공카드 리더, 곡선 플로터, 활판 주형 인쇄기</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* Section 2: Architecture Breakdown */}
+    <div class="bg-[#12161f] border border-gray-800 rounded-xl p-6 sm:p-8 mb-16">
+      <h2 class="text-2xl font-display font-bold text-white mb-6 text-brass-300">
+        해석기관의 하드웨어 & 소프트웨어 구조
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs text-gray-300">
+        <div class="bg-[#0d1015] border border-gray-800 p-5 rounded-lg">
+          <h3 class="font-bold text-sm text-purple-300 font-mono mb-2">
+            🏷️ 작전 카드 (Operation Cards)
+          </h3>
+          <p class="leading-relaxed mb-3">
+            현대 CPU의 **Opcode(명령어)**에 해당합니다. 밀(Mill)에게 다음에 수행할 연산(+, -, ×, ÷, √)의 종류를 지시합니다.
+          </p>
+          <div class="p-2 bg-[#161b24] rounded font-mono text-[11px] text-gray-400">
+            예: <code>OP_MUL</code>, <code>OP_SUB</code>, <code>OP_DIV</code>
+          </div>
+        </div>
+
+        <div class="bg-[#0d1015] border border-gray-800 p-5 rounded-lg">
+          <h3 class="font-bold text-sm text-purple-300 font-mono mb-2">
+            📍 변수 카드 (Variable Cards)
+          </h3>
+          <p class="leading-relaxed mb-3">
+            현대 CPU의 **Operand / Memory Address**에 해당합니다. 어떤 레지스터($V_1, V_2, \dots$)의 값을 밀로 가져오고 결과를 어디에 기록할지 지정합니다.
+          </p>
+          <div class="p-2 bg-[#161b24] rounded font-mono text-[11px] text-gray-400">
+            예: <code>LOAD V1, LOAD V2 -&gt; STORE V4</code>
+          </div>
+        </div>
+
+        <div class="bg-[#0d1015] border border-gray-800 p-5 rounded-lg">
+          <h3 class="font-bold text-sm text-purple-300 font-mono mb-2">
+            🔄 조건 분기 & 루프 (Branching)
+          </h3>
+          <p class="leading-relaxed mb-3">
+            연산 결과의 부호 휠(Sign Wheel)이 음수로 반전되거나 0에 도달할 때, 카드 체인을 앞/뒤로 되감는 레버(Backing Lever)를 작동시켜 **반복문(Loops)과 조건문(If-Else)**을 실행했습니다.
+          </p>
+          <div class="p-2 bg-[#161b24] rounded font-mono text-[11px] text-gray-400">
+            예: <code>IF V3 &lt; 0 GOTO CARD_12</code>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* Section 3: Architecture Comparison Matrix */}
+    <div class="bg-[#12161f] border border-gray-800 rounded-xl p-6 sm:p-8">
+      <h2 class="text-2xl font-display font-bold text-white mb-4 text-brass-300">
+        컴퓨터 구조 비교: 해석기관 vs. 현대 아키텍처
+      </h2>
+      <p class="text-xs text-gray-400 mb-6">
+        명령어와 데이터 경로를 분리한 하버드 구조(Harvard Architecture) 및 폰 노이만 구조와의 역사적 계보 비교.
+      </p>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-xs font-mono text-left border-collapse border border-gray-800">
+          <thead class="bg-[#181e28] text-gray-400">
+            <tr>
+              <th class="p-3 border border-gray-800">구분</th>
+              <th class="p-3 border border-gray-800 text-purple-300">찰스 배비지 해석기관 (1837)</th>
+              <th class="p-3 border border-gray-800">하버드 마크 I (1944)</th>
+              <th class="p-3 border border-gray-800">에니악 ENIAC (1945)</th>
+              <th class="p-3 border border-gray-800 text-brass-300">폰 노이만 EDVAC / 현대 PC</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-800 text-gray-300">
+            <tr>
+              <td class="p-3 border border-gray-800 font-bold text-white">연산 매체</td>
+              <td class="p-3 border border-gray-800 text-purple-200">기계식 톱니바퀴 (증기 동력)</td>
+              <td class="p-3 border border-gray-800">전자기 릴레이</td>
+              <td class="p-3 border border-gray-800">진공관 (전기)</td>
+              <td class="p-3 border border-gray-800 text-brass-200">반도체 트랜지스터</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-gray-800 font-bold text-white">프로그램 방식</td>
+              <td class="p-3 border border-gray-800 text-purple-200">자카드 천공카드 (분리형)</td>
+              <td class="p-3 border border-gray-800">천공 종이 테이프</td>
+              <td class="p-3 border border-gray-800">플러그보드 배선 연결</td>
+              <td class="p-3 border border-gray-800 text-brass-200">내장 프로그램 (Stored-Program)</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-gray-800 font-bold text-white">조건 분기 (If)</td>
+              <td class="p-3 border border-gray-800 text-purple-200 font-bold">지원 (부호 휠 연동 카드 스킵)</td>
+              <td class="p-3 border border-gray-800">초기 미지원 (선형 실행)</td>
+              <td class="p-3 border border-gray-800">지원 (마스터 프로그래머)</td>
+              <td class="p-3 border border-gray-800 text-brass-200 font-bold">지원 (명령어 주소 점프)</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-gray-800 font-bold text-white">구조적 분류</td>
+              <td class="p-3 border border-gray-800 text-purple-200">하버드 구조의 기계적 원형</td>
+              <td class="p-3 border border-gray-800">하버드 아키텍처</td>
+              <td class="p-3 border border-gray-800">전용 병렬 전자 계산기</td>
+              <td class="p-3 border border-gray-800 text-brass-200">폰 노이만 아키텍처</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-gray-800 font-bold text-white">튜링 완전성</td>
+              <td class="p-3 border border-gray-800 text-purple-200 font-bold">이론적 완전 (Turing-Complete)</td>
+              <td class="p-3 border border-gray-800">조건부 불완전</td>
+              <td class="p-3 border border-gray-800 font-bold">튜링 완전</td>
+              <td class="p-3 border border-gray-800 text-brass-200 font-bold">튜링 완전</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</Layout>

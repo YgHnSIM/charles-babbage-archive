@@ -1,0 +1,105 @@
+---
+title: "Passages from the Life of a Philosopher (Key Excerpts)"
+titleKorean: "철학자의 생애에서 발췌한 구절들 (찰스 배비지 자서전)"
+author: "Charles Babbage"
+year: 1864
+sourceId: "SRC-AUTO-01"
+originalPublisher: "Longman, Green, Longman, Roberts, & Green, London"
+---
+
+# Passages from the Life of a Philosopher (1864)
+### 찰스 배비지 자서전 핵심 사료 해제 및 정밀 번역
+
+> **사료 메타데이터 (Metadata)**
+> - **저자**: 찰스 배비지 (Charles Babbage, F.R.S.)
+> - **출판연도**: 1864년
+> - **출판지/출판사**: 런던 (Longman, Green, Longman, Roberts, & Green)
+> - **사료 분류**: 1차 사료 (자서전 및 기술 회고록)
+> - **식별자**: `SRC-AUTO-01`
+
+---
+
+## 제5장: 차분기관 1호에 관하여 (Chapter V: Of the Difference Engine No. 1)
+
+### 1. 해석학회에서의 몽상: 증기 계산기의 착상 (The Dream in the Analytical Society)
+
+| 빅토리아조 원문 (Original Victorian English) | 국문 정밀 번역 (Korean Translation) |
+| :--- | :--- |
+| **"One evening I was sitting in the rooms of the Analytical Society, at Cambridge, my head leaning forward on the table in a kind of dreamy mood, with a table of logarithms lying open before me. Another member, coming into the room, and seeing me half asleep, called out, 'Well, Babbage, what are you dreaming about?' to which I replied, 'I am thinking that all these tables (pointing to the logarithms) might be calculated by machinery.'"** *(pp. 42-43)* | **"어느 날 저녁, 나는 케임브리지 해석학회 방에 앉아 로그표를 앞에 펼쳐놓은 채 탁자에 머리를 기대고 일종의 몽상에 잠겨 있었다. 방으로 들어온 다른 회원이 반쯤 졸고 있는 나를 보고는 '이봐, 배비지, 무슨 꿈을 꾸고 있는 건가?'라고 소리쳤다. 나는 이렇게 대답했다. '이 모든 표들(로그표를 가리키며)을 기계로 계산해낼 수 있지 않을까 생각하던 중이었네.'"** |
+
+> **역사적 해설 및 맥락 (Historical Context)**:
+> 1812년경 케임브리지 대학 해석학회(Analytical Society)에서 존 허셜(John Herschel)과의 대화 중에 촉발된 이 일화는 기계식 자동 계산 컴퓨터의 태동을 알리는 가장 상징적인 순간입니다. 당대 천문학과 항해용 로그표에 넘쳐나던 인간 수작업 계산 오차를 목격한 배비지는, 증기 기관의 힘으로 회전하는 기계만이 결함 없는 완벽한 수표를 산출할 수 있다는 확신을 얻었습니다.
+
+---
+
+### 2. 유한차분 원리와 인쇄 자동화 (Principle of Differences and Elimination of Error)
+
+| 빅토리아조 원문 (Original Victorian English) | 국문 정밀 번역 (Korean Translation) |
+| :--- | :--- |
+| **"The first engine I constructed was a small model, which calculated and printed tables of differences. The method of finite differences enables us to compute any formula of polynomial function by simple successive additions. The mechanical execution of these tables would remove two of the greatest sources of human error: the errors of the human calculator in computing the numbers, and the still more dangerous errors of the copyist and the compositor in transcribing and printing them."** *(pp. 44-46)* | **"내가 처음 제작한 엔진은 차분표를 계산하고 인쇄하는 소형 모델이었다. 유한차분법(Method of Finite Differences)은 단순한 연속 덧셈만으로 임의의 다항식 함수 수식을 계산할 수 있게 해준다. 이러한 표를 기계적으로 제작하게 되면 인간의 두 가지 가장 큰 오류 근원을 제거할 수 있다. 즉, 숫자를 계산할 때 발생하는 인간 계산원의 오류와, 이를 필사하고 인쇄할 때 발생하는 더욱 위험한 필경사 및 식자공의 오류이다."** |
+
+> **컴퓨터 과학적 분석 (CS Analysis)**:
+> 배비지는 계산 알고리즘뿐만 아니라 활판 인쇄판(Stereotype Plate)을 기계가 직접 압인하는 일체형 하드웨어를 설계했습니다. 연산 장치(Processing Unit)와 출력 장치(Output/Printer)의 통합을 1820년대에 이미 완성된 형태로 구상한 것입니다.
+
+---
+
+## 제8장: 해석기관에 관하여 (Chapter VIII: Of the Analytical Engine)
+
+### 3. 스토어와 밀의 구조적 분리 (The Separation of Store and Mill)
+
+| 빅토리아조 원문 (Original Victorian English) | 국문 정밀 번역 (Korean Translation) |
+| :--- | :--- |
+| **"The Analytical Engine consists of two parts: 1st. The store in which all the variables to be operated upon, as well as all those which have arisen from the results of other operations, are placed. 2nd. The mill into which the quantities about to be operated upon are always brought. Every formula which the Analytical Engine can be required to compute consists of certain algebraical operations to be performed on given letters, and of certain other modifications depending on the numerical values assigned to those letters."** *(pp. 116-117)* | **"해석기관은 두 개의 핵심 부분으로 구성된다. 첫째, 연산 대상이 되는 모든 변수뿐만 아니라 다른 연산의 결과로부터 도출된 모든 값들이 배치되는 '스토어(Store)'. 둘째, 연산이 수행될 수량들이 매번 옮겨져 들어오는 '밀(Mill)'. 해석기관이 계산해야 하는 모든 수식은 주어진 문자에 대해 수행되어야 하는 특정한 대수적 연산들과, 그 문자들에 할당된 수치적 값에 따라 달라지는 제반 수정 작업들로 이루어진다."** |
+
+> **컴퓨터 구조적 의의 (Architecture Insight)**:
+> 1945년 존 폰 노이만의 보고서보다 100년 이상 앞서 데이터 기억 장치(Store = Memory/RAM)와 연산 제어 처리 장치(Mill = ALU/CPU)의 물리적 분리를 선언했습니다.
+
+---
+
+### 4. 자카드 직조기와 작전 카드 (Jacquard Loom and Operation Cards)
+
+| 빅토리아조 원문 (Original Victorian English) | 국문 정밀 번역 (Korean Translation) |
+| :--- | :--- |
+| **"The Analytical Engine weaves algebraical patterns just as the Jacquard-loom weaves flowers and leaves. The cards which determine the operations are called 'Operation Cards'; those which determine the variables are called 'Variable Cards'; and the mechanism can, by backing the cards, repeat any set of instructions or choose alternative paths based on the nature of the results produced."** *(pp. 118-120)* | **"자카드 직조기가 꽃과 나뭇잎을 짜내듯, 해석기관은 대수적 패턴을 직조해낸다. 연산의 종류를 결정하는 카드를 '작전 카드(Operation Cards)'라 부르고, 변수의 위치를 결정하는 카드를 '변수 카드(Variable Cards)'라 부른다. 또한 이 메커니즘은 카드를 후진(backing)시킴으로써 일련의 명령을 반복 실행하거나, 산출된 결과의 성격에 따라 대안적 경로를 선택할 수 있다."** |
+
+> **프로그래밍 제어 구조 (Control Flow)**:
+> 현대 컴퓨터 과학의 명령어(Opcode)와 피연산자 주소(Operand Address), 서브루틴 루프(Loops), 조건부 분기(Conditional Branching)의 기계적 구현을 묘사하고 있습니다.
+
+---
+
+## 제11장: 에이다 러브레이스 백작부인 (Chapter XI: Lady Lovelace)
+
+### 5. 1843년 논문 번역과 주석 집필의 기원 (Genesis of the 1843 Memoir and Notes)
+
+| 빅토리아조 원문 (Original Victorian English) | 국문 정밀 번역 (Korean Translation) |
+| :--- | :--- |
+| **"Some time after the appearance of this memoir, the late Countess of Lovelace informed me that she had translated the memoir of Menabrea. I asked why she had not herself written an original paper on a subject with which she was so intimately acquainted? To this Lady Lovelace replied that the thought had not occurred to her. I then suggested that she should add some notes to Menabrea's memoir; an idea which was immediately adopted."** *(pp. 135-136)* | **"이 논문이 발표되고 얼마 지나지 않아, 고(故) 러브레이스 백작부인은 내게 자신이 메나브레아의 논문을 번역했다고 알려왔다. 나는 부인이 그토록 깊이 이해하고 있는 주제에 대해 왜 스스로 독창적인 논문을 쓰지 않았느냐고 물었다. 이에 러브레이스 백작부인은 그런 생각은 미처 해보지 못했다고 답했다. 그러자 나는 메나브레아의 논문에 몇 가지 주석을 추가해보는 것이 어떻겠느냐고 제안했고, 이 생각은 즉시 채택되었다."** |
+
+---
+
+### 6. 베르누이 수 협업과 배비지의 오류 수정 (The Bernoulli Numbers Collaboration and Error Correction)
+
+| 빅토리아조 원문 (Original Victorian English) | 국문 정밀 번역 (Korean Translation) |
+| :--- | :--- |
+| **"We discussed together the various illustrations that might be introduced: I suggested several, but the selection was entirely her own. So also was the algebraical working out of the different problems, except, indeed, that relating to the numbers of Bernoulli, which I had offered to do to save Lady Lovelace the trouble. This she sent back to me with an amendment, having detected a grave mistake which I had made in the process. The notes of the Countess of Lovelace extend to about three times the length of the original memoir... Lady Lovelace possessed a mathematical genius of the highest order."** *(pp. 136-137)* | **"우리는 논문에 도입할 수 있는 다양한 예시들을 함께 논의했다. 내가 몇 가지를 제안하긴 했으나 최종 선택은 온전히 부인의 몫이었다. 서로 다른 문제들의 대수적 계산 과정 또한 전적으로 부인의 작업이었는데, 다만 베르누이 수(Numbers of Bernoulli)에 관한 부분만큼은 부인의 수고를 덜어주고자 내가 대신 계산해주겠다고 제안했었다. 그러나 부인은 내가 계산 과정에서 저지른 중대한 실수를 발견하고 수정안과 함께 그것을 내게 돌려보냈다. 러브레이스 백작부인의 주석은 원 논문 분량의 약 세 배에 달한다... 백작부인은 최고 수준의 수학적 천재성을 지니고 있었다."** |
+
+> **역사적 진실 (Fact-Check)**:
+> 일부 후대 비평가들이 에이다를 단순한 필경사로 폄하하려 했던 시도에 대해, 배비지 본인이 그녀의 독립적 수학적 기여와 알고리즘 디버깅 능력을 직접 확인해주는 핵심 증거입니다.
+
+---
+
+## 제26장: 거리의 소음과 방해꾼들 (Chapter XXVI: Street Nuisances)
+
+### 7. 파괴된 지적 노동의 계량화 (Calculation of Destroyed Intellectual Labour)
+
+| 빅토리아조 원문 (Original Victorian English) | 국문 정밀 번역 (Korean Translation) |
+| :--- | :--- |
+| **"During the last ten years, the amount of intellectual labour of which I have been destroyed by street music amounts to at least one-fourth of the whole value of my time. Those who are subject to this nuisance are persons whose minds are engaged in pursuits requiring deep thought and continuous attention: mathematicians, authors, artists, musicians who practice, and professional men. The instruments of torture are: Organs, Brass bands, Fiddles, Harps, Bagpipes, Accordions, Halfpenny whistles, and Tom-toms."** *(pp. 337-338)* | **"지난 10년 동안 거리 음악으로 인해 파괴된 나의 지적 노동의 양은 내 전체 시간 가치의 최소 4분의 1에 달한다. 이러한 소음 공해에 시달리는 이들은 깊은 사색과 지속적인 집중을 필요로 하는 탐구에 매진하는 사람들이다. 즉, 수학자, 저술가, 예술가, 자택에서 연습하는 음악가, 그리고 전문직 종사자들이다. 나를 고문하는 악기들은 다음과 같다: 오르간(손풍금), 금관악단, 바이올린, 하프, 백파이프, 아코디언, 싸구려 피리, 그리고 톰톰 북이다."** |
+
+---
+
+### 8. 군중의 횡포와 '배비지 법'의 탄생 (Harassment by Mobs and the Passing of Babbage's Act)
+
+| 빅토리아조 원문 (Original Victorian English) | 국문 정밀 번역 (Korean Translation) |
+| :--- | :--- |
+| **"I have been exposed to the grossest abuse and insults from these ruffians. Mobs have collected before my house; stones have been thrown through my windows; dead cats and other offensive objects have been hurled into my area. In 1864, after long efforts and despite the ridicule of the thoughtless, an Act of Parliament was passed (27 and 28 Vict., cap. 55), commonly called 'Mr. Babbage's Act', for the better regulation of street music in the Metropolis."** *(pp. 349-351)* | **"나는 이 무뢰한들로부터 극심한 욕설과 모욕에 시달렸다. 폭도 같은 군중이 내 집 앞에 몰려들었고, 창문으로 돌멩이가 날아들었으며, 집 마당 안으로 죽은 고양이와 온갖 불쾌한 오물들이 투척되었다. 1864년, 오랜 노력 끝에 그리고 몰지각한 자들의 비웃음에도 불구하고, 수도 런던의 거리 음악을 더욱 엄격히 규제하기 위한 의회 법률(27 & 28 Vict., cap. 55), 일명 '배비지 법(Mr. Babbage's Act)'이 마침내 통과되었다."** |
