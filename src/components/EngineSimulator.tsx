@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 interface PolynomialPreset {
   id: string;
@@ -55,8 +55,11 @@ export default function EngineSimulator() {
     { ...selectedPreset.initialValues }
   ]);
   const [isRotating, setIsRotating] = useState(false);
+  const [isAutoRunning, setIsAutoRunning] = useState(false);
+  const autoRunTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   const resetPreset = (preset: PolynomialPreset) => {
+    setIsAutoRunning(false);
     setSelectedPreset(preset);
     setCurrentStep(0);
     setHistory([{ ...preset.initialValues }]);
@@ -64,7 +67,7 @@ export default function EngineSimulator() {
 
   const handleStep = () => {
     setIsRotating(true);
-    setTimeout(() => setIsRotating(false), 500);
+    setTimeout(() => setIsRotating(false), 450);
 
     setHistory((prev) => {
       const last = prev[prev.length - 1];
@@ -89,17 +92,53 @@ export default function EngineSimulator() {
     setCurrentStep((prev) => prev + 1);
   };
 
+  // Auto-run continuous rotation loop
+  useEffect(() => {
+    if (isAutoRunning) {
+      autoRunTimerRef.current = setInterval(() => {
+        handleStep();
+      }, 750);
+    } else {
+      if (autoRunTimerRef.current) {
+        clearInterval(autoRunTimerRef.current);
+        autoRunTimerRef.current = null;
+      }
+    }
+
+    return () => {
+      if (autoRunTimerRef.current) {
+        clearInterval(autoRunTimerRef.current);
+      }
+    };
+  }, [isAutoRunning, selectedPreset]);
+
+  // Stop auto-run when reaching step limit to avoid infinite calculation
+  useEffect(() => {
+    if (currentStep >= 50 && isAutoRunning) {
+      setIsAutoRunning(false);
+    }
+  }, [currentStep, isAutoRunning]);
+
+  const toggleAutoRun = () => {
+    setIsAutoRunning((prev) => !prev);
+  };
+
   const latest = history[history.length - 1];
 
   return (
-    <div className="bg-[#141820] border border-[#2a3442] rounded-xl p-6 shadow-2xl text-gray-200">
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6 border-b border-gray-800 pb-4">
+    <div className="bg-[#141820] border border-[#2a3442] rounded-xl p-4 sm:p-6 shadow-2xl text-gray-200">
+      {/* Top Header & Preset Selectors */}
+      <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 mb-6 border-b border-gray-800 pb-4">
         <div>
           <div className="flex items-center gap-2">
-            <span className={`text-2xl transition-transform duration-500 ${isRotating ? 'rotate-180 text-brass-400' : 'text-brass-500'}`}>
+            <span
+              className={`text-2xl transition-transform duration-500 inline-block ${
+                isRotating || isAutoRunning ? 'rotate-180 text-brass-400' : 'text-brass-500'
+              }`}
+            >
               ⚙️
             </span>
-            <h3 className="font-display font-bold text-xl text-brass-300 break-keep">
+            <h3 className="font-display font-bold text-lg sm:text-xl text-brass-300 break-keep">
               차분기관 유한차분법(Method of Differences)<br className="hidden sm:inline" /> 인터랙티브 시뮬레이터
             </h3>
           </div>
@@ -108,122 +147,220 @@ export default function EngineSimulator() {
           </p>
         </div>
 
-        <div className="flex gap-2">
-          {PRESETS.map((p) => (
-            <button
-              key={p.id}
-              onClick={() => resetPreset(p)}
-              className={`px-3 py-1.5 rounded text-xs font-medium transition-all ${
-                selectedPreset.id === p.id
-                  ? 'bg-brass-500 text-iron-950 font-bold shadow'
-                  : 'bg-[#1e2530] text-gray-400 hover:text-white hover:bg-[#252f3d]'
-              }`}
-            >
-              {p.name}
-            </button>
-          ))}
+        {/* Preset Selector Buttons - Mobile Wrapped & >=44px Touch Targets */}
+        <div className="flex flex-wrap gap-2 w-full lg:w-auto">
+          {PRESETS.map((p) => {
+            const isSelected = selectedPreset.id === p.id;
+            return (
+              <button
+                key={p.id}
+                onClick={() => resetPreset(p)}
+                className={`min-h-[44px] px-3.5 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all flex-1 sm:flex-initial flex items-center justify-center text-center touch-manipulation active:scale-95 ${
+                  isSelected
+                    ? 'bg-brass-500 text-iron-950 font-bold shadow-md shadow-brass-500/20 border border-brass-400'
+                    : 'bg-[#1e2530] text-gray-300 border border-gray-700/60 hover:text-white hover:bg-[#252f3d]'
+                }`}
+              >
+                {p.name}
+              </button>
+            );
+          })}
         </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Left: Gear Columns View */}
-        <div className="lg:col-span-2 bg-[#0d1015] border border-gray-800/80 rounded-lg p-5">
-          <div className="flex justify-between items-center mb-4">
-            <span className="text-xs font-mono text-brass-400 tracking-wider uppercase">
-              수식: {selectedPreset.formula}
-            </span>
-            <span className="text-xs text-gray-500 font-mono">
-              누적 계산 스텝: {currentStep}회
-            </span>
+        <div className="lg:col-span-2 bg-[#0d1015] border border-gray-800/80 rounded-lg p-4 sm:p-5 flex flex-col justify-between">
+          <div>
+            <div className="flex flex-wrap justify-between items-center gap-2 mb-4">
+              <span className="text-xs font-mono text-brass-400 tracking-wider uppercase bg-brass-950/40 px-2.5 py-1 rounded border border-brass-500/30">
+                수식: {selectedPreset.formula}
+              </span>
+              <span className="text-xs text-gray-400 font-mono bg-[#181d26] px-2.5 py-1 rounded border border-gray-700/60">
+                누적 계산 스텝: <strong className="text-brass-300">{currentStep}회</strong>
+              </span>
+            </div>
+
+            {/* Mobile Scroll Indicator */}
+            <div className="sm:hidden flex items-center justify-between text-[11px] text-gray-400 mb-2 font-mono px-1">
+              <span>⚙️ 기계 기어 열 (Gear Columns)</span>
+              <span className="text-brass-400/90 flex items-center gap-1">
+                <span>↔ 가로 스크롤</span>
+              </span>
+            </div>
+
+            {/* Gear Columns Rack - Responsive with overflow-x-auto */}
+            <div className="overflow-x-auto pb-3 -mx-2 px-2 sm:mx-0 sm:px-0 scrollbar-thin scrollbar-thumb-brass-600/40 scrollbar-track-iron-900">
+              <div
+                className={`grid gap-2.5 sm:gap-3 text-center mb-2 ${
+                  selectedPreset.degree === 3
+                    ? 'grid-cols-5 min-w-[500px] sm:min-w-0'
+                    : 'grid-cols-4 min-w-[420px] sm:min-w-0'
+                }`}
+              >
+                {/* Column 1: x Input */}
+                <div className="bg-[#181d26] border border-gray-700/70 rounded-lg p-2.5 sm:p-3 relative overflow-hidden flex flex-col justify-between">
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gray-600/50" />
+                  <div>
+                    <div className="text-[10px] sm:text-[11px] text-gray-400 uppercase font-mono mb-1">인수 (x)</div>
+                    <div className="text-xl sm:text-2xl font-bold font-mono text-white tracking-wider my-1">{latest.x}</div>
+                  </div>
+                  <div className="text-[10px] text-gray-400 mt-1 font-mono">입력값 휠</div>
+                </div>
+
+                {/* Column 2: f(x) Output Result */}
+                <div className="bg-brass-950/50 border-2 border-brass-500/60 rounded-lg p-2.5 sm:p-3 shadow-lg shadow-brass-500/10 relative overflow-hidden flex flex-col justify-between">
+                  <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-brass-400 to-amber-300" />
+                  <div>
+                    <div className="text-[10px] sm:text-[11px] text-brass-300 uppercase font-mono font-bold mb-1">
+                      f(x) [출력]
+                    </div>
+                    <div className="text-xl sm:text-2xl font-bold font-mono text-brass-200 tracking-wider my-1 drop-shadow">
+                      {latest.f}
+                    </div>
+                  </div>
+                  <div className="text-[10px] text-brass-300/90 mt-1 font-mono">← Δ¹ 덧셈 누적</div>
+                </div>
+
+                {/* Column 3: Delta 1 */}
+                <div className="bg-[#181d26] border border-blue-500/40 rounded-lg p-2.5 sm:p-3 relative overflow-hidden flex flex-col justify-between">
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-blue-500/50" />
+                  <div>
+                    <div className="text-[10px] sm:text-[11px] text-blue-400 uppercase font-mono mb-1">1차 차분 (Δ¹)</div>
+                    <div className="text-xl sm:text-2xl font-bold font-mono text-blue-400 tracking-wider my-1">{latest.d1}</div>
+                  </div>
+                  <div className="text-[10px] text-gray-400 mt-1 font-mono">← Δ² 덧셈 누적</div>
+                </div>
+
+                {/* Column 4: Delta 2 */}
+                {selectedPreset.degree === 3 ? (
+                  <div className="bg-[#181d26] border border-purple-500/40 rounded-lg p-2.5 sm:p-3 relative overflow-hidden flex flex-col justify-between">
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-purple-500/50" />
+                    <div>
+                      <div className="text-[10px] sm:text-[11px] text-purple-400 uppercase font-mono mb-1">2차 차분 (Δ²)</div>
+                      <div className="text-xl sm:text-2xl font-bold font-mono text-purple-400 tracking-wider my-1">{latest.d2}</div>
+                    </div>
+                    <div className="text-[10px] text-gray-400 mt-1 font-mono">← Δ³ 덧셈 누적</div>
+                  </div>
+                ) : (
+                  <div className="bg-[#181d26] border border-emerald-500/40 rounded-lg p-2.5 sm:p-3 relative overflow-hidden flex flex-col justify-between">
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-emerald-500/50" />
+                    <div>
+                      <div className="text-[10px] sm:text-[11px] text-emerald-400 uppercase font-mono mb-1">2차 차분 (Δ² 상수)</div>
+                      <div className="text-xl sm:text-2xl font-bold font-mono text-emerald-400 tracking-wider my-1">{latest.d2}</div>
+                    </div>
+                    <div className="text-[10px] text-emerald-400/90 mt-1 font-mono">기계 불변 상수</div>
+                  </div>
+                )}
+
+                {/* Column 5: Delta 3 (Degree 3 only) */}
+                {selectedPreset.degree === 3 && (
+                  <div className="bg-[#181d26] border border-emerald-500/40 rounded-lg p-2.5 sm:p-3 relative overflow-hidden flex flex-col justify-between">
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-emerald-500/50" />
+                    <div>
+                      <div className="text-[10px] sm:text-[11px] text-emerald-400 uppercase font-mono mb-1">3차 차분 (Δ³ 상수)</div>
+                      <div className="text-xl sm:text-2xl font-bold font-mono text-emerald-400 tracking-wider my-1">{latest.d3}</div>
+                    </div>
+                    <div className="text-[10px] text-emerald-400/90 mt-1 font-mono">기계 불변 상수</div>
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
 
-          <div className="grid grid-cols-3 sm:grid-cols-4 gap-3 text-center mb-6">
-            <div className="bg-[#181d26] border border-gray-700/60 rounded p-3">
-              <div className="text-[10px] text-gray-400 uppercase font-mono mb-1">인수 (x)</div>
-              <div className="text-2xl font-bold font-mono text-white">{latest.x}</div>
-              <div className="text-[10px] text-gray-500 mt-1">입력값</div>
-            </div>
-
-            <div className="bg-brass-950/40 border border-brass-500/40 rounded p-3 shadow-inner">
-              <div className="text-[10px] text-brass-300 uppercase font-mono mb-1">함수값 f(x) [출력]</div>
-              <div className="text-2xl font-bold font-mono text-brass-300">{latest.f}</div>
-              <div className="text-[10px] text-brass-400/80 mt-1">← Δ¹ 덧셈 누적</div>
-            </div>
-
-            <div className="bg-[#181d26] border border-gray-700/60 rounded p-3">
-              <div className="text-[10px] text-gray-400 uppercase font-mono mb-1">1차 차분 (Δ¹)</div>
-              <div className="text-2xl font-bold font-mono text-blue-400">{latest.d1}</div>
-              <div className="text-[10px] text-gray-500 mt-1">← Δ² 덧셈 누적</div>
-            </div>
-
-            {selectedPreset.degree === 3 ? (
-              <div className="bg-[#181d26] border border-gray-700/60 rounded p-3">
-                <div className="text-[10px] text-gray-400 uppercase font-mono mb-1">2차 차분 (Δ²)</div>
-                <div className="text-2xl font-bold font-mono text-purple-400">{latest.d2}</div>
-                <div className="text-[10px] text-gray-500 mt-1">← Δ³ 덧셈 누적</div>
-              </div>
-            ) : (
-              <div className="bg-[#181d26] border border-emerald-500/30 rounded p-3">
-                <div className="text-[10px] text-emerald-400 uppercase font-mono mb-1">2차 차분 (Δ² 상수)</div>
-                <div className="text-2xl font-bold font-mono text-emerald-400">{latest.d2}</div>
-                <div className="text-[10px] text-emerald-500/80 mt-1">기계 불변 상수</div>
-              </div>
-            )}
-          </div>
-
-          <div className="flex gap-3">
+          {/* Control Buttons ("연산 1스텝 실행", "연속 회전", "초기화") - Min 44px Touch Targets */}
+          <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3 mt-4 pt-4 border-t border-gray-800">
+            {/* Step execution button */}
             <button
               onClick={handleStep}
-              disabled={isRotating}
-              className="flex-1 py-3 px-4 bg-gradient-to-r from-brass-600 to-brass-500 hover:from-brass-500 hover:to-brass-400 text-iron-950 font-bold rounded-lg shadow-lg shadow-brass-500/10 flex items-center justify-center gap-2 transition-all active:scale-[0.99]"
+              disabled={isRotating || isAutoRunning}
+              className="min-h-[44px] flex-1 py-3 px-4 bg-gradient-to-r from-brass-600 via-brass-500 to-amber-500 hover:from-brass-500 hover:to-amber-400 text-iron-950 font-bold rounded-lg shadow-lg shadow-brass-500/15 flex items-center justify-center gap-2 transition-all touch-manipulation active:scale-[0.98] disabled:opacity-50"
             >
-              <span className={isRotating ? 'animate-spin' : ''}>⚙️</span>
-              <span>크랭크 회전 (다음 값 덧셈 계산)</span>
+              <span className={`text-base ${isRotating ? 'animate-spin' : ''}`}>⚙️</span>
+              <span className="text-xs sm:text-sm font-bold">연산 1스텝 실행</span>
             </button>
+
+            {/* Continuous auto rotation button */}
+            <button
+              onClick={toggleAutoRun}
+              className={`min-h-[44px] px-4 py-3 rounded-lg text-xs sm:text-sm font-semibold flex items-center justify-center gap-1.5 transition-all touch-manipulation active:scale-[0.98] border ${
+                isAutoRunning
+                  ? 'bg-amber-950/80 border-amber-400 text-amber-200 shadow-md shadow-amber-500/20 animate-pulse'
+                  : 'bg-[#1e2530] border-amber-500/40 text-amber-300 hover:bg-[#283242]'
+              }`}
+            >
+              <span>{isAutoRunning ? '⏸️' : '▶️'}</span>
+              <span>{isAutoRunning ? '회전 일시정지' : '연속 회전'}</span>
+            </button>
+
+            {/* Reset button */}
             <button
               onClick={() => resetPreset(selectedPreset)}
-              className="px-4 py-3 bg-[#1e2530] hover:bg-[#283242] text-gray-300 rounded-lg text-sm transition-colors"
+              className="min-h-[44px] px-4 py-3 bg-[#1e2530] hover:bg-[#283242] border border-gray-700/70 text-gray-300 hover:text-white rounded-lg text-xs sm:text-sm font-medium transition-all touch-manipulation active:scale-[0.98] flex items-center justify-center gap-1.5"
             >
-              초기화
+              <span>🔄</span>
+              <span>초기화</span>
             </button>
           </div>
         </div>
 
         {/* Right: History & Explanation */}
-        <div className="bg-[#0d1015] border border-gray-800/80 rounded-lg p-4 flex flex-col justify-between">
+        <div className="bg-[#0d1015] border border-gray-800/80 rounded-lg p-4 sm:p-5 flex flex-col justify-between">
           <div>
-            <h4 className="text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">
-              수표 인쇄 기록 (Stereotype Output)
-            </h4>
-            <div className="max-h-48 overflow-y-auto pr-1 text-xs font-mono space-y-1">
-              <div className="grid grid-cols-4 text-gray-500 border-b border-gray-800 pb-1 mb-1 font-semibold text-[11px]">
-                <span>x</span>
-                <span>f(x)</span>
-                <span>Δ¹</span>
-                <span>Δ²</span>
-              </div>
-              {history.map((row, idx) => (
+            <div className="flex items-center justify-between mb-2">
+              <h4 className="text-xs font-semibold text-gray-300 uppercase tracking-wider font-mono flex items-center gap-1.5">
+                <span>🖨️ 수표 인쇄 기록</span>
+                <span className="text-[10px] text-gray-500 font-normal">(Stereotype Output)</span>
+              </h4>
+              <span className="text-[10px] text-brass-400 font-mono">{history.length}행 출력됨</span>
+            </div>
+
+            {/* History Table Container with Horizontal Scroll */}
+            <div className="overflow-x-auto -mx-1 px-1 max-h-52 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-700">
+              <div className="min-w-[260px] text-xs font-mono space-y-1">
                 <div
-                  key={idx}
-                  className={`grid grid-cols-4 py-0.5 px-1 rounded ${
-                    idx === history.length - 1 ? 'bg-brass-500/20 text-brass-200 font-bold' : 'text-gray-400'
-                  }`}
+                  className={`grid ${
+                    selectedPreset.degree === 3 ? 'grid-cols-5' : 'grid-cols-4'
+                  } text-gray-500 border-b border-gray-800 pb-1.5 mb-1 font-semibold text-[11px]`}
                 >
-                  <span>{row.x}</span>
-                  <span className="text-brass-300">{row.f}</span>
-                  <span className="text-blue-300">{row.d1}</span>
-                  <span className="text-emerald-300">{row.d2}</span>
+                  <span>x</span>
+                  <span className="text-brass-300">f(x)</span>
+                  <span className="text-blue-400">Δ¹</span>
+                  <span className="text-emerald-400">Δ²</span>
+                  {selectedPreset.degree === 3 && <span className="text-emerald-400">Δ³</span>}
                 </div>
-              ))}
+                {history.map((row, idx) => {
+                  const isLatest = idx === history.length - 1;
+                  return (
+                    <div
+                      key={idx}
+                      className={`grid ${
+                        selectedPreset.degree === 3 ? 'grid-cols-5' : 'grid-cols-4'
+                      } py-1 px-1.5 rounded transition-colors ${
+                        isLatest ? 'bg-brass-500/20 text-brass-200 font-bold border-l-2 border-brass-400' : 'text-gray-400 hover:bg-gray-800/40'
+                      }`}
+                    >
+                      <span>{row.x}</span>
+                      <span className="text-brass-300 font-semibold">{row.f}</span>
+                      <span className="text-blue-300">{row.d1}</span>
+                      <span className="text-emerald-300">{row.d2}</span>
+                      {selectedPreset.degree === 3 && <span className="text-emerald-300">{row.d3}</span>}
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
 
-          <div className="mt-4 pt-3 border-t border-gray-800 text-[11px] text-gray-400 leading-relaxed">
-            <p className="font-semibold text-brass-400 mb-1">배비지의 핵심 아이디어:</p>
-            {selectedPreset.description}
+          <div className="mt-4 pt-3 border-t border-gray-800 text-[11px] text-gray-400 leading-relaxed bg-[#141820]/80 p-3 rounded-lg border border-gray-800/60">
+            <p className="font-semibold text-brass-400 mb-1 flex items-center gap-1">
+              <span>💡 배비지의 핵심 아이디어:</span>
+            </p>
+            <p className="break-keep">{selectedPreset.description}</p>
           </div>
         </div>
       </div>
     </div>
   );
 }
+

@@ -1,47 +1,55 @@
 ---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
 const navItems = [
-  { name: '홈 (개요)', href: '/' },
-  { name: '생애 연표', href: '/biography' },
-  { name: '차분기관', href: '/difference-engine' },
-  { name: '해석기관', href: '/analytical-engine' },
-  { name: '에이다 러브레이스', href: '/ada-lovelace' },
-  { name: '경제학 & 철학', href: '/economy-philosophy' },
-  { name: '사료 도서관', href: '/sources' },
+  { name: '홈 (개요)', href: `${base}/` },
+  { name: '생애 연표', href: `${base}/biography` },
+  { name: '차분기관', href: `${base}/difference-engine` },
+  { name: '해석기관', href: `${base}/analytical-engine` },
+  { name: '에이다 러브레이스', href: `${base}/ada-lovelace` },
+  { name: '경제학 & 철학', href: `${base}/economy-philosophy` },
+  { name: '사료 도서관', href: `${base}/sources` },
 ];
 
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="sticky top-0 z-50 backdrop-blur-md bg-[#0f1115]/85 border-b border-[#252c38]">
+<header class="sticky top-0 z-50 backdrop-blur-md bg-[#0f1115]/90 border-b border-[#252c38]">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
+      <!-- Logo / Title -->
       <div class="flex items-center gap-3">
-        <a href="/" class="flex items-center gap-3 group">
-          <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-brass-400 via-brass-600 to-brass-800 flex items-center justify-center text-iron-950 font-bold text-lg shadow-lg shadow-brass-500/10 group-hover:scale-105 transition-transform duration-200">
+        <a href={`${base}/`} class="flex items-center gap-2.5 sm:gap-3 group focus:outline-none focus:ring-2 focus:ring-brass-400/50 rounded-lg p-1">
+          <div class="w-9 h-9 shrink-0 rounded-lg bg-gradient-to-br from-brass-400 via-brass-600 to-brass-800 flex items-center justify-center text-iron-950 font-bold text-lg shadow-lg shadow-brass-500/10 group-hover:scale-105 transition-transform duration-200">
             ⚙️
           </div>
           <div>
-            <div class="font-display font-bold tracking-wider text-base text-brass-300 group-hover:text-brass-200 transition-colors">
+            <div class="font-display font-bold tracking-wider text-sm sm:text-base text-brass-300 group-hover:text-brass-200 transition-colors">
               CHARLES BABBAGE
             </div>
-            <div class="text-[10px] text-gray-400 tracking-widest uppercase -mt-0.5">
+            <div class="text-[9px] sm:text-[10px] text-gray-400 tracking-widest uppercase -mt-0.5">
               Digital Archive & Legacy
             </div>
           </div>
         </a>
       </div>
 
-      <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center space-x-1 lg:space-x-2" aria-label="메인 내비게이션">
         {navItems.map((item) => {
-          const isActive = currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href));
+          const isHome = item.href === `${base}/` || item.href === `${base}` || item.href === '/';
+          const isActive = isHome
+            ? (currentPath === `${base}/` || currentPath === `${base}` || currentPath === '/')
+            : (currentPath === item.href || currentPath.startsWith(`${item.href}/`));
           return (
             <a
               href={item.href}
-              class={`px-3 py-1.5 rounded-md text-xs lg:text-sm font-medium transition-all duration-200 ${
+              class={`px-2.5 lg:px-3 py-1.5 rounded-md text-xs lg:text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-brass-400/50 ${
                 isActive
                   ? 'bg-brass-500/15 text-brass-300 border border-brass-500/30 shadow-sm'
                   : 'text-gray-300 hover:text-white hover:bg-white/5'
               }`}
+              aria-current={isActive ? 'page' : undefined}
             >
               {item.name}
             </a>
@@ -49,14 +57,156 @@ const currentPath = Astro.url.pathname;
         })}
       </nav>
 
+      <!-- Desktop Action & Mobile Hamburger Button -->
       <div class="flex items-center gap-2">
         <a
-          href="/sources"
-          class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold bg-gradient-to-r from-brass-600 to-brass-500 text-iron-950 hover:from-brass-500 hover:to-brass-400 shadow-md shadow-brass-500/20 transition-all hover:scale-[1.02]"
+          href={`${base}/sources`}
+          class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold bg-gradient-to-r from-brass-600 to-brass-500 text-iron-950 hover:from-brass-500 hover:to-brass-400 shadow-md shadow-brass-500/20 transition-all hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-brass-400/50"
         >
           <span>📜 원문 사료 PDF</span>
+        </a>
+
+        <!-- Mobile Hamburger Toggle Button -->
+        <button
+          id="mobile-menu-btn"
+          type="button"
+          class="md:hidden inline-flex items-center justify-center p-2 rounded-lg text-gray-400 hover:text-brass-300 hover:bg-[#1a202c]/70 focus:outline-none focus:ring-2 focus:ring-brass-400/50 min-h-[44px] min-w-[44px] transition-colors"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+          aria-label="메뉴 열기/닫기"
+        >
+          <span class="sr-only">메뉴 열기/닫기</span>
+          <!-- Hamburger Icon (closed state) -->
+          <svg id="hamburger-icon" class="w-6 h-6 block transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <!-- Close Icon (open state) -->
+          <svg id="close-icon" class="w-6 h-6 hidden transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Slide-Down Menu -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden border-t border-[#252c38] bg-[#0f1115]/98 backdrop-blur-xl shadow-2xl transition-all duration-300 max-h-[calc(100vh-4rem)] overflow-y-auto"
+    aria-label="모바일 내비게이션"
+  >
+    <div class="px-4 pt-3 pb-6 space-y-1.5">
+      {navItems.map((item) => {
+        const isHome = item.href === `${base}/` || item.href === `${base}` || item.href === '/';
+        const isActive = isHome
+          ? (currentPath === `${base}/` || currentPath === `${base}` || currentPath === '/')
+          : (currentPath === item.href || currentPath.startsWith(`${item.href}/`));
+        return (
+          <a
+            href={item.href}
+            class={`mobile-nav-link flex items-center justify-between px-4 py-3 rounded-lg text-sm font-medium transition-all duration-150 min-h-[44px] focus:outline-none focus:ring-2 focus:ring-brass-400/50 ${
+              isActive
+                ? 'bg-brass-500/15 text-brass-300 border border-brass-500/30 font-semibold shadow-sm'
+                : 'text-gray-300 hover:text-white hover:bg-white/5 active:bg-white/10'
+            }`}
+            aria-current={isActive ? 'page' : undefined}
+          >
+            <span>{item.name}</span>
+            {isActive && <span class="text-brass-400 text-xs font-mono">●</span>}
+          </a>
+        );
+      })}
+
+      <!-- Mobile PDF Archive Button -->
+      <div class="pt-3 mt-2 border-t border-gray-800/60">
+        <a
+          href={`${base}/sources`}
+          class="mobile-nav-link flex items-center justify-center gap-2 w-full px-4 py-3 rounded-lg text-sm font-semibold bg-gradient-to-r from-brass-600 to-brass-500 text-iron-950 hover:from-brass-500 hover:to-brass-400 shadow-md shadow-brass-500/20 active:scale-[0.99] transition-all min-h-[44px] focus:outline-none focus:ring-2 focus:ring-brass-400/50"
+        >
+          <span>📜 원문 사료 PDF 아카이브</span>
         </a>
       </div>
     </div>
   </div>
 </header>
+
+<script>
+  function setupMobileMenu() {
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    if (!btn || !menu) return;
+
+    // Prevent duplicate event listener binding
+    if (btn.dataset.initialized === 'true') return;
+    btn.dataset.initialized = 'true';
+
+    function openMenu() {
+      menu?.classList.remove('hidden');
+      btn?.setAttribute('aria-expanded', 'true');
+      hamburgerIcon?.classList.add('hidden');
+      closeIcon?.classList.remove('hidden');
+    }
+
+    function closeMenu() {
+      menu?.classList.add('hidden');
+      btn?.setAttribute('aria-expanded', 'false');
+      hamburgerIcon?.classList.remove('hidden');
+      closeIcon?.classList.add('hidden');
+    }
+
+    function toggleMenu() {
+      const isExpanded = btn?.getAttribute('aria-expanded') === 'true';
+      if (isExpanded) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    }
+
+    // Toggle button click
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMenu();
+    });
+
+    // Close on navigation link click
+    const navLinks = menu.querySelectorAll('.mobile-nav-link');
+    navLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        closeMenu();
+      });
+    });
+
+    // Close on click outside
+    document.addEventListener('click', (e) => {
+      const target = e.target as Node;
+      if (menu && !menu.contains(target) && btn && !btn.contains(target)) {
+        closeMenu();
+      }
+    });
+
+    // Close on ESC key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeMenu();
+      }
+    });
+
+    // Close on resize if switching to desktop breakpoint (md: 768px)
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) {
+        closeMenu();
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupMobileMenu);
+  } else {
+    setupMobileMenu();
+  }
+  document.addEventListener('astro:page-load', setupMobileMenu);
+</script>

@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
 const timelineEvents = [
   {
     year: "1791",
@@ -198,30 +200,30 @@ const timelineEvents = [
 ---
 
 <Layout title="생애 연표 (1791–1871) - 찰스 배비지 아카이브">
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <div class="text-center mb-16">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+    <div class="text-center mb-12 sm:mb-16">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-500/30 bg-blue-950/30 text-blue-300 text-xs font-mono mb-4">
         CHRONOLOGY & BIOGRAPHY
       </div>
-      <h1 class="text-4xl sm:text-5xl font-display font-bold text-white mb-4 break-keep">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4 break-keep">
         찰스 배비지의<br />생애와 마일스톤
       </h1>
-      <p class="text-sm sm:text-base text-gray-400 max-w-2xl mx-auto font-body-serif break-keep">
+      <p class="text-xs sm:text-sm sm:text-base text-gray-400 max-w-2xl mx-auto font-body-serif break-keep">
         1791년 출생부터 1871년 서거, 그리고 1991년 런던 과학박물관의 역사적 실물 복원까지의 전 기록입니다.
       </p>
 
       {/* Category Badges Legend */}
-      <div class="flex flex-wrap justify-center gap-3 mt-8 text-xs font-mono">
-        <span class="px-3 py-1 rounded-full bg-blue-950/50 border border-blue-500/40 text-blue-300">● 생애 & 가족</span>
-        <span class="px-3 py-1 rounded-full bg-purple-950/50 border border-purple-500/40 text-purple-300">● 학술 & 협회</span>
-        <span class="px-3 py-1 rounded-full bg-amber-950/50 border border-amber-500/40 text-amber-300">● 기계 & 발명</span>
-        <span class="px-3 py-1 rounded-full bg-emerald-950/50 border border-emerald-500/40 text-emerald-300">● 저술 & 경제학</span>
-        <span class="px-3 py-1 rounded-full bg-pink-950/50 border border-pink-500/40 text-pink-300">● 현대적 복원</span>
+      <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mt-6 sm:mt-8 text-xs font-mono">
+        <span class="px-2.5 sm:px-3 py-1 rounded-full bg-blue-950/50 border border-blue-500/40 text-blue-300">● 생애 & 가족</span>
+        <span class="px-2.5 sm:px-3 py-1 rounded-full bg-purple-950/50 border border-purple-500/40 text-purple-300">● 학술 & 협회</span>
+        <span class="px-2.5 sm:px-3 py-1 rounded-full bg-amber-950/50 border border-amber-500/40 text-amber-300">● 기계 & 발명</span>
+        <span class="px-2.5 sm:px-3 py-1 rounded-full bg-emerald-950/50 border border-emerald-500/40 text-emerald-300">● 저술 & 경제학</span>
+        <span class="px-2.5 sm:px-3 py-1 rounded-full bg-pink-950/50 border border-pink-500/40 text-pink-300">● 현대적 복원</span>
       </div>
     </div>
 
     {/* Timeline Container */}
-    <div class="relative border-l border-gray-800 ml-4 sm:ml-32 space-y-12">
+    <div class="relative border-l border-gray-800 ml-3 sm:ml-32 space-y-8 sm:space-y-12">
       {timelineEvents.map((ev) => {
         let badgeColor = "border-blue-500/40 bg-blue-950/40 text-blue-300";
         let dotColor = "bg-blue-400";
@@ -237,29 +239,29 @@ const timelineEvents = [
         }
 
         return (
-          <div class="relative pl-8 sm:pl-10 group">
+          <div class="relative pl-6 sm:pl-10 group">
             {/* Year marker on left for larger screens */}
             <div class="hidden sm:block absolute -left-32 top-1 text-right w-24 font-mono font-bold text-base text-brass-400">
               {ev.year}
             </div>
 
             {/* Timeline node circle */}
-            <div class={`absolute -left-[9px] top-1.5 w-4 h-4 rounded-full border-2 border-[#0f1115] ${dotColor} group-hover:scale-125 transition-transform`}></div>
+            <div class={`absolute -left-[7px] sm:-left-[9px] top-1.5 w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full border-2 border-[#0f1115] ${dotColor} group-hover:scale-125 transition-transform`}></div>
 
             {/* Event Card */}
-            <div class="bg-[#12161f] border border-gray-800 hover:border-gray-700 rounded-xl p-5 sm:p-6 transition-all">
+            <div class="bg-[#12161f] border border-gray-800 hover:border-gray-700 rounded-xl p-4 sm:p-6 transition-all">
               <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
-                <span class="sm:hidden font-mono font-bold text-sm text-brass-400">{ev.year}년</span>
-                <span class={`text-[11px] font-mono px-2.5 py-0.5 rounded-full border ${badgeColor}`}>
+                <span class="sm:hidden font-mono font-bold text-xs sm:text-sm text-brass-400">{ev.year}년</span>
+                <span class={`text-[10px] sm:text-[11px] font-mono px-2 sm:px-2.5 py-0.5 rounded-full border ${badgeColor}`}>
                   {ev.category} • {ev.date}
                 </span>
               </div>
 
-              <h3 class="text-lg sm:text-xl font-display font-bold text-white mb-2 group-hover:text-brass-300 transition-colors">
+              <h3 class="text-base sm:text-lg lg:text-xl font-display font-bold text-white mb-2 group-hover:text-brass-300 transition-colors break-keep">
                 {ev.title}
               </h3>
 
-              <p class="text-xs sm:text-sm text-gray-300 leading-relaxed font-body-serif">
+              <p class="text-xs sm:text-sm text-gray-300 leading-relaxed font-body-serif break-keep">
                 {ev.description}
               </p>
             </div>

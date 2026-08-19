@@ -51,3 +51,18 @@ _Avoid_: 에이다 바이런, 배비지의 조수
 **조셉 클레먼트 (Joseph Clement)**:
 차분기관 1호의 초정밀 금속 가공 및 기계 제작을 담당했던 영국의 전설적인 정밀 기계 엔지니어.
 _Avoid_: 제작자, 부품업자
+
+## 배포 및 웹 아키텍처 (Deployment & Web Architecture)
+
+**GitHub Pages 배포 파이프라인 (GitHub Pages Deployment Pipeline)**:
+`main` 브랜치 변경 시 GitHub Actions를 통해 Astro 정적 사이트를 자동 빌드하고 `https://yghnsim.github.io/charles-babbage-archive/`로 배포하는 CI/CD 자동화 시스템.
+_Avoid_: 수동 배포, FTP 업로드
+
+**서브패스 베이스 URL (Subpath Base URL)**:
+GitHub Pages 저장소 경로(`/charles-babbage-archive`)에 맞추어 모든 정적 에셋과 내부 라우트를 정합시키는 Astro 환경 변수(`import.meta.env.BASE_URL`).
+_Avoid_: 절대 경로 하드코딩, 루트 고정 경로
+
+**반응형 터치 UX (Responsive Touch UX)**:
+360px 모바일 화면에서도 최소 44px 터치 영역, 햄버거 드로어, 톱니바퀴 및 트레이스 표의 부드러운 가로 스크롤을 보장하는 모바일 인터랙션 설계.
+_Avoid_: 데스크톱 전용 뷰, 터치 미스 유발 레이아웃
+
