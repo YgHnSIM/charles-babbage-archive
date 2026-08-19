@@ -1,11 +1,11 @@
 ---
 name: text-align
-description: Visual text, markdown table, delimiter, code assignment alignment, and semantic line breaking/wrapping with CJK (East Asian Width) compensation. Use when the user asks to "align text", "align table", "format markdown table", "align assignments", "align colons", "semantic wrap", "line wrap", "텍스트 정렬", "표 정렬", "대입문 정렬", "문자열 줄맞춤", "의미 단위 줄바꿈", "문장 단위 줄바꿈", "문맥 줄바꿈", or format monospace visual alignment.
+description: Visual text, markdown table, delimiter, code assignment alignment, and semantic line breaking/wrapping with CJK (East Asian Width) compensation. Use when the user asks to "align text", "align table", "format markdown table", "align assignments", "align colons", "semantic wrap", "line wrap", "balance title", "텍스트 정렬", "표 정렬", "대입문 정렬", "문자열 줄맞춤", "의미 단위 줄바꿈", "문장 단위 줄바꿈", "문맥 줄바꿈", "제목 줄바꿈", or format monospace visual alignment.
 ---
 
 # `text-align` (Visual Text, Table & Semantic Line Wrap Engine)
 
-This skill provides precise visual text formatting, delimiter alignment, markdown table equalization, text padding, and **semantic clause/sentence line breaking (의미/문맥 단위 줄바꿈)** with full support for CJK (Korean, Japanese, Chinese) character widths.
+This skill provides precise visual text formatting, delimiter alignment, markdown table equalization, text padding, and **semantic clause/sentence & balanced title line breaking (의미/문맥 단위 줄바꿈 및 제목 균형 줄맞춤)** with full support for CJK (Korean, Japanese, Chinese) character widths.
 
 ---
 
@@ -14,7 +14,26 @@ This skill provides precise visual text formatting, delimiter alignment, markdow
 The core alignment engine is located at:
 `python .agents/skills/text-align/scripts/align.py` (or absolute path `c:/Vault/CharlesBBG/.agents/skills/text-align/scripts/align.py`)
 
-### 1. Markdown Table Formatting (`--mode table`)
+### 1. Title & Headline Semantic Balance (`--mode title` / `--mode balance`)
+Splits hero titles/headings into **semantically balanced lines** by respecting Korean grammatical particles (`와/과`, `의`, `은/는`, `을/를`, `에`, `로`, `및`, `그리고`) and minimizing visual width variance across lines.
+
+* **HTML Title with `<br />` (Default)**:
+  ```bash
+  # Input: "에이다 러브레이스와 세계 최초의 알고리즘"
+  # Output: "에이다 러브레이스와<br />세계 최초의 알고리즘"
+  echo "에이다 러브레이스와 세계 최초의 알고리즘" | python .agents/skills/text-align/scripts/align.py --mode title
+  ```
+* **Text / Markdown Output (`--format text` / `--format markdown`)**:
+  ```bash
+  # Output:
+  # 에이다 러브레이스와
+  # 세계 최초의 알고리즘
+  echo "에이다 러브레이스와 세계 최초의 알고리즘" | python .agents/skills/text-align/scripts/align.py --mode title --format text
+  ```
+
+---
+
+### 2. Markdown Table Formatting (`--mode table`)
 Calculates visual column widths (treating CJK characters as 2 columns, ASCII as 1) and formats markdown table columns neatly while preserving column alignments (`:---`, `:---:`, `---:`).
 
 * **In-place file update**:
@@ -28,7 +47,7 @@ Calculates visual column widths (treating CJK characters as 2 columns, ASCII as 
 
 ---
 
-### 2. Delimiter Alignment (`--mode delimiter`)
+### 3. Delimiter Alignment (`--mode delimiter`)
 Aligns code lines, assignments, or key-value pairs at a specific delimiter (e.g., `=`, `:`, `=>`, `//`, `#`).
 
 * **Variable assignments (`=`)**:
@@ -52,7 +71,7 @@ Aligns code lines, assignments, or key-value pairs at a specific delimiter (e.g.
 
 ---
 
-### 3. Semantic Line Wrapping & Breaking (`--mode wrap`)
+### 4. Semantic Line Wrapping & Breaking (`--mode wrap`)
 Wraps prose, markdown lists, and paragraphs intelligently by **meaningful linguistic boundaries** without breaking words or awkward phrase splits.
 
 * **Sentence-by-sentence breaking (`--by-sentence` / `-s`)**:
@@ -73,7 +92,7 @@ Wraps prose, markdown lists, and paragraphs intelligently by **meaningful lingui
 
 ---
 
-### 4. Text Padding & Justification (`--mode justify` / `--mode pad`)
+### 5. Text Padding & Justification (`--mode justify` / `--mode pad`)
 Aligns lines to a fixed width or the longest line width.
 
 * **Center alignment**:
@@ -91,7 +110,8 @@ Aligns lines to a fixed width or the longest line width.
 
 | Option | Shorthand | Description | Default |
 | :--- | :--- | :--- | :--- |
-| `--mode` | `-m` | `table`, `delimiter`, `wrap`, `justify`, `pad` | `table` |
+| `--mode` | `-m` | `title`, `table`, `delimiter`, `wrap`, `justify`, `pad` | `table` |
+| `--format` | | Format for title mode: `html` (`<br />`), `text` (`\n`), `markdown` | `html` |
 | `--by-sentence` | `-s` | Wrap mode: split lines by sentence terminators (`.`, `!`, `?`) | `False` |
 | `--by-clause` | `-c` | Wrap mode: split lines by clauses/commas/punctuation | `False` |
 | `--delimiter` | `-d` | Target delimiter character/string for delimiter mode | `=` |
@@ -108,6 +128,6 @@ Aligns lines to a fixed width or the longest line width.
 
 ## 💡 Best Practices
 
-1. **Semantic Diffing**: When writing documentation or essays in Markdown, use `--mode wrap -s` (one sentence per line). This makes GitHub / Git diffs clean and line-granular.
-2. **CJK Display Width**: East Asian Wide characters (한글, 한자, 전각기호) take 2 visual columns. `align.py` handles this automatically using `unicodedata.east_asian_width`.
-3. **Always verify line ranges**: When operating on files in-place with `--in-place`, specify `--range start:end` to avoid touching unrelated lines.
+1. **Title Balancing**: When formatting hero titles, headings, or banner texts, use `--mode title` to automatically find the most natural particle/grammatical split point that balances line widths evenly.
+2. **Semantic Diffing**: When writing documentation or essays in Markdown, use `--mode wrap -s` (one sentence per line). This makes GitHub / Git diffs clean and line-granular.
+3. **CJK Display Width**: East Asian Wide characters (한글, 한자, 전각기호) take 2 visual columns. `align.py` handles this automatically using `unicodedata.east_asian_width`.

@@ -409,6 +409,76 @@ def semantic_wrap(
     return result
 
 
+def balance_title(text: str, target_lines: int = 2, format_type: str = "html") -> str:
+    """
+    Break a title/headline into semantically and visually balanced lines.
+    Balances line display width while respecting grammatical particle boundaries in Korean & English.
+    """
+    words = text.strip().split()
+    if len(words) <= 1 or target_lines <= 1:
+        return text
+
+    best_split = None
+    best_score = float('inf')
+
+    # Semantic break bonuses: particles, conjunctions, punctuation
+    korean_particles = ('와', '과', '의', '은', '는', '이', '가', '을', '를', '에', '에서', '로', '으로', '및', '대해', '위한', '통해', '하며', '하고', '하지만')
+    punct_marks = (':', '—', '-', ',', ';')
+    conjunctions = ('및', '그리고', '또는', '하지만', '그러나', 'and', 'or', 'for', 'with', 'in', 'on', 'of', 'to', 'the')
+
+    for i in range(1, len(words)):
+        line1_words = words[:i]
+        line2_words = words[i:]
+
+        line1 = " ".join(line1_words)
+        line2 = " ".join(line2_words)
+
+        w1 = get_display_width(line1)
+        w2 = get_display_width(line2)
+
+        width_diff = abs(w1 - w2)
+
+        last_word = line1_words[-1]
+        semantic_bonus = 0
+
+        if any(last_word.endswith(p) for p in punct_marks):
+            semantic_bonus += 20
+        elif any(last_word.endswith(p) for p in korean_particles):
+            semantic_bonus += 12
+        elif last_word in conjunctions:
+            semantic_bonus += 8
+
+        # Overall score: lower is better
+        score = width_diff - semantic_bonus
+
+        if score < best_score:
+            best_score = score
+            best_split = (line1, line2)
+
+    if best_split:
+        sep = "<br />" if format_type.lower() == "html" else "\n"
+        return f"{best_split[0]}{sep}{best_split[1]}"
+
+    return text
+
+
+def align_titles(lines: List[str], target_lines: int = 2, format_type: str = "html") -> List[str]:
+    """
+    Process each title/headline line with semantic & visual balance.
+    """
+    out = []
+    for line in lines:
+        stripped = line.strip()
+        if not stripped:
+            out.append(line)
+            continue
+        indent_match = re.match(r'^(\s*)', line)
+        indent = indent_match.group(1) if indent_match else ''
+        balanced = balance_title(stripped, target_lines=target_lines, format_type=format_type)
+        out.append(f"{indent}{balanced}")
+    return out
+
+
 def run_self_tests():
     """Run internal test suite."""
     print("Running text-align self-tests...")
@@ -493,6 +563,13 @@ def run_self_tests():
     assert wrapped_bullet[0].startswith("- ")
     assert wrapped_bullet[1].startswith("  ")  # Hanging indent
 
+    # 10. Balanced Title Semantic Wrapping Test
+    raw_title = "에이다 러브레이스와 세계 최초의 알고리즘"
+    balanced_title_html = balance_title(raw_title, format_type="html")
+    assert balanced_title_html == "에이다 러브레이스와<br />세계 최초의 알고리즘"
+    balanced_title_txt = balance_title(raw_title, format_type="text")
+    assert balanced_title_txt == "에이다 러브레이스와\n세계 최초의 알고리즘"
+
     print("All self-tests passed successfully! ✅")
 
 
@@ -506,7 +583,7 @@ def main():
             pass
 
     parser = argparse.ArgumentParser(description="Deterministic text & table alignment tool with CJK awareness.")
-    parser.add_argument("--mode", choices=["table", "delimiter", "justify", "pad", "wrap", "semantic-wrap"], default="table",
+    parser.add_argument("--mode", choices=["table", "delimiter", "justify", "pad", "wrap", "semantic-wrap", "title", "headline", "balance"], default="table",
                         help="Alignment mode (default: table)")
     parser.add_argument("--delimiter", "-d", default="=",
                         help="Delimiter string for 'delimiter' mode (e.g. '=', ':', '=>', '//')")
@@ -522,6 +599,8 @@ def main():
                         help="Wrap mode: Split into lines by sentence (.?!)")
     parser.add_argument("--by-clause", "-c", action="store_true",
                         help="Wrap mode: Split into lines by clauses/commas/punctuation")
+    parser.add_argument("--format", choices=["html", "text", "markdown"], default="html",
+                        help="Output break format for title mode (html: <br />, text/markdown: \\n)")
     parser.add_argument("--file", "-f", help="Target file path to read from / modify")
     parser.add_argument("--range", "-r", help="Line range to process (e.g. 10:25, 1-indexed)")
     parser.add_argument("--in-place", "-i", action="store_true", help="Modify file in-place")
@@ -569,6 +648,8 @@ def main():
     elif args.mode in ("wrap", "semantic-wrap"):
         wrap_width = args.width if args.width > 0 else (0 if (args.by_sentence or args.by_clause) else 80)
         result = semantic_wrap(lines, max_width=wrap_width, by_sentence=args.by_sentence, by_clause=args.by_clause)
+    elif args.mode in ("title", "headline", "balance"):
+        result = align_titles(lines, target_lines=2, format_type=args.format)
     else:
         result = lines
 
