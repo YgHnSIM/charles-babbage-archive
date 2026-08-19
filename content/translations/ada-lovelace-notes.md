@@ -1,19 +1,27 @@
 ---
 title: "Sketch of the Analytical Engine (Notes by Ada Lovelace)"
 titleKorean: "찰스 배비지가 발명한 해석기관의 스케치 및 역자 주석"
-author: "L. F. Menabrea & Ada Augusta Lovelace"
+author: "L.
+F.
+Menabrea & Ada Augusta Lovelace"
 year: 1843
 sourceId: "SRC-ANAL-01"
-originalPublisher: "Taylor's Scientific Memoirs, Vol. 3, London, pp. 666-731"
+originalPublisher: "Taylor's Scientific Memoirs, Vol.
+3, London, pp.
+666-731"
 ---
 
 # Sketch of the Analytical Engine (1843)
 ### 에이다 러브레이스 주석(Notes A, D, G) 핵심 사료 해제 및 정밀 번역
 
 > **사료 메타데이터 (Metadata)**
-> - **저자**: 루이지 F. 메나브레아 (Luigi F. Menabrea) 원저 / 에이다 오거스타 러브레이스 (Ada Augusta, Countess of Lovelace) 영역 및 주석
+> - **저자**: 루이지 F.
+> 메나브레아 (Luigi F.
+> Menabrea) 원저 / 에이다 오거스타 러브레이스 (Ada Augusta, Countess of Lovelace) 영역 및 주석
 > - **출판연도**: 1843년 8월
-> - **출판지/출판사**: 런던 (Richard Taylor, *Scientific Memoirs*, Vol. 3, pp. 666–731)
+> - **출판지/출판사**: 런던 (Richard Taylor, *Scientific Memoirs*, Vol.
+> 3, pp.
+> 666–731)
 > - **사료 분류**: 1차 사료 (세계 최초의 컴퓨터 프로그램 및 컴퓨팅 철학 논문)
 > - **식별자**: `SRC-ANAL-01`
 

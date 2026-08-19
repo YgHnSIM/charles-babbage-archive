@@ -1,12 +1,14 @@
 # Git 커밋 메시지 규칙 (Commit Message Convention)
 
-본 프로젝트(Charles Babbage Digital Archive & Exhibition)의 Git 커밋 메시지 작성 표준 가이드입니다. 일관성 있는 커밋 로그를 유지하여 변경 이력을 쉽게 파악하고 협업 및 유지보수 효율을 높이는 것을 목적으로 합니다.
+본 프로젝트(Charles Babbage Digital Archive & Exhibition)의 Git 커밋 메시지 작성 표준 가이드입니다.
+일관성 있는 커밋 로그를 유지하여 변경 이력을 쉽게 파악하고 협업 및 유지보수 효율을 높이는 것을 목적으로 합니다.
 
 ---
 
 ## 1. 커밋 메시지 기본 구조
 
-커밋 메시지는 기본적으로 **Conventional Commits** 표준을 따르며, 다음과 같이 `Header`, `Body`, `Footer` 3개 영역으로 구분합니다. (Body와 Footer는 선택 사항)
+커밋 메시지는 기본적으로 **Conventional Commits** 표준을 따르며, 다음과 같이 `Header`, `Body`, `Footer` 3개 영역으로 구분합니다.
+(Body와 Footer는 선택 사항)
 
 ```
 <type>(<scope>): <subject>

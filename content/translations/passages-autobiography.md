@@ -28,7 +28,8 @@ originalPublisher: "Longman, Green, Longman, Roberts, & Green, London"
 | **"One evening I was sitting in the rooms of the Analytical Society, at Cambridge, my head leaning forward on the table in a kind of dreamy mood, with a table of logarithms lying open before me. Another member, coming into the room, and seeing me half asleep, called out, 'Well, Babbage, what are you dreaming about?' to which I replied, 'I am thinking that all these tables (pointing to the logarithms) might be calculated by machinery.'"** *(pp. 42-43)* | **"어느 날 저녁, 나는 케임브리지 해석학회 방에 앉아 로그표를 앞에 펼쳐놓은 채 탁자에 머리를 기대고 일종의 몽상에 잠겨 있었다. 방으로 들어온 다른 회원이 반쯤 졸고 있는 나를 보고는 '이봐, 배비지, 무슨 꿈을 꾸고 있는 건가?'라고 소리쳤다. 나는 이렇게 대답했다. '이 모든 표들(로그표를 가리키며)을 기계로 계산해낼 수 있지 않을까 생각하던 중이었네.'"** |
 
 > **역사적 해설 및 맥락 (Historical Context)**:
-> 1812년경 케임브리지 대학 해석학회(Analytical Society)에서 존 허셜(John Herschel)과의 대화 중에 촉발된 이 일화는 기계식 자동 계산 컴퓨터의 태동을 알리는 가장 상징적인 순간입니다. 당대 천문학과 항해용 로그표에 넘쳐나던 인간 수작업 계산 오차를 목격한 배비지는, 증기 기관의 힘으로 회전하는 기계만이 결함 없는 완벽한 수표를 산출할 수 있다는 확신을 얻었습니다.
+> 1812년경 케임브리지 대학 해석학회(Analytical Society)에서 존 허셜(John Herschel)과의 대화 중에 촉발된 이 일화는 기계식 자동 계산 컴퓨터의 태동을 알리는 가장 상징적인 순간입니다.
+> 당대 천문학과 항해용 로그표에 넘쳐나던 인간 수작업 계산 오차를 목격한 배비지는, 증기 기관의 힘으로 회전하는 기계만이 결함 없는 완벽한 수표를 산출할 수 있다는 확신을 얻었습니다.
 
 ---
 
@@ -39,7 +40,8 @@ originalPublisher: "Longman, Green, Longman, Roberts, & Green, London"
 | **"The first engine I constructed was a small model, which calculated and printed tables of differences. The method of finite differences enables us to compute any formula of polynomial function by simple successive additions. The mechanical execution of these tables would remove two of the greatest sources of human error: the errors of the human calculator in computing the numbers, and the still more dangerous errors of the copyist and the compositor in transcribing and printing them."** *(pp. 44-46)* | **"내가 처음 제작한 엔진은 차분표를 계산하고 인쇄하는 소형 모델이었다. 유한차분법(Method of Finite Differences)은 단순한 연속 덧셈만으로 임의의 다항식 함수 수식을 계산할 수 있게 해준다. 이러한 표를 기계적으로 제작하게 되면 인간의 두 가지 가장 큰 오류 근원을 제거할 수 있다. 즉, 숫자를 계산할 때 발생하는 인간 계산원의 오류와, 이를 필사하고 인쇄할 때 발생하는 더욱 위험한 필경사 및 식자공의 오류이다."** |
 
 > **컴퓨터 과학적 분석 (CS Analysis)**:
-> 배비지는 계산 알고리즘뿐만 아니라 활판 인쇄판(Stereotype Plate)을 기계가 직접 압인하는 일체형 하드웨어를 설계했습니다. 연산 장치(Processing Unit)와 출력 장치(Output/Printer)의 통합을 1820년대에 이미 완성된 형태로 구상한 것입니다.
+> 배비지는 계산 알고리즘뿐만 아니라 활판 인쇄판(Stereotype Plate)을 기계가 직접 압인하는 일체형 하드웨어를 설계했습니다.
+> 연산 장치(Processing Unit)와 출력 장치(Output/Printer)의 통합을 1820년대에 이미 완성된 형태로 구상한 것입니다.
 
 ---
 

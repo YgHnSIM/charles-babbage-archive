@@ -1,6 +1,7 @@
 # Sources & Primary Documents Registry
 
-찰스 배비지 프로젝트에서 수집, 인용, 분석하는 1차 사료(Primary Sources) 및 2차 연구(Secondary Literature)의 공식 메타데이터 원장입니다. 모든 1차 사료 원본 PDF 및 전문 텍스트는 로컬 `sources/` 및 웹 배포용 `public/sources/`에 안전하게 영구 아카이빙되었습니다.
+찰스 배비지 프로젝트에서 수집, 인용, 분석하는 1차 사료(Primary Sources) 및 2차 연구(Secondary Literature)의 공식 메타데이터 원장입니다.
+모든 1차 사료 원본 PDF 및 전문 텍스트는 로컬 `sources/` 및 웹 배포용 `public/sources/`에 안전하게 영구 아카이빙되었습니다.
 
 ---
 

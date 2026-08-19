@@ -4,7 +4,8 @@ titleKorean: "기계와 제조업의 경제학 (정신 노동의 분업 및 배�
 author: "Charles Babbage"
 year: 1832
 sourceId: "SRC-ECON-01"
-originalPublisher: "Charles Knight, Pall Mall East, London (4th ed. 1835)"
+originalPublisher: "Charles Knight, Pall Mall East, London (4th ed.
+1835)"
 ---
 
 # On the Economy of Machinery and Manufactures (1832)

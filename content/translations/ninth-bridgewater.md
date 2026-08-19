@@ -4,7 +4,8 @@ titleKorean: "제9 브릿지워터 논문: 단편 (자연신학과 기계적 기
 author: "Charles Babbage"
 year: 1837
 sourceId: "SRC-PHIL-01"
-originalPublisher: "John Murray, Albemarle Street, London (2nd ed. 1838)"
+originalPublisher: "John Murray, Albemarle Street, London (2nd ed.
+1838)"
 ---
 
 # The Ninth Bridgewater Treatise (1837)

@@ -4,9 +4,11 @@
 
 찰스 배비지(Charles Babbage, 1791–1871)의 **차분기관(Difference Engine)**은 인류 최초로 다항식 함수(Polynomial Function)를 순수한 기계적 톱니바퀴의 회전 운동만으로 자동 계산하고, 그 결과를 오차 없이 활판 인쇄(Stereotyping)하도록 설계된 특수 목적 계산 기계(Special-Purpose Mechanical Calculator)이다.
 
-19세기 초 대영제국은 해상 무역과 해군력 유지를 위해 정확한 천문항법표(Astronomical and Nautical Tables)와 대수표(Logarithmic Tables)에 전적으로 의존하고 있었다. 당시 이러한 수치표는 '컴퓨터(Computers)'라 불리던 수십 명의 인간 계산원들이 수작업으로 계산하고 필사하였으며, 식자공의 인쇄 과정을 거치면서 치명적인 오차(Errata)가 지속적으로 발생했다. 배비지는 1821년 절친한 천문학자 존 허셜(John Herschel)과 대수표의 오류를 대조하던 중 다음과 같이 한탄했다.
+19세기 초 대영제국은 해상 무역과 해군력 유지를 위해 정확한 천문항법표(Astronomical and Nautical Tables)와 대수표(Logarithmic Tables)에 전적으로 의존하고 있었다.
+당시 이러한 수치표는 '컴퓨터(Computers)'라 불리던 수십 명의 인간 계산원들이 수작업으로 계산하고 필사하였으며, 식자공의 인쇄 과정을 거치면서 치명적인 오차(Errata)가 지속적으로 발생했다.
+배비지는 1821년 절친한 천문학자 존 허셜(John Herschel)과 대수표의 오류를 대조하던 중 다음과 같이 한탄했다.
 
-> *"이 모든 계산이 증기 기관으로 이루어질 수만 있다면 얼마나 좋을까!"*  
+> *"이 모든 계산이 증기 기관으로 이루어질 수만 있다면 얼마나 좋을까!"*
 > (*"I wish to God these calculations had been executed by steam!"*)
 
 배비지는 복잡한 초월함수(삼각함수, 로그함수, 지수함수 등)를 다항식 근사(Polynomial Approximation)로 변환한 뒤, 곱셈과 나눗셈을 완전히 배제하고 오직 **'덧셈(Addition)'** 연산의 무한 반복만으로 수치표를 생성하는 **유한차분법(Method of Finite Differences)**을 기계적 하드웨어로 구현하기로 결심했다.
@@ -21,7 +23,8 @@
 
 $$\frac{df}{dx} = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}$$
 
-그러나 이산적인(Discrete) 기계식 계산기에서는 무한소 극한 $h \to 0$을 다룰 수 없다. 따라서 일정한 간격 $h$ (일반적으로 $h=1$)를 갖는 **전진 차분 연산자(Forward Difference Operator, $\Delta$)**를 도입한다.
+그러나 이산적인(Discrete) 기계식 계산기에서는 무한소 극한 $h \to 0$을 다룰 수 없다.
+따라서 일정한 간격 $h$ (일반적으로 $h=1$)를 갖는 **전진 차분 연산자(Forward Difference Operator, $\Delta$)**를 도입한다.
 
 $$\Delta f(x) = f(x+h) - f(x)$$
 
@@ -40,7 +43,8 @@ $$\Delta^k f(x) = \sum_{j=0}^{k} (-1)^{k-j} \binom{k}{j} f(x + jh)$$
 $n$차 다항식 $P_n(x) = a_n x^n + a_{n-1} x^{n-1} + \dots + a_1 x + a_0$ ($a_n \neq 0$)에 대하여, 일정한 간격 $h$로 차분을 취할 때 다음 정리가 성립한다.
 
 1. $n$계 차분 $\Delta^n P_n(x)$은 $x$에 무관한 **상수(Constant)**가 된다.
-   $$\Delta^n P_n(x) = a_n \cdot n! \cdot h^n = \text{Constant}$$
+   $$\Delta^n P_n(x) = a_n \cdot n!
+   \cdot h^n = \text{Constant}$$
 2. $n+1$계 이상의 모든 차분은 **0**이 된다.
    $$\Delta^{n+1} P_n(x) = 0 \quad (\forall x)$$
 
@@ -49,8 +53,11 @@ $n$차 다항식 $P_n(x) = a_n x^n + a_{n-1} x^{n-1} + \dots + a_1 x + a_0$ ($a_
 $$\Delta x^n = (x+h)^n - x^n = \sum_{j=0}^{n-1} \binom{n}{j} x^j h^{n-j} = n h x^{n-1} + O(x^{n-2})$$
 즉, 차분을 1회 취할 때마다 다항식의 최고차수는 1씩 감소하며, 최고차항 계수는 $n h$가 곱해진다.
 이를 $n$회 반복 적용하면:
-$$\Delta^n x^n = n(n-1)(n-2)\cdots 1 \cdot h^n = n! h^n$$
-따라서 임의의 $n$차 다항식 $P_n(x)$의 $n$계 차분은 $\Delta^n P_n(x) = a_n \cdot n! h^n$으로 일정하다. $\blacksquare$
+$$\Delta^n x^n = n(n-1)(n-2)\cdots 1 \cdot h^n = n!
+h^n$$
+따라서 임의의 $n$차 다항식 $P_n(x)$의 $n$계 차분은 $\Delta^n P_n(x) = a_n \cdot n!
+h^n$으로 일정하다.
+$\blacksquare$
 
 ### 2.3 기계적 계산의 원리: 역방향 누적 덧셈 파이프라인
 
@@ -75,7 +82,8 @@ y_{m+1} &= y_m + \Delta y_{m+1}
 오일러(Leonhard Euler)의 유명한 소수 생성 다항식 $f(x) = x^2 + x + 41$을 간격 $h=1$로 차분기관에 입력하는 과정을 분석한다.
 
 - 최고차항 계수 $a_2 = 1$, 차수 $n = 2$, 간격 $h = 1$
-- 2계 차분 상수: $\Delta^2 f(x) = 1 \cdot 2! \cdot 1^2 = \mathbf{2}$
+- 2계 차분 상수: $\Delta^2 f(x) = 1 \cdot 2!
+  \cdot 1^2 = \mathbf{2}$
 
 #### 초기 시드값(Seed Values, $x=0$):
 - 함수값 $y_0 = f(0) = 41$
@@ -114,7 +122,8 @@ y_{m+1} &= y_m + \Delta y_{m+1}
 보다 일반적인 3차 다항식의 기계적 계산 테이블을 분석한다.
 
 - 최고차항 계수 $a_3 = 2$, 차수 $n = 3$, 간격 $h = 1$
-- 3계 차분 상수: $\Delta^3 f(x) = 2 \cdot 3! \cdot 1^3 = 2 \cdot 6 = \mathbf{12}$
+- 3계 차분 상수: $\Delta^3 f(x) = 2 \cdot 3!
+  \cdot 1^3 = 2 \cdot 6 = \mathbf{12}$
 
 #### 초기 시드값 계산 ($x = 0, 1, 2, 3$의 직접 계산을 통한 초기화):
 - $f(0) = 7$
@@ -135,7 +144,8 @@ y_{m+1} &= y_m + \Delta y_{m+1}
 | **6** | **361** ($207 + 154$) |      **220** ($154 + 66$)      |        **78** ($66 + 12$)        |              **12**              |
 
 #### 파이프라인 인터리빙 사이클 (Odd/Even Column Interleaving):
-모든 칼럼이 동시에 인접 칼럼에 덧셈을 수행하면 데이터 레이스(Race Condition) 및 기어 충돌이 발생한다. 따라서 배비지는 2행정 교대 가산 방식을 채택했다.
+모든 칼럼이 동시에 인접 칼럼에 덧셈을 수행하면 데이터 레이스(Race Condition) 및 기어 충돌이 발생한다.
+따라서 배비지는 2행정 교대 가산 방식을 채택했다.
 
 - **Phase A (짝수 칼럼 덧셈)**: $D_3 \to D_2$, $D_1 \to D_0$ 가산 실행.
 - **Phase B (홀수 칼럼 덧셈)**: $D_2 \to D_1$ 가산 실행.
@@ -176,7 +186,8 @@ y_{m+1} &= y_m + \Delta y_{m+1}
 
 ### 4.2 자리올림(Carry) 메커니즘: 순차 캐리와 예측 캐리
 
-기계식 가산기 설계에서 가장 까다로운 난제는 **자리올림(Carry Propagation)**이다. 예컨대 `99999 + 1`을 계산할 때, 최하위 자리의 캐리가 최상위 자리까지 연쇄적으로 전파되어야 한다.
+기계식 가산기 설계에서 가장 까다로운 난제는 **자리올림(Carry Propagation)**이다.
+예컨대 `99999 + 1`을 계산할 때, 최하위 자리의 캐리가 최상위 자리까지 연쇄적으로 전파되어야 한다.
 
 #### 문제점: 리플 캐리(Ripple Carry)의 토크 폭발
 모든 자리올림이 동시에 기계적으로 연결되면, 30개 휠을 한 번에 회전시키기 위해 필요한 회전력(Torque)이 순간적으로 극대화되어 기어가 파손되거나 핸들이 멈추게 된다.
