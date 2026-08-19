@@ -236,6 +236,179 @@ def align_justify(lines: List[str], target_width: int = 0, align: str = 'left') 
     return [pad_to_width(line, target_width, align=align) for line in stripped_lines]
 
 
+def split_into_sentences(text: str) -> List[str]:
+    """
+    Split text into individual sentences based on punctuation (. ! ?)
+    while preserving quotation marks and avoiding middle-number dots.
+    """
+    # Regex splitting on sentence end markers followed by whitespace
+    pattern = r'([.?!]["\']?)\s+'
+    tokens = re.split(pattern, text)
+    sentences = []
+    i = 0
+    while i < len(tokens):
+        part = tokens[i].strip()
+        if i + 1 < len(tokens) and re.match(r'^[.?!]["\']?$', tokens[i+1]):
+            part += tokens[i+1]
+            i += 2
+        else:
+            i += 1
+        if part:
+            sentences.append(part)
+    return sentences if sentences else [text]
+
+
+def split_into_clauses(text: str) -> List[str]:
+    """
+    Split text into individual clauses based on punctuation (, ; : — . ! ?)
+    while keeping the punctuation attached to the preceding clause.
+    """
+    pattern = r'([,;:\—]|[.?!]["\']?)\s+'
+    tokens = re.split(pattern, text)
+    clauses = []
+    i = 0
+    while i < len(tokens):
+        part = tokens[i].strip()
+        if i + 1 < len(tokens) and re.match(r'^([,;:\—]|[.?!]["\']?)$', tokens[i+1]):
+            part += tokens[i+1]
+            i += 2
+        else:
+            i += 1
+        if part:
+            clauses.append(part)
+    return clauses if clauses else [text]
+
+
+def wrap_paragraph(
+    paragraph: str,
+    prefix: str = "",
+    hanging_indent: str = "",
+    max_width: int = 80,
+    by_sentence: bool = False,
+    by_clause: bool = False
+) -> List[str]:
+    """
+    Wrap a single paragraph with semantic clause/sentence awareness and CJK width.
+    """
+    if by_sentence:
+        sentences = split_into_sentences(paragraph)
+        out = []
+        for idx, s in enumerate(sentences):
+            p = prefix if idx == 0 else hanging_indent
+            out.append(f"{p}{s}")
+        return out
+
+    if by_clause:
+        clauses = split_into_clauses(paragraph)
+        out = []
+        for idx, c in enumerate(clauses):
+            p = prefix if idx == 0 else hanging_indent
+            c_str = c.strip()
+            if c_str:
+                out.append(f"{p}{c_str}")
+        return out if out else [f"{prefix}{paragraph}"]
+
+    if max_width <= 0:
+        return [f"{prefix}{paragraph}"]
+
+    tokens = paragraph.split()
+    if not tokens:
+        return [prefix] if prefix else []
+
+    out_lines: List[str] = []
+    cur_line: List[str] = []
+    cur_width = get_display_width(prefix)
+    first_line = True
+
+    for token in tokens:
+        token_w = get_display_width(token)
+        space_w = 1 if cur_line else 0
+        added_w = token_w + space_w
+
+        if cur_line and (cur_width + added_w > max_width):
+            line_str = (prefix if first_line else hanging_indent) + " ".join(cur_line)
+            out_lines.append(line_str)
+            cur_line = [token]
+            cur_width = get_display_width(hanging_indent) + token_w
+            first_line = False
+        else:
+            cur_line.append(token)
+            cur_width += added_w
+
+    if cur_line:
+        line_str = (prefix if first_line else hanging_indent) + " ".join(cur_line)
+        out_lines.append(line_str)
+
+    return out_lines
+
+
+def semantic_wrap(
+    lines: List[str],
+    max_width: int = 80,
+    by_sentence: bool = False,
+    by_clause: bool = False
+) -> List[str]:
+    """
+    Semantic wrapping for multiple lines/paragraphs with support for
+    markdown bullet lists, blockquotes, and hanging indents.
+    """
+    result: List[str] = []
+    i = 0
+    while i < len(lines):
+        line = lines[i]
+        stripped = line.strip()
+        if not stripped:
+            result.append(line)
+            i += 1
+            continue
+
+        # Skip headers, code blocks, or table rows
+        if stripped.startswith('#') or stripped.startswith('```') or (stripped.startswith('|') and stripped.endswith('|')):
+            result.append(line)
+            i += 1
+            continue
+
+        # Check list prefix (- , * , 1. )
+        list_match = re.match(r'^(\s*(?:[-*+]|\d+\.)\s+)(.*)$', line)
+        quote_match = re.match(r'^(\s*>\s*)(.*)$', line)
+
+        if list_match:
+            prefix = list_match.group(1)
+            content = list_match.group(2)
+            hanging = " " * get_display_width(prefix)
+            wrapped = wrap_paragraph(content, prefix=prefix, hanging_indent=hanging,
+                                     max_width=max_width, by_sentence=by_sentence, by_clause=by_clause)
+            result.extend(wrapped)
+            i += 1
+        elif quote_match:
+            prefix = quote_match.group(1)
+            content = quote_match.group(2)
+            hanging = prefix
+            wrapped = wrap_paragraph(content, prefix=prefix, hanging_indent=hanging,
+                                     max_width=max_width, by_sentence=by_sentence, by_clause=by_clause)
+            result.extend(wrapped)
+            i += 1
+        else:
+            # Combine multi-line paragraph block
+            indent_match = re.match(r'^(\s*)', line)
+            base_indent = indent_match.group(1) if indent_match else ""
+            para_lines = [line.strip()]
+            while i + 1 < len(lines):
+                nxt = lines[i+1]
+                nxt_str = nxt.strip()
+                if not nxt_str or nxt_str.startswith(('-', '*', '+', '#', '```', '>')) or (nxt_str.startswith('|') and nxt_str.endswith('|')) or re.match(r'^\d+\.', nxt_str):
+                    break
+                para_lines.append(nxt_str)
+                i += 1
+            full_para = " ".join(para_lines)
+            wrapped = wrap_paragraph(full_para, prefix=base_indent, hanging_indent=base_indent,
+                                     max_width=max_width, by_sentence=by_sentence, by_clause=by_clause)
+            result.extend(wrapped)
+            i += 1
+
+    return result
+
+
 def run_self_tests():
     """Run internal test suite."""
     print("Running text-align self-tests...")
@@ -293,6 +466,33 @@ def run_self_tests():
     aligned_comments = align_delimiter(comment_lines, delimiter="//")
     assert "// sum of elements" in aligned_comments[1]
 
+    # 7. Semantic Sentence Wrapping Test
+    multi_sentence = [
+        "찰스 배비지는 컴퓨터의 아버지입니다. 그는 차분기관과 해석기관을 고안했습니다! 에이다는 주석을 남겼을까요?"
+    ]
+    wrapped_sentences = semantic_wrap(multi_sentence, by_sentence=True)
+    assert len(wrapped_sentences) == 3
+    assert wrapped_sentences[0] == "찰스 배비지는 컴퓨터의 아버지입니다."
+    assert wrapped_sentences[1] == "그는 차분기관과 해석기관을 고안했습니다!"
+    assert wrapped_sentences[2] == "에이다는 주석을 남겼을까요?"
+
+    # 8. Semantic Clause Wrapping Test
+    clause_text = [
+        "차분기관은 특수 목적 계산기이지만, 해석기관은 역사상 최초의 범용 컴퓨터입니다."
+    ]
+    wrapped_clauses = semantic_wrap(clause_text, by_clause=True)
+    assert len(wrapped_clauses) == 2
+    assert wrapped_clauses[0] == "차분기관은 특수 목적 계산기이지만,"
+
+    # 9. Width-bounded Word Wrap with CJK and Hanging Indent
+    bullet_list = [
+        "- 찰스 배비지는 19세기 영국의 수학자이자 발명가로서 차분기관을 설계하여 덧셈만으로 수표를 자동 계산하고자 했습니다."
+    ]
+    wrapped_bullet = semantic_wrap(bullet_list, max_width=40)
+    assert len(wrapped_bullet) >= 2
+    assert wrapped_bullet[0].startswith("- ")
+    assert wrapped_bullet[1].startswith("  ")  # Hanging indent
+
     print("All self-tests passed successfully! ✅")
 
 
@@ -306,7 +506,7 @@ def main():
             pass
 
     parser = argparse.ArgumentParser(description="Deterministic text & table alignment tool with CJK awareness.")
-    parser.add_argument("--mode", choices=["table", "delimiter", "justify", "pad"], default="table",
+    parser.add_argument("--mode", choices=["table", "delimiter", "justify", "pad", "wrap", "semantic-wrap"], default="table",
                         help="Alignment mode (default: table)")
     parser.add_argument("--delimiter", "-d", default="=",
                         help="Delimiter string for 'delimiter' mode (e.g. '=', ':', '=>', '//')")
@@ -317,7 +517,11 @@ def main():
     parser.add_argument("--align", "-a", choices=["left", "right", "center"], default="left",
                         help="Alignment direction for padding/justify (default: left)")
     parser.add_argument("--width", "-w", type=int, default=0,
-                        help="Target width for justify/pad mode (default: auto)")
+                        help="Target width for justify/pad/wrap mode (default: auto / 80 for wrap)")
+    parser.add_argument("--by-sentence", "-s", action="store_true",
+                        help="Wrap mode: Split into lines by sentence (.?!)")
+    parser.add_argument("--by-clause", "-c", action="store_true",
+                        help="Wrap mode: Split into lines by clauses/commas/punctuation")
     parser.add_argument("--file", "-f", help="Target file path to read from / modify")
     parser.add_argument("--range", "-r", help="Line range to process (e.g. 10:25, 1-indexed)")
     parser.add_argument("--in-place", "-i", action="store_true", help="Modify file in-place")
@@ -362,6 +566,9 @@ def main():
         result = align_delimiter(lines, delimiter=args.delimiter, occurrence=args.occurrence, attach_delimiter=args.attach_delimiter)
     elif args.mode in ("justify", "pad"):
         result = align_justify(lines, target_width=args.width, align=args.align)
+    elif args.mode in ("wrap", "semantic-wrap"):
+        wrap_width = args.width if args.width > 0 else (0 if (args.by_sentence or args.by_clause) else 80)
+        result = semantic_wrap(lines, max_width=wrap_width, by_sentence=args.by_sentence, by_clause=args.by_clause)
     else:
         result = lines
 
