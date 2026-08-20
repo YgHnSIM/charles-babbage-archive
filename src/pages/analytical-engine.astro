@@ -19,8 +19,24 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       </p>
     </div>
 
+    {/* In-Page Quick Jump Chips */}
+    <div class="mb-10 sm:mb-14 overflow-x-auto pb-2 scrollbar-none">
+      <div class="flex items-center gap-2 min-w-max">
+        <span class="text-xs font-mono text-gray-400 mr-1">⚡ 바로가기:</span>
+        <a href="#leap" class="px-3 py-1.5 rounded-full text-xs font-mono bg-[#12161f] border border-gray-800 hover:border-purple-500/50 hover:text-purple-300 text-gray-300 transition-all">
+          1. 거대한 도약 & 4대 요소
+        </a>
+        <a href="#architecture" class="px-3 py-1.5 rounded-full text-xs font-mono bg-[#12161f] border border-gray-800 hover:border-purple-500/50 hover:text-purple-300 text-gray-300 transition-all">
+          2. HW/SW 제어 메커니즘
+        </a>
+        <a href="#comparison" class="px-3 py-1.5 rounded-full text-xs font-mono bg-[#12161f] border border-gray-800 hover:border-brass-500/50 hover:text-brass-300 text-gray-300 transition-all">
+          3. 컴퓨터 아키텍처 비교 행렬
+        </a>
+      </div>
+    </div>
+
     {/* Section 1: The Conceptual Leap */}
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-16">
+    <div id="leap" class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-16 scroll-mt-20">
       <div class="bg-[#12161f] border border-gray-800 rounded-xl p-5 sm:p-8">
         <h2 class="text-lg sm:text-xl font-display font-bold text-white mb-3 text-purple-300 break-keep">
           차분기관에서 해석기관으로의 거대한 도약
@@ -58,7 +74,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     </div>
 
     {/* Section 2: Architecture Breakdown */}
-    <div class="bg-[#12161f] border border-gray-800 rounded-xl p-5 sm:p-8 mb-12 sm:mb-16">
+    <div id="architecture" class="bg-[#12161f] border border-gray-800 rounded-xl p-5 sm:p-8 mb-12 sm:mb-16 scroll-mt-20">
       <h2 class="text-xl sm:text-2xl font-display font-bold text-white mb-6 text-brass-300 break-keep">
         해석기관의 하드웨어 & 소프트웨어 구조
       </h2>
@@ -103,7 +119,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     </div>
 
     {/* Section 3: Architecture Comparison Matrix */}
-    <div class="bg-[#12161f] border border-gray-800 rounded-xl p-5 sm:p-8">
+    <div id="comparison" class="bg-[#12161f] border border-gray-800 rounded-xl p-5 sm:p-8 scroll-mt-20">
       <h2 class="text-xl sm:text-2xl font-display font-bold text-white mb-3 sm:mb-4 text-brass-300 break-keep">
         컴퓨터 구조 비교: 해석기관 vs. 현대 아키텍처
       </h2>

@@ -212,18 +212,55 @@ const timelineEvents = [
         1791년 출생부터 1871년 서거, 그리고 1991년 런던 과학박물관의 역사적 실물 복원까지의 전 기록입니다.
       </p>
 
-      {/* Category Badges Legend */}
-      <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mt-6 sm:mt-8 text-xs font-mono">
-        <span class="px-2.5 sm:px-3 py-1 rounded-full bg-blue-950/50 border border-blue-500/40 text-blue-300">● 생애 & 가족</span>
-        <span class="px-2.5 sm:px-3 py-1 rounded-full bg-purple-950/50 border border-purple-500/40 text-purple-300">● 학술 & 협회</span>
-        <span class="px-2.5 sm:px-3 py-1 rounded-full bg-amber-950/50 border border-amber-500/40 text-amber-300">● 기계 & 발명</span>
-        <span class="px-2.5 sm:px-3 py-1 rounded-full bg-emerald-950/50 border border-emerald-500/40 text-emerald-300">● 저술 & 경제학</span>
-        <span class="px-2.5 sm:px-3 py-1 rounded-full bg-pink-950/50 border border-pink-500/40 text-pink-300">● 현대적 복원</span>
+      {/* Interactive Category Filter Buttons */}
+      <div id="timeline-filters" class="flex flex-wrap justify-center gap-2 sm:gap-2.5 mt-6 sm:mt-8 text-xs font-mono">
+        <button
+          type="button"
+          data-filter="all"
+          class="timeline-filter-btn px-3 py-1.5 rounded-full bg-brass-500/20 border border-brass-500/60 text-brass-200 font-bold shadow-sm transition-all hover:scale-105 active:scale-95"
+        >
+          ✨ 전체 (18)
+        </button>
+        <button
+          type="button"
+          data-filter="생애"
+          class="timeline-filter-btn px-3 py-1.5 rounded-full bg-blue-950/40 border border-blue-500/30 text-blue-300 transition-all hover:border-blue-400 hover:text-white active:scale-95"
+        >
+          ● 생애 (3)
+        </button>
+        <button
+          type="button"
+          data-filter="학술"
+          class="timeline-filter-btn px-3 py-1.5 rounded-full bg-purple-950/40 border border-purple-500/30 text-purple-300 transition-all hover:border-purple-400 hover:text-white active:scale-95"
+        >
+          ● 학술 (4)
+        </button>
+        <button
+          type="button"
+          data-filter="발명"
+          class="timeline-filter-btn px-3 py-1.5 rounded-full bg-amber-950/40 border border-amber-500/30 text-amber-300 transition-all hover:border-amber-400 hover:text-white active:scale-95"
+        >
+          ● 발명 (6)
+        </button>
+        <button
+          type="button"
+          data-filter="저술|경제학"
+          class="timeline-filter-btn px-3 py-1.5 rounded-full bg-emerald-950/40 border border-emerald-500/30 text-emerald-300 transition-all hover:border-emerald-400 hover:text-white active:scale-95"
+        >
+          ● 경제학 (2)
+        </button>
+        <button
+          type="button"
+          data-filter="현대"
+          class="timeline-filter-btn px-3 py-1.5 rounded-full bg-pink-950/40 border border-pink-500/30 text-pink-300 transition-all hover:border-pink-400 hover:text-white active:scale-95"
+        >
+          ● 현대 복원 (3)
+        </button>
       </div>
     </div>
 
     {/* Timeline Container */}
-    <div class="relative border-l border-gray-800 ml-3 sm:ml-32 space-y-8 sm:space-y-12">
+    <div id="timeline-container" class="relative border-l border-gray-800 ml-3 sm:ml-32 space-y-8 sm:space-y-12">
       {timelineEvents.map((ev) => {
         let badgeColor = "border-blue-500/40 bg-blue-950/40 text-blue-300";
         let dotColor = "bg-blue-400";
@@ -236,10 +273,16 @@ const timelineEvents = [
         } else if (ev.categoryColor === 'emerald') {
           badgeColor = "border-emerald-500/40 bg-emerald-950/40 text-emerald-300";
           dotColor = "bg-emerald-400";
+        } else if (ev.categoryColor === 'pink') {
+          badgeColor = "border-pink-500/40 bg-pink-950/40 text-pink-300";
+          dotColor = "bg-pink-400";
         }
 
         return (
-          <div class="relative pl-6 sm:pl-10 group">
+          <div
+            class="timeline-item relative pl-6 sm:pl-10 group transition-all duration-300"
+            data-category={ev.category}
+          >
             {/* Year marker on left for larger screens */}
             <div class="hidden sm:block absolute -left-32 top-1 text-right w-24 font-mono font-bold text-base text-brass-400">
               {ev.year}
@@ -249,7 +292,7 @@ const timelineEvents = [
             <div class={`absolute -left-[7px] sm:-left-[9px] top-1.5 w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full border-2 border-[#0f1115] ${dotColor} group-hover:scale-125 transition-transform`}></div>
 
             {/* Event Card */}
-            <div class="bg-[#12161f] border border-gray-800 hover:border-gray-700 rounded-xl p-4 sm:p-6 transition-all">
+            <div class="bg-[#12161f] border border-gray-800 hover:border-gray-700 rounded-xl p-4 sm:p-6 transition-all shadow-lg">
               <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
                 <span class="sm:hidden font-mono font-bold text-xs sm:text-sm text-brass-400">{ev.year}년</span>
                 <span class={`text-[10px] sm:text-[11px] font-mono px-2 sm:px-2.5 py-0.5 rounded-full border ${badgeColor}`}>
@@ -270,4 +313,44 @@ const timelineEvents = [
       })}
     </div>
   </div>
+
+  <script>
+    function initTimelineFilters() {
+      const filterBtns = document.querySelectorAll<HTMLButtonElement>('.timeline-filter-btn');
+      const timelineItems = document.querySelectorAll<HTMLElement>('.timeline-item');
+      if (!filterBtns.length || !timelineItems.length) return;
+
+      filterBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const filter = btn.getAttribute('data-filter') || 'all';
+
+          // Update active styles
+          filterBtns.forEach((b) => {
+            b.classList.remove('bg-brass-500/20', 'border-brass-500/60', 'text-brass-200', 'font-bold', 'shadow-sm');
+          });
+          btn.classList.add('bg-brass-500/20', 'border-brass-500/60', 'text-brass-200', 'font-bold', 'shadow-sm');
+
+          // Filter items
+          timelineItems.forEach((item) => {
+            const cat = item.getAttribute('data-category') || '';
+            if (filter === 'all') {
+              item.style.display = 'block';
+            } else if (filter.includes('|')) {
+              const matched = filter.split('|').some((f) => cat.includes(f));
+              item.style.display = matched ? 'block' : 'none';
+            } else {
+              item.style.display = cat.includes(filter) ? 'block' : 'none';
+            }
+          });
+        });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initTimelineFilters);
+    } else {
+      initTimelineFilters();
+    }
+    document.addEventListener('astro:page-load', initTimelineFilters);
+  </script>
 </Layout>

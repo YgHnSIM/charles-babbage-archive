@@ -65,6 +65,50 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     </main>
 
     <Footer />
+
+    <!-- Back to Top Floating Button -->
+    <button
+      id="back-to-top"
+      type="button"
+      aria-label="페이지 맨 위로 이동"
+      class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-[#161b24]/90 border border-brass-500/40 text-brass-300 shadow-xl shadow-black/50 backdrop-blur flex items-center justify-center transition-all duration-300 opacity-0 pointer-events-none hover:bg-brass-500 hover:text-iron-950 hover:border-brass-400 hover:scale-110 active:scale-95 focus:outline-none"
+    >
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+      </svg>
+    </button>
+
+    <script>
+      function initBackToTop() {
+        const btn = document.getElementById('back-to-top');
+        if (!btn || btn.dataset.initialized === 'true') return;
+        btn.dataset.initialized = 'true';
+
+        const toggleVisibility = () => {
+          if (window.scrollY > 300) {
+            btn.classList.remove('opacity-0', 'pointer-events-none');
+            btn.classList.add('opacity-100', 'pointer-events-auto');
+          } else {
+            btn.classList.add('opacity-0', 'pointer-events-none');
+            btn.classList.remove('opacity-100', 'pointer-events-auto');
+          }
+        };
+
+        window.addEventListener('scroll', toggleVisibility, { passive: true });
+        toggleVisibility();
+
+        btn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initBackToTop);
+      } else {
+        initBackToTop();
+      }
+      document.addEventListener('astro:page-load', initBackToTop);
+    </script>
   </body>
 </html>
 

@@ -20,8 +20,27 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       </p>
     </div>
 
+    {/* In-Page Quick Jump Chips */}
+    <div class="mb-10 sm:mb-14 overflow-x-auto pb-2 scrollbar-none">
+      <div class="flex items-center gap-2 min-w-max">
+        <span class="text-xs font-mono text-gray-400 mr-1">⚡ 바로가기:</span>
+        <a href="#partnership" class="px-3 py-1.5 rounded-full text-xs font-mono bg-[#12161f] border border-gray-800 hover:border-pink-500/50 hover:text-pink-300 text-gray-300 transition-all">
+          1. 시적 과학 & 통찰
+        </a>
+        <a href="#notes-overview" class="px-3 py-1.5 rounded-full text-xs font-mono bg-[#12161f] border border-gray-800 hover:border-pink-500/50 hover:text-pink-300 text-gray-300 transition-all">
+          2. 주석 A–G 총괄 해제
+        </a>
+        <a href="#note-g-simulator" class="px-3 py-1.5 rounded-full text-xs font-mono bg-[#12161f] border border-gray-800 hover:border-purple-500/50 hover:text-purple-300 text-gray-300 transition-all">
+          3. Note G 알고리즘 시뮬레이터
+        </a>
+        <a href="#python-code" class="px-3 py-1.5 rounded-full text-xs font-mono bg-[#12161f] border border-gray-800 hover:border-emerald-500/50 hover:text-emerald-300 text-gray-300 transition-all">
+          4. Python 재현 코드
+        </a>
+      </div>
+    </div>
+
     {/* Section 1: Partnership & Vision */}
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-16">
+    <div id="partnership" class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-16 scroll-mt-20">
       <div class="bg-[#12161f] border border-gray-800 rounded-xl p-5 sm:p-8">
         <h2 class="text-lg sm:text-xl font-display font-bold text-white mb-3 text-pink-300 break-keep">
           "시적 과학(Poetical Science)"의 탄생
@@ -51,7 +70,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     </div>
 
     {/* Section 2: Overview of Notes A-G */}
-    <div class="bg-[#12161f] border border-gray-800 rounded-xl p-5 sm:p-8 mb-12 sm:mb-16">
+    <div id="notes-overview" class="bg-[#12161f] border border-gray-800 rounded-xl p-5 sm:p-8 mb-12 sm:mb-16 scroll-mt-20">
       <h2 class="text-xl sm:text-2xl font-display font-bold text-white mb-6 text-brass-300 break-keep">
         1843년 『해석기관에 관한 주석 (Notes A–G)』 해제
       </h2>
@@ -97,7 +116,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     </div>
 
     {/* Section 3: Note G & Bernoulli Trace */}
-    <div class="mb-12 sm:mb-16">
+    <div id="note-g-simulator" class="mb-12 sm:mb-16 scroll-mt-20">
       <div class="mb-6">
         <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded bg-purple-950/60 border border-purple-500/40 text-purple-300 text-xs font-mono mb-2">
           THE CROWNING ACHIEVEMENT: NOTE G
@@ -116,16 +135,30 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     </div>
 
     {/* Section 4: Modern Python Code Comparison */}
-    <div class="bg-[#12161f] border border-gray-800 rounded-xl p-5 sm:p-8">
-      <h2 class="text-lg sm:text-xl font-display font-bold text-white mb-4 text-brass-300 break-keep">
-        Note G 알고리즘의 현대 Python 재현 (`bernoulli.py`)
-      </h2>
-      <p class="text-xs text-gray-400 mb-4 font-body-serif break-keep">
-        1843년 에이다 러브레이스가 작성한 25단계 천공카드 실행 다이어그램을 현대 파이썬 코드로 1:1 복원한 코드입니다.
-      </p>
+    <div id="python-code" class="bg-[#12161f] border border-gray-800 rounded-xl p-5 sm:p-8 scroll-mt-20">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+        <div>
+          <h2 class="text-lg sm:text-xl font-display font-bold text-white text-brass-300 break-keep">
+            Note G 알고리즘의 현대 Python 재현 (`bernoulli.py`)
+          </h2>
+          <p class="text-xs text-gray-400 mt-1 font-body-serif break-keep">
+            1843년 에이다 러브레이스가 작성한 25단계 천공카드 실행 다이어그램을 현대 파이썬 코드로 1:1 복원한 코드입니다.
+          </p>
+        </div>
+      </div>
 
-      <div class="bg-[#0d1015] p-3.5 sm:p-4 rounded-lg border border-gray-800 overflow-x-auto">
-        <pre class="font-mono text-xs text-emerald-400 leading-relaxed"><code>{`# Ada Lovelace 1843 Note G Algorithm - Bernoulli Number Generator
+      <details class="group/pycode">
+        <summary class="flex items-center justify-between cursor-pointer p-3.5 rounded-lg bg-[#0d1015] border border-gray-800 hover:border-emerald-500/40 text-xs font-mono text-emerald-300 select-none transition-all">
+          <span class="flex items-center gap-2 font-bold">
+            <span>🐍</span> 파이썬 재현 소스 코드 보기 (compute_bernoulli_note_g)
+          </span>
+          <span class="text-[11px] text-gray-400 group-open/pycode:text-emerald-300">
+            <span class="group-open/pycode:hidden">코드 펼치기 ▼</span>
+            <span class="hidden group-open/pycode:inline">코드 접기 ▲</span>
+          </span>
+        </summary>
+        <div class="bg-[#0d1015] p-3.5 sm:p-4 rounded-b-lg border-x border-b border-gray-800 overflow-x-auto mt-0">
+          <pre class="font-mono text-xs text-emerald-400 leading-relaxed"><code>{`# Ada Lovelace 1843 Note G Algorithm - Bernoulli Number Generator
 from fractions import Fraction
 
 def compute_bernoulli_note_g(target_n=4):
@@ -158,7 +191,8 @@ def compute_bernoulli_note_g(target_n=4):
         print(f"n={n}: Computed Bernoulli Number = {V['V11']}")
 
     return B`}</code></pre>
-      </div>
+        </div>
+      </details>
     </div>
   </div>
 </Layout>
