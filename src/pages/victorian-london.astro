@@ -1,0 +1,227 @@
+---
+import Layout from '../layouts/Layout.astro';
+import VictorianLondonMap from '../components/VictorianLondonMap';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<Layout title="빅토리아 시대 런던 & 생애 지리 - 찰스 배비지 아카이브">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brass-500/30 bg-brass-950/30 text-brass-300 text-xs font-mono mb-4">
+        VICTORIAN LONDON GEOGRAPHY & NETWORK
+      </div>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4 break-keep">
+        빅토리아 시대 런던과<br />찰스 배비지의 지적 궤적
+      </h1>
+      <p class="text-xs sm:text-sm md:text-base text-gray-400 font-body-serif leading-relaxed break-keep">
+        19세기 대영제국의 심장부 런던에서 펼쳐진 배비지의 42년 도싯 가(Dorset Street) 살롱, 
+        에이다 러브레이스와의 운명적 조우, 그리고 대영박물관에서 배비지를 탐독했던 칼 마르크스와의 
+        동시대적 지리 공간을 인터랙티브 사료 지도로 탐색합니다.
+      </p>
+    </div>
+
+    <!-- Interactive Map Section -->
+    <div class="mb-14 sm:mb-20">
+      <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center gap-2">
+          <span class="text-xl">🗺️</span>
+          <h2 class="text-lg sm:text-xl font-display font-bold text-white">
+            인터랙티브 빅토리아 런던 사료 지도
+          </h2>
+        </div>
+        <span class="text-xs font-mono text-gray-400">18개 핵심 역사 좌표군 수록</span>
+      </div>
+
+      <!-- React Map Component with Client Hydration -->
+      <VictorianLondonMap client:load />
+    </div>
+
+    <!-- Deep-Dive Section 1: The Dorset Street Salon Atmosphere -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 items-stretch">
+      <div class="lg:col-span-7 bg-[#12161f] border border-gray-800 rounded-2xl p-6 sm:p-8 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-2 text-xs font-mono text-brass-400 uppercase tracking-wider mb-2">
+            <span>⚙️ THE SATURDAY SOIRÉES (1829–1850s)</span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-display font-bold text-white mb-4 break-keep">
+            도싯 가 1번지 살롱:<br />빅토리아 런던 지성계의 기관실
+          </h3>
+          <div class="space-y-4 text-xs sm:text-sm text-gray-300 font-body-serif leading-relaxed break-keep">
+            <p>
+              배비지가 1829년부터 1871년 타계할 때까지 거주했던 <strong>메릴본 도싯 가 1번지(1 Dorset Street)</strong>는 
+              단순한 주택이 아니었습니다. 뒤뜰에는 화재를 막기 위해 지어진 2층 규모의 최신 방화 공방과 제도가 놓여 있었고, 
+              토요일 밤마다 <strong>200~300명의 런던 최고 지식인, 과학자, 문인, 정치가</strong>가 모여들었습니다.
+            </p>
+            <div class="p-4 bg-[#181e28] border-l-4 border-brass-500 rounded-r-lg">
+              <p class="italic text-brass-200 text-xs sm:text-sm">
+                "배비지의 토요 살롱은 당대 런던에서 가장 지적으로 빛나는 자리였다. 우아한 응접실에는 샴페인과 담소가 넘쳐났고, 
+                진지한 과학자들은 안쪽 작업실로 안내되어 놋쇠 톱니바퀴가 돌아가는 차분기관의 경이를 목격했다."
+              </p>
+              <div class="text-[11px] text-gray-400 mt-2 text-right">— 해리엇 마티노(Harriet Martineau) 회고록</div>
+            </div>
+            <p>
+              이 살롱에는 <strong>찰스 디킨스</strong>(배비지의 관료주의 투쟁을 바탕으로 소설 『작은 도릿』의 발명가 '대니얼 도이스' 창작), 
+              <strong>찰스 다윈</strong>(『제9 브리지워터 논문』의 불연속 법칙에 깊은 영감을 받음), 
+              <strong>마이클 패러데이</strong>, <strong>토머스 칼라일</strong>, <strong>앨버트 왕세자</strong> 등이 단골 손님으로 드나들었습니다.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 bg-[#12161f] border border-gray-800 rounded-2xl p-6 sm:p-8 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-2 text-xs font-mono text-purple-400 uppercase tracking-wider mb-2">
+            <span>🎭 THE DUAL SPECTACLE</span>
+          </div>
+          <h4 class="text-lg sm:text-xl font-display font-bold text-white mb-3 break-keep">
+            은빛 숙녀(Silver Lady)와 차분기관
+          </h4>
+          <p class="text-xs sm:text-sm text-gray-300 font-body-serif leading-relaxed mb-4 break-keep">
+            배비지는 살롱에 두 개의 대조적인 기계를 나란히 배치하여 방문객들의 지적 반응을 시험했습니다:
+          </p>
+          <div class="space-y-3 font-mono text-xs">
+            <div class="p-3 bg-[#0d1015] border border-gray-800 rounded-lg">
+              <div class="text-purple-400 font-bold mb-1">1. 은빛 숙녀 오토마타 (Silver Lady)</div>
+              <div class="text-gray-400 text-[11px] leading-relaxed">
+                손가락 위 새가 날개 치고 눈을 깜빡이는 12인치 정밀 자동인형. 대다수 귀족 사교계 인사들의 시선을 빼앗는 '미끼' 역할을 수행.
+              </div>
+            </div>
+            <div class="p-3 bg-[#0d1015] border border-gray-800 rounded-lg">
+              <div class="text-brass-400 font-bold mb-1">2. 1832년 차분기관 1호 시제품 (Difference Engine)</div>
+              <div class="text-gray-400 text-[11px] leading-relaxed">
+                2,000개의 황동 기어로 16자리 다항식을 오차 없이 덧셈하는 계산 기계. 기계적 논리의 위대함을 알아본 극소수의 인물 중 한 명이 바로 <strong>17세의 에이다 바이런</strong>이었습니다.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4 pt-3 border-t border-gray-800 text-[11px] text-gray-400 font-mono">
+          📌 1833년 6월 5일, 바로 이 살롱에서 현대 컴퓨터 과학의 역사가 태동했습니다.
+        </div>
+      </div>
+    </div>
+
+    <!-- Deep-Dive Section 2: Geospatial Proximity Matrix (Babbage, Lovelace, Marx) -->
+    <div class="bg-[#12161f] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-16">
+      <div class="max-w-3xl mb-6">
+        <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded text-xs font-mono text-emerald-400 bg-emerald-950/40 border border-emerald-500/30 mb-2">
+          GEOSPATIAL PROXIMITY & CONVERGENCE
+        </div>
+        <h3 class="text-xl sm:text-2xl font-display font-bold text-white break-keep">
+          빅토리아 런던의 지리적 삼각축: 배비지 · 러브레이스 · 마르크스
+        </h3>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs sm:text-sm">
+        <div class="p-5 bg-[#0e1117] border border-amber-500/30 rounded-xl space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="text-2xl">⚙️</span>
+            <div>
+              <div class="font-bold text-white text-sm">찰스 배비지</div>
+              <div class="text-[11px] text-amber-400 font-mono">메릴본 도싯 가 1번지</div>
+            </div>
+          </div>
+          <p class="text-gray-300 font-body-serif leading-relaxed text-xs">
+            1829~1871년 거주. 런던 서부 고급 주거 구역에 자리잡아 하이드 파크, 왕립학회(피카딜리), 클레먼트 공방(람베스)을 오가며 기계 제작과 지성계 살롱을 주도했습니다.
+          </p>
+        </div>
+
+        <div class="p-5 bg-[#0e1117] border border-purple-500/30 rounded-xl space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="text-2xl">✨</span>
+            <div>
+              <div class="font-bold text-white text-sm">에이다 러브레이스</div>
+              <div class="text-[11px] text-purple-400 font-mono">세인트 제임스 & 오컴 파크</div>
+            </div>
+          </div>
+          <p class="text-gray-300 font-body-serif leading-relaxed text-xs">
+            서리주 오컴 파크와 런던 세인트 제임스 스퀘어 12번지를 오가며 도싯 가의 배비지와 매일 특송 편지로 알고리즘을 논쟁하고 1843년 주석(Notes A~G)을 완성했습니다.
+          </p>
+        </div>
+
+        <div class="p-5 bg-[#0e1117] border border-rose-500/30 rounded-xl space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="text-2xl">📜</span>
+            <div>
+              <div class="font-bold text-white text-sm">칼 마르크스</div>
+              <div class="text-[11px] text-rose-400 font-mono">소호 딘 가 & 대영박물관</div>
+            </div>
+          </div>
+          <p class="text-gray-300 font-body-serif leading-relaxed text-xs">
+            1849년 런던 망명 후 소호 딘 가 28번지(배비지 자택과 2km)에 거주하며, 대영박물관 열람실(Desk O-7)에서 배비지의 경제학 저작을 정밀 독해하여 『자본론』에 편입했습니다.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-6 p-4 bg-[#181e28] rounded-xl border border-gray-800 text-xs font-mono text-gray-300 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>
+          <span class="text-brass-400 font-bold">📍 지리적 거리:</span> 배비지의 도싯 가와 마르크스의 대영박물관 열람실은 옥스퍼드 스트리트를 따라 도보로 약 25분(2.4km) 거리에 불과했습니다.
+        </div>
+        <a
+          href={`${base}/economy-philosophy#marx-intersection`}
+          class="px-3 py-1.5 rounded-lg bg-brass-500/20 text-brass-300 border border-brass-500/40 hover:bg-brass-500 hover:text-iron-950 transition-all text-xs font-bold shrink-0"
+        >
+          마르크스 사상적 교차 분석 보기 →
+        </a>
+      </div>
+    </div>
+
+    <!-- Timeline of Geographic Movements -->
+    <div class="bg-[#12161f] border border-gray-800 rounded-2xl p-6 sm:p-8">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-2xl">🛤️</span>
+        <h3 class="text-xl sm:text-2xl font-display font-bold text-white">
+          배비지의 시공간 궤적 (Geographical Lifecycle)
+        </h3>
+      </div>
+
+      <div class="relative border-l-2 border-brass-500/30 ml-3 sm:ml-6 space-y-6 sm:space-y-8 pl-6 sm:pl-8">
+        <div class="relative">
+          <div class="absolute -left-[31px] sm:-left-[39px] top-1 w-4 h-4 rounded-full bg-brass-500 border-4 border-[#12161f]"></div>
+          <span class="text-xs font-mono text-brass-400">1791–1810년</span>
+          <h4 class="text-sm sm:text-base font-bold text-white">런던 서더크 출생 & 데번주(Devon) 유년기</h4>
+          <p class="text-xs sm:text-sm text-gray-400 font-body-serif mt-1 break-keep">
+            런던 서더크 월워스(Walworth)에서 출생 후 데번주 토트네스(Totnes) 및 엔필드 홀름우드 아카데미에서 수학적 재능을 꽃피움.
+          </p>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -left-[31px] sm:-left-[39px] top-1 w-4 h-4 rounded-full bg-purple-500 border-4 border-[#12161f]"></div>
+          <span class="text-xs font-mono text-purple-400">1810–1814년</span>
+          <h4 class="text-sm sm:text-base font-bold text-white">케임브리지 대학교 (트리니티 & 피터하우스)</h4>
+          <p class="text-xs sm:text-sm text-gray-400 font-body-serif mt-1 break-keep">
+            해석학회(Analytical Society) 결성. 라이프니츠 미분 표기법 도입 운동을 주도하며 영국 수학 혁신을 견인.
+          </p>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -left-[31px] sm:-left-[39px] top-1 w-4 h-4 rounded-full bg-amber-500 border-4 border-[#12161f]"></div>
+          <span class="text-xs font-mono text-amber-400">1823–1833년</span>
+          <h4 class="text-sm sm:text-base font-bold text-white">런던 람베스 조셉 클레먼트 공방 & 차분기관 1호 제작</h4>
+          <p class="text-xs sm:text-sm text-gray-400 font-body-serif mt-1 break-keep">
+            영국 정부 지원금으로 정밀 부품 가공 착수. 1832년 2,000개 부품의 1호 시제품 조립 성공.
+          </p>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -left-[31px] sm:-left-[39px] top-1 w-4 h-4 rounded-full bg-emerald-500 border-4 border-[#12161f]"></div>
+          <span class="text-xs font-mono text-emerald-400">1829–1871년</span>
+          <h4 class="text-sm sm:text-base font-bold text-white">메릴본 도싯 가 1번지 & 해석기관(Analytical Engine) 설계</h4>
+          <p class="text-xs sm:text-sm text-gray-400 font-body-serif mt-1 break-keep">
+            스토어와 밀을 분리한 범용 컴퓨터 아키텍처 완성, 에이다 러브레이스와의 협업, 그리고 토요 살롱을 통한 빅토리아 지식 네트워크의 중심지.
+          </p>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -left-[31px] sm:-left-[39px] top-1 w-4 h-4 rounded-full bg-gray-500 border-4 border-[#12161f]"></div>
+          <span class="text-xs font-mono text-gray-400">1871년 10월 18일</span>
+          <h4 class="text-sm sm:text-base font-bold text-white">도싯 가에서의 영면 & 켄살 그린 묘지 안장</h4>
+          <p class="text-xs sm:text-sm text-gray-400 font-body-serif mt-1 break-keep">
+            80세를 일기로 타계 후 켄살 그린 묘지(Square 84, Grave 1791)에 안장됨.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

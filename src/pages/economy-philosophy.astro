@@ -6,43 +6,47 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 <Layout title="산업경제학 & 사회철학 - 찰스 배비지 아카이브">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-    {/* Page Header */}
+    <!-- Page Header -->
     <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-950/30 text-emerald-300 text-xs font-mono mb-4">
-        ECONOMY, PHILOSOPHY & REFORMS
+        ECONOMY, PHILOSOPHY & CRITIQUE
       </div>
       <h1 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4 break-keep">
-        산업경제학, 기계철학<br />그리고 사회 개혁
+        산업경제학, 기계철학<br />그리고 칼 마르크스의 비판
       </h1>
       <p class="text-xs sm:text-sm md:text-base text-gray-400 font-body-serif leading-relaxed break-keep">
-        배비지는 컴퓨터 공학자였을 뿐만 아니라, 근대 산업공학의 기초를 놓은 경제학자이자 자연신학의 패러다임을 바꾼 철학자였으며, 사회 인프라를 혁신한 행동가였습니다.
+        배비지는 컴퓨터 공학자였을 뿐만 아니라, 근대 산업공학의 기초를 놓은 경제학자이자 자연신학의 패러다임을 바꾼 철학자였습니다. 
+        동시대 런던에서 배비지를 깊이 연구했던 칼 마르크스의 『자본론』과 『그룬트리스』를 통해 기계화와 자본주의의 심층을 탐구합니다.
       </p>
     </div>
 
-    {/* In-Page Quick Jump Chips */}
+    <!-- In-Page Quick Jump Chips -->
     <div class="mb-10 sm:mb-14 overflow-x-auto pb-2 scrollbar-none">
       <div class="flex items-center gap-2 min-w-max">
         <span class="text-xs font-mono text-gray-400 mr-1">⚡ 바로가기:</span>
         <a href="#economy-of-machinery" class="px-3 py-1.5 rounded-full text-xs font-mono bg-[#12161f] border border-gray-800 hover:border-emerald-500/50 hover:text-emerald-300 text-gray-300 transition-all">
           1. 제조업 경제학 & 배비지 원칙
         </a>
+        <a href="#marx-intersection" class="px-3 py-1.5 rounded-full text-xs font-mono bg-[#12161f] border border-gray-800 hover:border-rose-500/50 hover:text-rose-300 text-gray-300 transition-all">
+          2. 배비지와 칼 마르크스: 자본론 & 기계단편
+        </a>
         <a href="#bridgewater-treatise" class="px-3 py-1.5 rounded-full text-xs font-mono bg-[#12161f] border border-gray-800 hover:border-purple-500/50 hover:text-purple-300 text-gray-300 transition-all">
-          2. 제9 브리지워터 & 자연신학
+          3. 제9 브리지워터 & 자연신학
         </a>
         <a href="#social-reforms" class="px-3 py-1.5 rounded-full text-xs font-mono bg-[#12161f] border border-gray-800 hover:border-brass-500/50 hover:text-brass-300 text-gray-300 transition-all">
-          3. 기타 발명 & 사회 개혁
+          4. 기타 발명 & 사회 개혁
         </a>
       </div>
     </div>
 
-    {/* Section 1: Economy of Machinery */}
-    <div id="economy-of-machinery" class="bg-[#12161f] border border-gray-800 rounded-xl p-5 sm:p-8 mb-12 sm:mb-16 scroll-mt-20">
+    <!-- Section 1: Economy of Machinery -->
+    <div id="economy-of-machinery" class="bg-[#12161f] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-12 sm:mb-16 scroll-mt-20">
       <div class="flex items-center gap-3 mb-6">
         <span class="text-2xl">🏭</span>
         <div>
-          <span class="text-xs font-mono uppercase text-emerald-400">1832년 명저</span>
+          <span class="text-xs font-mono uppercase text-emerald-400">1832년 고전 명저</span>
           <h2 class="text-xl sm:text-2xl font-display font-bold text-white text-brass-300 break-keep">
-            『기계 및 제조업의 경제학(On the Economy of Machinery and Manufactures)』
+            『기계 및 제조업의 경제학 (On the Economy of Machinery and Manufactures)』
           </h2>
         </div>
       </div>
@@ -59,9 +63,10 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
             <p class="text-xs italic text-emerald-200 break-keep">
               "공장주는 각 공정에 정확히 필요한 만큼의 기술과 힘을 가진 노동자만을 고용함으로써, 고숙련 노동자에게 단순 노무 임금을 지불하는 낭비를 완전히 제거할 수 있다."
             </p>
+            <div class="text-[10px] text-gray-400 mt-1 text-right">— 제19장 §168–§169</div>
           </div>
           <p class="break-keep">
-            이 원리는 훗날 프레더릭 테일러의 '과학적 관리법'과 현대 경영학/산업공학의 모태가 되었으며, 칼 마르크스(Karl Marx)의 『자본론』과 존 스튜어트 밀의 경제학에서도 핵심적으로 인용되었습니다.
+            이 원리는 훗날 프레더릭 테일러의 '과학적 관리법'과 현대 경영학/산업공학의 모태가 되었으며, 칼 마르크스의 『자본론』에서 자본의 상대적 잉여가치 착취 메커니즘을 규명하는 핵심 사료로 인용되었습니다.
           </p>
         </div>
 
@@ -90,14 +95,143 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       </div>
     </div>
 
-    {/* Section 2: Ninth Bridgewater Treatise */}
-    <div id="bridgewater-treatise" class="bg-[#12161f] border border-gray-800 rounded-xl p-5 sm:p-8 mb-12 sm:mb-16 scroll-mt-20">
+    <!-- Section 2: Karl Marx & Babbage Deep Intersection -->
+    <div id="marx-intersection" class="bg-[#12161f] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-12 sm:mb-16 scroll-mt-20">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-2xl">📜</span>
+        <div>
+          <span class="text-xs font-mono uppercase text-rose-400">사상사적 교차와 자본주의 비판</span>
+          <h2 class="text-xl sm:text-2xl font-display font-bold text-white text-brass-300 break-keep">
+            찰스 배비지와 칼 마르크스: 기계론과 '제너럴 인텔렉트'
+          </h2>
+        </div>
+      </div>
+
+      <!-- 22 Years London Coexistence -->
+      <div class="p-5 bg-[#0d1015] border border-rose-500/30 rounded-xl mb-8">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+          <div class="flex items-center gap-2">
+            <span class="text-rose-400 font-bold text-sm font-sans">📍 22년간의 런던 동시대성과 2.4km의 지리적 근접성 (1849–1871)</span>
+          </div>
+          <a href={`${base}/victorian-london`} class="text-xs font-mono text-brass-400 hover:underline">
+            런던 지도에서 위치 확인 →
+          </a>
+        </div>
+        <p class="text-xs sm:text-sm text-gray-300 font-body-serif leading-relaxed break-keep">
+          칼 마르크스가 1849년 8월 런던으로 망명한 이래 1871년 배비지가 세상을 떠날 때까지, 두 사람은 <strong>22년 동안 런던 도심에서 불과 2.4km 떨어진 거리</strong>에 공존했습니다. 
+          메릴본 도싯 가의 배비지와 소호 딘 가에 살며 대영박물관 열람실(Desk O-7)에서 매일 연구하던 마르크스는 
+          직접 대면하지는 않았으나, 대영도서관 총괄관 앤서니 파니치 경(Anthony Panizzi), 왕립통계학회, 1851년 및 1862년 만국박람회라는 공통의 지적 네트워크를 공유했습니다.
+        </p>
+      </div>
+
+      <!-- 3 Pillars of Marx's Critique in Das Kapital -->
+      <div class="mb-8">
+        <h3 class="text-base sm:text-lg font-bold text-white font-sans mb-4 flex items-center gap-2">
+          <span>⚙️</span> 『자본론 (Das Kapital)』 제1권의 배비지 비판 3대 축
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs font-body-serif">
+          <!-- Pillar 1 -->
+          <div class="p-4 bg-[#181e28] border border-gray-800 rounded-xl space-y-2">
+            <div class="text-rose-400 font-bold font-mono text-xs uppercase">1. 배비지 원칙과 부분노동자</div>
+            <p class="text-gray-300 leading-relaxed text-xs">
+              배비지가 '합리적 비용 절감'으로 칭송한 임금 세분화를, 마르크스는 노동자를 기계 부품과 같은 <strong>'부분노동자(Teilarbeiter)'</strong>로 전락시키고 교육 비용을 깎아 <strong>상대적 잉여가치</strong>를 극대화하는 자본의 지배 기제로 해체했습니다 (제14장, MEW 23, S. 368).
+            </p>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="p-4 bg-[#181e28] border border-gray-800 rounded-xl space-y-2">
+            <div class="text-rose-400 font-bold font-mono text-xs uppercase">2. 도구에서 작업기계로의 전환</div>
+            <p class="text-gray-300 leading-relaxed text-xs">
+              산업혁명은 증기기관(동력)이 아니라 인간의 손에서 도구를 빼앗아 금속 기구에 장착한 <strong>'작업기계(Werkzeugmaschine)'</strong>에서 시작되었습니다. 기계는 인간 육체의 한계를 넘어 수천 개의 바늘과 기어를 동시에 구동합니다 (제15장, MEW 23, S. 393).
+            </p>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="p-4 bg-[#181e28] border border-gray-800 rounded-xl space-y-2">
+            <div class="text-rose-400 font-bold font-mono text-xs uppercase">3. 도덕적 마모와 24시간 가동</div>
+            <p class="text-gray-300 leading-relaxed text-xs">
+              배비지는 신기술로 인한 기계 가치 하락(진부화)을 막기 위해 24시간 주야 가동을 권고했습니다. 마르크스는 이를 <strong>'도덕적 마모(Moralischer Verschleiß)'</strong>로 개념화하며, 자본이 야간 교대제와 절대적 노동일 연장으로 노동자를 쥐어짜는 근원적 동학임을 폭로했습니다 (제15장, MEW 23, S. 426).
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grundrisse & General Intellect -->
+      <div class="p-5 bg-[#0e1117] border border-purple-500/30 rounded-xl mb-8">
+        <div class="text-xs font-mono text-purple-400 uppercase font-bold mb-2">
+          🧠 『그룬트리스(Grundrisse, 1857-1858)』와 기계에 관한 단편 (Fragment on Machines)
+        </div>
+        <h4 class="text-sm sm:text-base font-bold text-white font-sans mb-3 break-keep">
+          드 프로니 $\rightarrow$ 배비지 $\rightarrow$ 마르크스의 '제너럴 인텔렉트(General Intellect)'
+        </h4>
+        <div class="text-xs sm:text-sm text-gray-300 font-body-serif leading-relaxed space-y-3 break-keep">
+          <p>
+            배비지가 드 프로니의 정신 노동 분업을 해석기관과 기계식 계산 하드웨어로 구현했다면, 마르크스는 이를 자본주의 생산양식 전체의 궁극적 전환점으로 파악했습니다.
+          </p>
+          <div class="p-3.5 bg-[#181e28] border-l-4 border-purple-500 rounded-r text-xs text-purple-200 italic leading-relaxed">
+            "고정자본의 발전은 일반적 사회적 지식(knowledge)이 어느 정도로 직접적인 생산력(General Intellect)이 되었는가를 보여준다... 
+            직접적 인간 노동이 물질적 생산의 주된 원천이기를 멈추는 순간, 노동시간을 기준으로 부를 측정하는 자본주의의 가치 법칙은 스스로 붕괴한다."
+            <div class="text-[10px] text-gray-400 not-italic mt-1 text-right">— 마르크스, 『그룬트리스』 (MEW 42, S. 602)</div>
+          </div>
+          <p class="text-xs text-gray-400">
+            배비지의 자동화 계산 기계는 단순한 발명품이 아니라, 인류의 집단 지성이 '고정 자본'이라는 기계 장치 속에 객체화되고, 결국 인공지능과 자동화 사회로 나아가는 역사적 필연의 문을 연 사건이었습니다.
+          </p>
+        </div>
+      </div>
+
+      <!-- Comparative Ideological Matrix -->
+      <div>
+        <h4 class="text-sm font-bold text-white font-sans mb-3">⚖️ 배비지와 마르크스의 사상적 대조 매트릭스</h4>
+        <div class="overflow-x-auto">
+          <table class="w-full text-xs font-mono text-left border-collapse border border-gray-800">
+            <thead>
+              <tr class="bg-[#181e28] text-gray-300 border-b border-gray-800">
+                <th class="p-2.5 sm:p-3 border-r border-gray-800">비교 축</th>
+                <th class="p-2.5 sm:p-3 border-r border-gray-800 text-brass-300">찰스 배비지 (1791–1871)</th>
+                <th class="p-2.5 sm:p-3 text-rose-300">칼 마르크스 (1818–1883)</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-800 text-gray-300">
+              <tr>
+                <td class="p-2.5 sm:p-3 font-bold bg-[#0e1117] border-r border-gray-800">사상적 지향</td>
+                <td class="p-2.5 sm:p-3 border-r border-gray-800">자유주의적 공리주의, 휘그당 개혁주의</td>
+                <td class="p-2.5 sm:p-3">변증법적 유물론, 혁명적 공산주의</td>
+              </tr>
+              <tr>
+                <td class="p-2.5 sm:p-3 font-bold bg-[#0e1117] border-r border-gray-800">기계와 기술관</td>
+                <td class="p-2.5 sm:p-3 border-r border-gray-800">합리적 효율성 극대화 및 문명 번영의 중립적 도구</td>
+                <td class="p-2.5 sm:p-3">생산관계의 물질적 무기; 노동자를 포섭·지배하는 자본의 형태</td>
+              </tr>
+              <tr>
+                <td class="p-2.5 sm:p-3 font-bold bg-[#0e1117] border-r border-gray-800">분업과 노동자</td>
+                <td class="p-2.5 sm:p-3 border-r border-gray-800">숙련도에 맞춘 임금 최적화(배비지 원칙)</td>
+                <td class="p-2.5 sm:p-3">소외, 탈숙련화(Deskilling), 기계 부속품으로의 전락</td>
+              </tr>
+              <tr>
+                <td class="p-2.5 sm:p-3 font-bold bg-[#0e1117] border-r border-gray-800">노사 갈등의 해결</td>
+                <td class="p-2.5 sm:p-3 border-r border-gray-800">기술관료적 이윤공유제(Profit-sharing)로 파업 예방</td>
+                <td class="p-2.5 sm:p-3">계급적 적대; 생산수단 사회화를 통한 자본주의 철폐</td>
+              </tr>
+              <tr>
+                <td class="p-2.5 sm:p-3 font-bold bg-[#0e1117] border-r border-gray-800">과학과 우주관</td>
+                <td class="p-2.5 sm:p-3 border-r border-gray-800">자연신학 (신은 우주를 코딩한 위대한 프로그래머)</td>
+                <td class="p-2.5 sm:p-3">역사적 유물론 (사회적 지식의 총체인 General Intellect)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 3: Ninth Bridgewater Treatise -->
+    <div id="bridgewater-treatise" class="bg-[#12161f] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-12 sm:mb-16 scroll-mt-20">
       <div class="flex items-center gap-3 mb-6">
         <span class="text-2xl">🌌</span>
         <div>
           <span class="text-xs font-mono uppercase text-purple-400">자연신학과 기계철학</span>
           <h2 class="text-xl sm:text-2xl font-display font-bold text-white text-brass-300 break-keep">
-            『제9 브리지워터 논문(The Ninth Bridgewater Treatise, 1837)』
+            『제9 브리지워터 논문 (The Ninth Bridgewater Treatise, 1837)』
           </h2>
         </div>
       </div>
@@ -118,13 +252,13 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           </p>
         </div>
         <p class="text-xs text-gray-400 break-keep">
-          배비지는 이 비유를 통해, 신은 매 순간 세계에 변덕스럽게 개입하는 시계공이 아니라, 모든 예외와 기적까지 포괄하는 고차원의 우주적 법칙을 완벽히 코딩한 지고의 설계자라고 주장했습니다.
+          배비지는 이 비유를 통해, 신은 매 순간 세계에 변덕스럽게 개입하는 시계공이 아니라, 모든 예외와 기적까지 포괄하는 고차원의 우주적 법칙을 완벽히 코딩한 지고의 설계자라고 주장했습니다. (이 논증은 찰스 다윈의 진화론적 자연법칙 형성에도 깊은 영향을 끼쳤습니다.)
         </p>
       </div>
     </div>
 
-    {/* Section 3: Inventions & Public Reforms */}
-    <div id="social-reforms" class="bg-[#12161f] border border-gray-800 rounded-xl p-5 sm:p-8 scroll-mt-20">
+    <!-- Section 4: Inventions & Public Reforms -->
+    <div id="social-reforms" class="bg-[#12161f] border border-gray-800 rounded-2xl p-6 sm:p-8 scroll-mt-20">
       <h2 class="text-xl sm:text-2xl font-display font-bold text-white mb-6 text-brass-300 break-keep">
         배비지의 기타 발명과 사회 개혁
       </h2>

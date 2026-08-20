@@ -7,125 +7,187 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 <Layout title="에이다 러브레이스 (Ada Lovelace) - 세계 최초의 프로그래머와 Note G">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-    {/* Page Header */}
+    <!-- Page Header -->
     <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-pink-500/30 bg-pink-950/30 text-pink-300 text-xs font-mono mb-4">
         THE FIRST COMPUTER PROGRAMMER
       </div>
       <h1 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4 break-keep">
-        에이다 러브레이스와<br />세계 최초의 알고리즘
+        에이다 러브레이스와<br />세계 최초의 컴퓨터 알고리즘
       </h1>
       <p class="text-xs sm:text-sm md:text-base text-gray-400 font-body-serif leading-relaxed break-keep">
-        시인 바이런 경의 딸이자 천재 수학자 에이다 러브레이스(1815–1852). 1843년 해석기관에 관한 7편의 주석(Notes A–G)을 통해 기계가 음악과 기호를 다루는 미래를 예견하고, 최초의 컴퓨터 프로그램을 집필했습니다.
+        시인 조지 고든 바이런의 딸이자 천재 수학자 에이다 러브레이스(1815–1852). 1843년 해석기관에 관한 7편의 주석(Notes A–G)을 통해 
+        기계가 음악과 상징 기호를 다루는 디지털 시대를 100년 앞서 예견하고, 인류 최초의 컴퓨터 프로그램을 집필했습니다.
       </p>
     </div>
 
-    {/* In-Page Quick Jump Chips */}
+    <!-- In-Page Quick Jump Chips -->
     <div class="mb-10 sm:mb-14 overflow-x-auto pb-2 scrollbar-none">
       <div class="flex items-center gap-2 min-w-max">
         <span class="text-xs font-mono text-gray-400 mr-1">⚡ 바로가기:</span>
-        <a href="#partnership" class="px-3 py-1.5 rounded-full text-xs font-mono bg-[#12161f] border border-gray-800 hover:border-pink-500/50 hover:text-pink-300 text-gray-300 transition-all">
-          1. 시적 과학 & 통찰
+        <a href="#meeting-1833" class="px-3 py-1.5 rounded-full text-xs font-mono bg-[#12161f] border border-gray-800 hover:border-pink-500/50 hover:text-pink-300 text-gray-300 transition-all">
+          1. 1833년 도싯 가 첫 만남
         </a>
-        <a href="#notes-overview" class="px-3 py-1.5 rounded-full text-xs font-mono bg-[#12161f] border border-gray-800 hover:border-pink-500/50 hover:text-pink-300 text-gray-300 transition-all">
-          2. 주석 A–G 총괄 해제
+        <a href="#poetical-science" class="px-3 py-1.5 rounded-full text-xs font-mono bg-[#12161f] border border-gray-800 hover:border-pink-500/50 hover:text-pink-300 text-gray-300 transition-all">
+          2. 시적 과학 & 주석 A~G 해제
         </a>
         <a href="#note-g-simulator" class="px-3 py-1.5 rounded-full text-xs font-mono bg-[#12161f] border border-gray-800 hover:border-purple-500/50 hover:text-purple-300 text-gray-300 transition-all">
-          3. Note G 알고리즘 시뮬레이터
+          3. Note G 베르누이 알고리즘
         </a>
-        <a href="#python-code" class="px-3 py-1.5 rounded-full text-xs font-mono bg-[#12161f] border border-gray-800 hover:border-emerald-500/50 hover:text-emerald-300 text-gray-300 transition-all">
-          4. Python 재현 코드
+        <a href="#lovelace-objection" class="px-3 py-1.5 rounded-full text-xs font-mono bg-[#12161f] border border-gray-800 hover:border-amber-500/50 hover:text-amber-300 text-gray-300 transition-all">
+          4. 러브레이스의 이의 vs 튜링
+        </a>
+        <a href="#tragic-ending" class="px-3 py-1.5 rounded-full text-xs font-mono bg-[#12161f] border border-gray-800 hover:border-rose-500/50 hover:text-rose-300 text-gray-300 transition-all">
+          5. 경마 신디케이트와 비극적 종말
+        </a>
+        <a href="#archival-sources" class="px-3 py-1.5 rounded-full text-xs font-mono bg-[#12161f] border border-gray-800 hover:border-emerald-500/50 hover:text-emerald-300 text-gray-300 transition-all">
+          6. 1차 사료 아카이브
         </a>
       </div>
     </div>
 
-    {/* Section 1: Partnership & Vision */}
-    <div id="partnership" class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-16 scroll-mt-20">
-      <div class="bg-[#12161f] border border-gray-800 rounded-xl p-5 sm:p-8">
-        <h2 class="text-lg sm:text-xl font-display font-bold text-white mb-3 text-pink-300 break-keep">
-          "시적 과학(Poetical Science)"의 탄생
-        </h2>
-        <div class="text-xs sm:text-sm text-gray-300 font-body-serif leading-relaxed space-y-3 break-keep">
-          <p>
-            1833년 6월, 17세의 에이다는 배비지의 살롱에서 차분기관 1호의 시제품을 처음 보았습니다. 당대 대부분의 관람객들이 이를 단순한 기계적 마술 쇼로 여겼던 것과 달리, 에이다는 기계의 톱니바퀴 이면에 숨겨진 엄밀한 수학적 논리를 꿰뚫어 보았습니다.
-          </p>
-          <p>
-            배비지는 그녀의 뛰어난 수학적 직관과 문장력에 매료되어 그녀를 <strong>"숫자의 마법사(The Enchantress of Numbers)"</strong>라 불렀으며, 두 사람은 20년에 걸친 지적 협업을 이어갔습니다.
-          </p>
+    <!-- Section 1: 1833 Dorset Street Encounter -->
+    <div id="meeting-1833" class="bg-[#12161f] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-12 sm:mb-16 scroll-mt-20">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-2xl">🏛️</span>
+        <div>
+          <span class="text-xs font-mono uppercase text-pink-400">1833년 6월 5일의 운명적 조우</span>
+          <h2 class="text-xl sm:text-2xl font-display font-bold text-white text-brass-300 break-keep">
+            도싯 가 1번지 살롱: 차분기관과 17세 소녀의 직관
+          </h2>
         </div>
       </div>
 
-      <div class="bg-[#12161f] border border-gray-800 rounded-xl p-5 sm:p-8 flex flex-col justify-between">
-        <h2 class="text-lg sm:text-xl font-display font-bold text-white mb-3 text-pink-300 break-keep">
-          Note A의 위대한 통찰: 소프트웨어 개념의 기원
-        </h2>
-        <blockquote class="p-3.5 sm:p-4 bg-[#181a24] border-l-4 border-pink-500 rounded-r-lg italic text-xs text-pink-200 leading-relaxed break-keep">
-          "해석기관은 단순한 수치 계산 기계를 넘어선다. 소리나 화성의 본질적 관계를 표현할 수 있는 과학적 법칙이 존재한다면, 이 기계는 정교하고 과학적인 악곡을 작곡할 수도 있을 것이다."
-          <div class="mt-2 text-[10px] text-gray-400 font-sans not-italic">— 에이다 러브레이스, 1843년 Note A</div>
-        </blockquote>
-        <p class="text-xs text-gray-400 font-body-serif mt-3 break-keep">
-          이는 앨런 튜링이 1936년 보편 튜링 기계를 정의하기 거의 100년 전에, 하드웨어가 '숫자'뿐만 아니라 모든 '상징 기호와 데이터'를 조작할 수 있음을 갈파한 컴퓨터 과학사상 최고의 통찰입니다.
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center text-xs sm:text-sm text-gray-300 font-body-serif leading-relaxed">
+        <div class="lg:col-span-7 space-y-4 break-keep">
+          <p>
+            1833년 6월 5일 수요일 저녁, 17세의 에이다 바이런은 어머니 바이런 부인(Lady Byron) 및 여성 과학자 메리 서머빌(Mary Somerville)과 함께 
+            런던 메릴본에 위치한 배비지의 <strong>도싯 가 1번지(1 Dorset Street) 살롱</strong>을 방문했습니다.
+          </p>
+          <div class="p-4 bg-[#181e28] border-l-4 border-pink-500 rounded-r-lg">
+            <p class="italic text-pink-200 text-xs sm:text-sm">
+              "다른 이들이 신기한 총기를 처음 본 원주민처럼 넋을 잃고 바라보거나 춤추는 자동인형에 시선을 빼앗길 때, 
+              미스 바이런은 그 어린 나이에도 차분기관의 기계적 작동 원리를 정확히 이해했으며 그 위대한 아름다움을 꿰뚫어 보았다."
+            </p>
+            <div class="text-[11px] text-gray-400 mt-2 text-right">
+              — 소피아 프렌드(Sophia Frend / De Morgan 부인), 1895년 회고록 『70년의 생애(Threescore Years and Ten)』
+            </div>
+          </div>
+          <p>
+            배비지는 에이다의 천부적인 수학적 직관과 논리적 엄밀성에 깊이 매료되어 그녀를 <strong class="text-white">"숫자의 마법사(The Enchantress of Number)"</strong>라고 불렀으며, 
+            이날의 만남은 향후 20년에 걸친 역사적 지적 동행의 출발점이 되었습니다.
+          </p>
+        </div>
+
+        <div class="lg:col-span-5 bg-[#0e1117] border border-gray-800 p-5 rounded-xl space-y-3 font-mono text-xs">
+          <div class="text-brass-400 font-bold flex items-center justify-between">
+            <span>📍 지리적 거점 안내</span>
+            <a href={`${base}/victorian-london`} class="text-[11px] text-pink-400 hover:underline">
+              런던 지도 보기 →
+            </a>
+          </div>
+          <div class="p-2.5 bg-[#181e28] rounded border border-gray-800">
+            <div class="text-gray-400 text-[11px]">배비지 도싯 가 살롱</div>
+            <div class="text-gray-200">1 Dorset Street, Marylebone</div>
+          </div>
+          <div class="p-2.5 bg-[#181e28] rounded border border-gray-800">
+            <div class="text-gray-400 text-[11px]">에이다 런던 타운하우스</div>
+            <div class="text-gray-200">12 St James's Square, London</div>
+          </div>
+          <div class="p-2.5 bg-[#181e28] rounded border border-gray-800">
+            <div class="text-gray-400 text-[11px]">서리주 오컴 파크 본택</div>
+            <div class="text-gray-200">Ockham Park, Ripley, Surrey</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 2: Poetical Science & 1843 Notes A-G Overview -->
+    <div id="poetical-science" class="mb-12 sm:mb-16 scroll-mt-20">
+      <div class="bg-[#12161f] border border-gray-800 rounded-2xl p-6 sm:p-8">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="text-2xl">🧠</span>
+          <div>
+            <span class="text-xs font-mono uppercase text-purple-400">1843년 『테일러 과학 논집(Scientific Memoirs)』 제3권</span>
+            <h2 class="text-xl sm:text-2xl font-display font-bold text-white text-brass-300 break-keep">
+              시적 과학(Poetical Science)과 주석 A~G 체계적 해부
+            </h2>
+          </div>
+        </div>
+
+        <p class="text-xs sm:text-sm text-gray-300 font-body-serif leading-relaxed mb-6 break-keep">
+          이탈리아 수학자 루이지 메나브레아(Luigi Menabrea)의 해석기관 강연 논문을 영문 번역하면서, 
+          에이다는 원문의 3배가 넘는 방대한 <strong>7개의 주석(Notes A through G)</strong>을 덧붙였습니다. 
+          이는 하드웨어 설계도에 불과했던 해석기관에 <strong>'소프트웨어'와 '보편 연산 이론'</strong>이라는 생명을 불어넣은 작업이었습니다.
         </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-body-serif mb-8">
+          <!-- Note A Card -->
+          <div class="p-4 bg-[#0d1015] border border-pink-500/30 rounded-xl space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-pink-300 font-mono text-sm">Note A • 자카드 직조기와 음악 작곡</span>
+              <span class="text-[10px] font-mono text-gray-500">pp. 691–699</span>
+            </div>
+            <blockquote class="italic text-gray-300 border-l-2 border-pink-500 pl-3 leading-relaxed text-xs">
+              "해석기관은 자카드 직조기가 꽃과 잎을 짜내듯 대수적 패턴을 짠다... 만약 화성과 악곡의 근본 관계가 과학적으로 표현될 수 있다면, 기계는 정교하고 과학적인 음악을 작곡할 수도 있을 것이다."
+            </blockquote>
+            <p class="text-gray-400 text-[11px]">
+              컴퓨터가 단순한 산술 계산기를 넘어 비수치적 상징 기호(음악, 텍스트, 논리)를 처리하는 <strong>보편 기호 조작기(General Symbolic Processor)</strong>임을 천명.
+            </p>
+          </div>
+
+          <!-- Note D Card -->
+          <div class="p-4 bg-[#0d1015] border border-purple-500/30 rounded-xl space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-purple-300 font-mono text-sm">Note D • 산술과 보편 대수의 경계</span>
+              <span class="text-[10px] font-mono text-gray-500">pp. 706–711</span>
+            </div>
+            <blockquote class="italic text-gray-300 border-l-2 border-purple-500 pl-3 leading-relaxed text-xs">
+              "차분기관은 덧셈이라는 특정 연산에 국한되지만, 해석기관은 펀치 카드를 통해 임의의 함수를 전개한다. 카드를 적용한 순간 산술의 한계는 완전히 돌파되었다."
+            </blockquote>
+            <p class="text-gray-400 text-[11px]">
+              고정 하드웨어 계산기와 프로그램 제어식 범용 튜링 완전 기계의 개념적 분수령을 명확히 정의.
+            </p>
+          </div>
+
+          <!-- Note B & C Card -->
+          <div class="p-4 bg-[#0d1015] border border-gray-800 rounded-xl space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-emerald-300 font-mono text-sm">Note B & C • 스토어와 제어의 분리</span>
+              <span class="text-[10px] font-mono text-gray-500">pp. 699–706</span>
+            </div>
+            <p class="text-gray-300 text-xs leading-relaxed">
+              기억 장치(스토어)의 레지스터 컬럼과 중간값 보존 방식, 그리고 <strong>작전 카드(연산 명령)와 변수 카드(데이터 주소 지정)</strong>의 분리 구조(현대의 폰 노이만 구조의 원형)를 기계공학적으로 증명.
+            </p>
+          </div>
+
+          <!-- Note E & F Card -->
+          <div class="p-4 bg-[#0d1015] border border-gray-800 rounded-xl space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-amber-300 font-mono text-sm">Note E & F • 초월함수와 행렬 연립방정식</span>
+              <span class="text-[10px] font-mono text-gray-500">pp. 711–722</span>
+            </div>
+            <p class="text-gray-300 text-xs leading-relaxed">
+              삼각함수/로그 급수 계산에서 천공 카드 개수를 최소화하는 경제성 최적화 파이프라인 및 소거법을 이용한 $n$원 일차연립방정식 풀이 알고리즘 설계.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
 
-    {/* Section 2: Overview of Notes A-G */}
-    <div id="notes-overview" class="bg-[#12161f] border border-gray-800 rounded-xl p-5 sm:p-8 mb-12 sm:mb-16 scroll-mt-20">
-      <h2 class="text-xl sm:text-2xl font-display font-bold text-white mb-6 text-brass-300 break-keep">
-        1843년 『해석기관에 관한 주석 (Notes A–G)』 해제
-      </h2>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4 text-xs">
-        <div class="bg-[#0d1015] border border-gray-800 p-3.5 sm:p-4 rounded-lg">
-          <div class="text-pink-300 font-bold font-mono mb-1">Note A • 기호 연산의 본질</div>
-          <p class="text-gray-400 leading-relaxed break-keep">
-            해석기관과 차분기관의 근본적 차이 규명. 자카드 직기의 비유 및 기호/음악 처리 가능성 제시.
-          </p>
-        </div>
-        <div class="bg-[#0d1015] border border-gray-800 p-3.5 sm:p-4 rounded-lg">
-          <div class="text-pink-300 font-bold font-mono mb-1">Note B • 메모리 및 연산 추적</div>
-          <p class="text-gray-400 leading-relaxed break-keep">
-            스토어(Store)의 기계적 메모리 레지스터 구조와 연산 중간값의 보존 메커니즘 분석.
-          </p>
-        </div>
-        <div class="bg-[#0d1015] border border-gray-800 p-3.5 sm:p-4 rounded-lg">
-          <div class="text-pink-300 font-bold font-mono mb-1">Note C • 연산과 변수의 분리</div>
-          <p class="text-gray-400 leading-relaxed break-keep">
-            작전 카드(Operation Cards)와 변수 카드(Variable Cards)의 기능 분리(현대의 코드/데이터 분리).
-          </p>
-        </div>
-        <div class="bg-[#0d1015] border border-gray-800 p-3.5 sm:p-4 rounded-lg">
-          <div class="text-pink-300 font-bold font-mono mb-1">Note D • 삼각함수와 순환</div>
-          <p class="text-gray-400 leading-relaxed break-keep">
-            복잡한 대수 공식의 단계별 분해 및 곱셈 순서 최적화 파이프라인 제시.
-          </p>
-        </div>
-        <div class="bg-[#0d1015] border border-gray-800 p-3.5 sm:p-4 rounded-lg">
-          <div class="text-pink-300 font-bold font-mono mb-1">Note E • 초월함수와 급수</div>
-          <p class="text-gray-400 leading-relaxed break-keep">
-            베르누이 급수 전개 및 기계적 루프 제어의 수학적 정당성 증명.
-          </p>
-        </div>
-        <div class="bg-[#0d1015] border border-gray-800 p-3.5 sm:p-4 rounded-lg">
-          <div class="text-pink-300 font-bold font-mono mb-1">Note F • 연립일차방정식</div>
-          <p class="text-gray-400 leading-relaxed break-keep">
-            행렬식 소거법을 통한 $n$원 연립일차방정식 자동 풀이 프로그램 설계.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    {/* Section 3: Note G & Bernoulli Trace */}
+    <!-- Section 3: Note G Simulator & Bernoulli Algorithm -->
     <div id="note-g-simulator" class="mb-12 sm:mb-16 scroll-mt-20">
       <div class="mb-6">
         <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded bg-purple-950/60 border border-purple-500/40 text-purple-300 text-xs font-mono mb-2">
           THE CROWNING ACHIEVEMENT: NOTE G
         </div>
         <h2 class="text-xl sm:text-2xl font-display font-bold text-white text-brass-300 break-keep">
-          Note G: 베르누이 수 계산 프로그램 (1843)
+          Note G: 베르누이 수 알고리즘 & 제1호 컴퓨터 프로그램
         </h2>
-        <p class="text-xs text-gray-400 mt-1 break-keep">
-          변수 레지스터 $V_1 \sim V_{13}$, 이중 루프, 조건 분기를 갖춘 인류 최초의 완전한 알고리즘 실행표입니다.
+        <p class="text-xs sm:text-sm text-gray-400 mt-1 font-body-serif break-keep">
+          홀수 베르누이 수 $B_7 = -1/30$을 계산하기 위한 25단계 천공 카드 실행 다이어그램, 
+          변수 레지스터($V_1 \sim V_{14}$) 할당, SSA(Static Single Assignment) 표기법($^m V_n$), 
+          그리고 카드 되감기(Card Backing) 루프 메커니즘을 인터랙티브하게 체험합니다.
         </p>
       </div>
 
@@ -134,65 +196,107 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       </div>
     </div>
 
-    {/* Section 4: Modern Python Code Comparison */}
-    <div id="python-code" class="bg-[#12161f] border border-gray-800 rounded-xl p-5 sm:p-8 scroll-mt-20">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+    <!-- Section 4: Lady Lovelace's Objection vs Alan Turing -->
+    <div id="lovelace-objection" class="bg-[#12161f] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-12 sm:mb-16 scroll-mt-20">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-2xl">⚖️</span>
         <div>
-          <h2 class="text-lg sm:text-xl font-display font-bold text-white text-brass-300 break-keep">
-            Note G 알고리즘의 현대 Python 재현 (`bernoulli.py`)
+          <span class="text-xs font-mono uppercase text-amber-400">인공지능 철학의 기원</span>
+          <h2 class="text-xl sm:text-2xl font-display font-bold text-white text-brass-300 break-keep">
+            '러브레이스 백작부인의 이의'와 튜링의 반론
           </h2>
-          <p class="text-xs text-gray-400 mt-1 font-body-serif break-keep">
-            1843년 에이다 러브레이스가 작성한 25단계 천공카드 실행 다이어그램을 현대 파이썬 코드로 1:1 복원한 코드입니다.
-          </p>
         </div>
       </div>
 
-      <details class="group/pycode">
-        <summary class="flex items-center justify-between cursor-pointer p-3.5 rounded-lg bg-[#0d1015] border border-gray-800 hover:border-emerald-500/40 text-xs font-mono text-emerald-300 select-none transition-all">
-          <span class="flex items-center gap-2 font-bold">
-            <span>🐍</span> 파이썬 재현 소스 코드 보기 (compute_bernoulli_note_g)
-          </span>
-          <span class="text-[11px] text-gray-400 group-open/pycode:text-emerald-300">
-            <span class="group-open/pycode:hidden">코드 펼치기 ▼</span>
-            <span class="hidden group-open/pycode:inline">코드 접기 ▲</span>
-          </span>
-        </summary>
-        <div class="bg-[#0d1015] p-3.5 sm:p-4 rounded-b-lg border-x border-b border-gray-800 overflow-x-auto mt-0">
-          <pre class="font-mono text-xs text-emerald-400 leading-relaxed"><code>{`# Ada Lovelace 1843 Note G Algorithm - Bernoulli Number Generator
-from fractions import Fraction
-
-def compute_bernoulli_note_g(target_n=4):
-    """
-    Simulates Ada Lovelace's 1843 Note G diagram to compute Bernoulli numbers.
-    target_n=4 computes B_7 = -1/30 (modern B_8 = -1/30).
-    """
-    V = {f"V{i}": Fraction(0) for i in range(1, 14)}
-    B = {} # Store previously computed Bernoulli numbers: B[1]=1/6, B[3]=-1/30, etc.
-
-    for n in range(1, target_n + 1):
-        V["V1"] = Fraction(1)
-        V["V2"] = Fraction(2)
-        V["V3"] = Fraction(n)
-        
-        # Step 1: V4 = 2 * n
-        V["V4"] = V["V2"] * V["V3"]
-        # Step 2: V5 = 2n - 1
-        V["V5"] = V["V4"] - V["V1"]
-        # Step 3: V6 = 2n + 1
-        V["V6"] = V["V4"] + V["V1"]
-        # Step 4: V7 = (2n - 1) / (2n + 1)
-        V["V7"] = V["V5"] / V["V6"]
-        # Step 5: V11 = -(1/2) * (2n - 1) / (2n + 1)
-        V["V11"] = -Fraction(1, 2) * V["V7"]
-        
-        # Loop to subtract previous terms B_1, B_3, ...
-        # (Ada Lovelace's nested loop with Operation & Variable cards)
-        # Returns exact Fraction result: B[1]=1/6, B[2]=1/30, B[3]=1/42, B[4]=-1/30
-        print(f"n={n}: Computed Bernoulli Number = {V['V11']}")
-
-    return B`}</code></pre>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm font-body-serif leading-relaxed">
+        <div class="p-5 bg-[#0d1015] border border-amber-500/30 rounded-xl space-y-3">
+          <div class="font-bold text-amber-300 font-mono text-sm flex items-center gap-2">
+            <span>📜</span> 에이다 러브레이스의 명제 (1843)
+          </div>
+          <blockquote class="italic text-gray-300 border-l-2 border-amber-500 pl-3 leading-relaxed text-xs">
+            "해석기관은 스스로 무엇인가를 창작(originate)할 능력은 없다. 기계는 우리가 어떻게 명령해야 할지 아는 것만을 수행할 수 있다."
+          </blockquote>
+          <p class="text-gray-400 text-xs">
+            기계는 규칙과 알고리즘을 충실히 실행하는 실행자일 뿐, 자발적 의식이나 독창적 통찰을 가질 수 없다는 기계 지능의 한계 규정.
+          </p>
         </div>
-      </details>
+
+        <div class="p-5 bg-[#0d1015] border border-blue-500/30 rounded-xl space-y-3">
+          <div class="font-bold text-blue-300 font-mono text-sm flex items-center gap-2">
+            <span>💻</span> 앨런 튜링의 응답 (1950)
+          </div>
+          <blockquote class="italic text-gray-300 border-l-2 border-blue-500 pl-3 leading-relaxed text-xs">
+            "기계는 종종 인간 프로그래머가 전혀 예상치 못한 놀라운 결과를 산출한다. 학습 능력을 갖춘 기계는 인간처럼 독창성을 발현할 수 있다."
+          </blockquote>
+          <p class="text-gray-400 text-xs">
+            튜링은 기념비적 논문 『계산 기계와 지능』에서 에이다의 주장을 '러브레이스 부인의 반론(Lady Lovelace's Objection)'으로 명명하며 AI 튜링 테스트의 주요 반박 대상으로 삼았습니다.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 5: The Turf Syndicate & Tragic Ending -->
+    <div id="tragic-ending" class="bg-[#12161f] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-12 sm:mb-16 scroll-mt-20">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-2xl">🥀</span>
+        <div>
+          <span class="text-xs font-mono uppercase text-rose-400">1848–1852년의 암흑기</span>
+          <h2 class="text-xl sm:text-2xl font-display font-bold text-white text-brass-300 break-keep">
+            경마 베팅 신디케이트와 비극적 최후
+          </h2>
+        </div>
+      </div>
+
+      <div class="space-y-4 text-xs sm:text-sm text-gray-300 font-body-serif leading-relaxed break-keep">
+        <p>
+          1840년대 후반, 에이다는 여성으로서의 경제적 종속에서 벗어나 독립적인 연구 자금을 마련하고자 
+          수학적 확률론과 미적분학을 활용한 <strong>경마 베팅 모델('The Book')</strong>을 구축했습니다. 
+          존 크로스(John Crosse) 등과 결성한 이 신디케이트는 그러나 1851년 요크 더비(York Derby)에서 
+          당대 3,200파운드(현재 수억 원 상당)의 천문학적인 빚을 지며 파멸로 치달았습니다.
+        </p>
+        <div class="p-4 bg-[#181a24] border-l-4 border-rose-500 rounded-r-lg space-y-2">
+          <p class="text-xs text-rose-200">
+            사기꾼들의 협박에 시달리던 에이다는 러브레이스 가문의 가보 다이아몬드를 두 차례나 몰래 전당포에 저당 잡혀야 했고, 
+            어머니 바이런 부인의 엄격한 감시 아래 런던 <strong>메릴본 그레이트 컴벌랜드 플레이스 6번지</strong>에서 
+            극심한 자궁암 투병 끝에 <strong>1852년 11월 27일, 아버지 바이런 경과 같은 나이인 만 36세로 요절</strong>했습니다.
+          </p>
+        </div>
+        <p>
+          배비지는 그녀의 병상을 끝까지 지키며 위로했던 극소수의 진실한 친구였으며, 
+          에이다는 유언에 따라 생전에 한 번도 만나지 못한 아버지 조지 고든 바이런 곁(노팅엄셔 허크널 토커드 교회)에 안장되었습니다.
+        </p>
+      </div>
+    </div>
+
+    <!-- Section 6: Archival Primary Sources -->
+    <div id="archival-sources" class="bg-[#12161f] border border-gray-800 rounded-2xl p-6 sm:p-8 scroll-mt-20">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-2xl">📜</span>
+        <div>
+          <span class="text-xs font-mono uppercase text-emerald-400">1차 사료 아카이브 연계</span>
+          <h2 class="text-xl sm:text-2xl font-display font-bold text-white text-brass-300 break-keep">
+            영국 국립 문서관 및 사료 서지 번호
+          </h2>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-mono">
+        <div class="p-4 bg-[#0d1015] border border-gray-800 rounded-xl space-y-2">
+          <div class="text-brass-300 font-bold">🏛️ 대영도서관 (British Library, London)</div>
+          <div class="text-gray-400 text-[11px] space-y-1">
+            <div>• <strong class="text-gray-200">Add MS 37192</strong>: 1843년 7~8월 에이다-배비지 서신 (베르누이 수 오류 교정 및 16쪽 제안서)</div>
+            <div>• <strong class="text-gray-200">Add MS 37193</strong>: 배비지의 1843년 9월 9일 편지 ("Enchantress of Number")</div>
+          </div>
+        </div>
+
+        <div class="p-4 bg-[#0d1015] border border-gray-800 rounded-xl space-y-2">
+          <div class="text-purple-300 font-bold">📚 옥스퍼드 보들리언 도서관 (Bodleian Library)</div>
+          <div class="text-gray-400 text-[11px] space-y-1">
+            <div>• <strong class="text-gray-200">Dep. Lovelace Byron 169–174</strong>: 러브레이스-바이런 가문 가족 서신 및 드 모르간 수학 연습장</div>
+            <div>• <strong class="text-gray-200">Dep. Lovelace Byron, Box 172</strong>: 경마 신디케이트 및 전당포 다이아몬드 회수 기록</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </Layout>

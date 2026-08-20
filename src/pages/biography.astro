@@ -165,12 +165,36 @@ const timelineEvents = [
     description: "해석기관 연구를 통해 축적된 노하우를 바탕으로 부품 수를 1/3로 줄인(약 8,000개) 혁신적인 차분기관 2호의 완전한 설계 도면을 완성함."
   },
   {
+    year: "1851",
+    date: "1851년 5월",
+    category: "저술",
+    categoryColor: "emerald",
+    title: "런던 만국박람회(수정궁) 배제와 『1851년 박람회론』 출간",
+    description: "하이드 파크 수정궁 박람회에서 계산기계 전시가 거부되자, 정부의 비과학적 관료주의와 산업 정책을 통렬히 규탄하는 저술을 발표함. (동시기 칼 마르크스가 박람회 기계관 참관)."
+  },
+  {
+    year: "1862",
+    date: "1862년 5월",
+    category: "발명",
+    categoryColor: "amber",
+    title: "1862년 런던 만국박람회에 차분기관 1호 시제품 공식 전시",
+    description: "사우스 켄싱턴 만국박람회 서부 기계관에 1832년 완성된 차분기관 1호 시제품이 공식 전시되어 대중과 학계의 찬사를 받음."
+  },
+  {
     year: "1864",
     date: "1864년",
     category: "저술",
     categoryColor: "emerald",
     title: "자서전 『철학자의 생애에서 발췌한 구절들(Passages)』 출간",
     description: "자신의 생애, 기계 발명 비화, 사회비판, 거리 소음(오르간 악사) 반대 운동의 기록을 집대성한 공식 회고록 출간."
+  },
+  {
+    year: "1867",
+    date: "1867년",
+    category: "학술",
+    categoryColor: "purple",
+    title: "칼 마르크스 『자본론』 제1권 출간: 배비지 원칙과 기계론의 세계사적 조명",
+    description: "런던 대영박물관에서 연구하던 칼 마르크스가 배비지의 『기계 및 제조업의 경제학』을 핵심적으로 인용하며 '배비지 원칙'과 '도덕적 마모'를 자본주의 분석의 핵심 축으로 정립함."
   },
   {
     year: "1871",
@@ -201,7 +225,7 @@ const timelineEvents = [
 
 <Layout title="생애 연표 (1791–1871) - 찰스 배비지 아카이브">
   <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-    <div class="text-center mb-12 sm:mb-16">
+    <div class="text-center mb-10 sm:mb-14">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-500/30 bg-blue-950/30 text-blue-300 text-xs font-mono mb-4">
         CHRONOLOGY & BIOGRAPHY
       </div>
@@ -212,8 +236,25 @@ const timelineEvents = [
         1791년 출생부터 1871년 서거, 그리고 1991년 런던 과학박물관의 역사적 실물 복원까지의 전 기록입니다.
       </p>
 
+      {/* Victorian London Map Cross-Link Callout Banner */}
+      <div class="mt-6 max-w-2xl mx-auto p-4 bg-[#12161f] border border-brass-500/30 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4 text-left shadow-lg">
+        <div class="flex items-center gap-3">
+          <span class="text-2xl">🗺️</span>
+          <div>
+            <div class="text-xs font-bold text-brass-300">빅토리아 런던 사료 지도 연동</div>
+            <div class="text-[11px] text-gray-400">도싯 가 살롱, 에이다와의 만남, 마르크스의 대영박물관을 지도에서 탐색하세요.</div>
+          </div>
+        </div>
+        <a
+          href={`${base}/victorian-london`}
+          class="px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold bg-brass-500 text-iron-950 hover:bg-brass-400 transition-all shrink-0 shadow-md"
+        >
+          런던 지도 보기 →
+        </a>
+      </div>
+
       {/* Interactive Category Filter Buttons */}
-      <div id="timeline-filters" class="flex flex-wrap justify-center gap-2 sm:gap-2.5 mt-6 sm:mt-8 text-xs font-mono">
+      <div id="timeline-filters" class="flex flex-wrap justify-center gap-2 sm:gap-2.5 mt-8 text-xs font-mono">
         <button
           type="button"
           data-filter="all"

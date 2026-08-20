@@ -42,17 +42,37 @@ _Avoid_: 배비지 정리, 배비지 법칙
 1812년 케임브리지 대학에서 찰스 배비지, 존 허셜, 조지 피콕 등이 뉴턴의 유율법(dot-notation)에서 벗어나 라이프니츠의 미분 표기법(d-notation)을 영국에 도입하기 위해 설립한 학술 단체.
 _Avoid_: 분석학회, 미적분학회
 
-## 인물 및 협업 (Collaborations)
+**도덕적 마모 (Moral Depreciation / Moralischer Verschleiß)**:
+기계가 물리적으로 마모되어 낡기 전에 신기술 등장이나 생산성 향상으로 경제적 교환가치를 상실하는 현상으로, 자본이 24시간 가동 및 노동일 연장을 강제하는 근원적 원인.
+_Avoid_: 물리적 마모, 단순 감가상각
+
+**제너럴 인텔렉트 (General Intellect)**:
+『그룬트리스』 기계 단편에서 마르크스가 제시한 개념으로, 인간 사회의 집단적 지식과 과학 기술이 기계(고정자본)의 형태로 대상화되어 사회의 직접적 생산력이 되는 상태.
+_Avoid_: 일반 지능, 인공지능, 단순 집단지성
+
+**작업기계 (Working Machine / Werkzeugmaschine)**:
+인간의 손에서 전통적 공예 도구를 빼앗아 금속 기구에 장착한 기계 장치로, 마르크스가 증기기관(동력원)이 아닌 산업혁명의 진정한 역사적 출발점으로 규정한 핵심 기관.
+_Avoid_: 동력기계, 일반 도구
+
+## 인물 및 협업 (Collaborations & Encounters)
 
 **에이다 러브레이스 (Ada Lovelace)**:
 메나브레아의 해석기관 논문을 영문 번역하고 베르누이 수 계산 알고리즘을 담은 7개의 주석(Notes A~G)을 집필하여 인류 최초의 컴퓨터 프로그래머로 평가받는 배비지의 핵심 협력자.
 _Avoid_: 에이다 바이런, 배비지의 조수
 
+**칼 마르크스 (Karl Marx)**:
+런던 망명기(1849–1883) 대영박물관 열람실에서 배비지의 경제학 저작을 탐독하여 『자본론』과 『그룬트리스』에서 배비지 원칙, 도덕적 마모, 제너럴 인텔렉트 개념을 정립한 동시대 비판적 사상가.
+_Avoid_: 배비지의 동업자, 배비지의 제자
+
 **조셉 클레먼트 (Joseph Clement)**:
 차분기관 1호의 초정밀 금속 가공 및 기계 제작을 담당했던 영국의 전설적인 정밀 기계 엔지니어.
 _Avoid_: 제작자, 부품업자
 
-## 배포 및 웹 아키텍처 (Deployment & Web Architecture)
+## 지리 및 웹 아키텍처 (Geospatial & Web Architecture)
+
+**빅토리아 런던 사료 지도 (Victorian London Geospatial Archive)**:
+도싯 가 1번지 살롱, 조셉 클레먼트 공방, 대영박물관, 수정궁 등 19세기 런던 18개 사료 좌표를 Leaflet 및 NLS 1890년대 빅토리아 실측 지도로 시각화한 인터랙티브 역사 지리 시스템.
+_Avoid_: 일반 구글 지도, 현대 런던 지도
 
 **GitHub Pages 배포 파이프라인 (GitHub Pages Deployment Pipeline)**:
 `main` 브랜치 변경 시 GitHub Actions를 통해 Astro 정적 사이트를 자동 빌드하고 `https://yghnsim.github.io/charles-babbage-archive/`로 배포하는 CI/CD 자동화 시스템.
