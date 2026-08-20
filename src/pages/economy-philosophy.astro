@@ -20,7 +20,23 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       </p>
     </div>
 
-    <!-- In-Page Quick Jump Chips -->
+    <!-- In-Page Quick Jump Chips & STS Callout -->
+    <div class="mb-8 p-4 bg-[#12161f] border border-blue-500/30 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4 text-left shadow-lg">
+      <div class="flex items-center gap-3">
+        <span class="text-2xl">🔬</span>
+        <div>
+          <div class="text-xs font-bold text-blue-300">사이먼 샤퍼(Simon Schaffer)의 과학기술학(STS) 분석</div>
+          <div class="text-[11px] text-gray-400">포츠머스 도크야드, 파놉티콘 기호 표기법, 람베스 장인 갈등, 지능의 정치학을 탐색하세요.</div>
+        </div>
+      </div>
+      <a
+        href={`${base}/factory-intelligence`}
+        class="px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold bg-blue-500 text-white hover:bg-blue-400 transition-all shrink-0 shadow-md"
+      >
+        공장제 & 기계지능 보기 →
+      </a>
+    </div>
+
     <div class="mb-10 sm:mb-14 overflow-x-auto pb-2 scrollbar-none">
       <div class="flex items-center gap-2 min-w-max">
         <span class="text-xs font-mono text-gray-400 mr-1">⚡ 바로가기:</span>

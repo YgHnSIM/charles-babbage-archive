@@ -1,0 +1,301 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SociotechnicalGraph from '../components/SociotechnicalGraph';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<Layout title="공장제, 기계공구 & 지능의 정치학 - 찰스 배비지 아카이브">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-500/30 bg-blue-950/30 text-blue-300 text-xs font-mono mb-4">
+        SOCIOTECHNICAL ANALYSIS & STS
+      </div>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4 break-keep">
+        공장제, 기계공구, 그리고<br />지능의 정치학
+      </h1>
+      <p class="text-xs sm:text-sm md:text-base text-gray-400 font-body-serif leading-relaxed break-keep">
+        케임브리지 대학 과학사학자 <strong>사이먼 샤퍼(Simon Schaffer)</strong>의 기념비적 연구 『Babbage's Intelligence (1994)』를 바탕으로, 
+        19세기 공장제 감시 체제, 기계공구 산업의 노동 갈등, 그리고 자연신학과 진화론으로 이어진 배비지 계산 기계의 사회사적 심층을 조명합니다.
+      </p>
+    </div>
+
+    <!-- Interactive Knowledge Graph -->
+    <div class="mb-14 sm:mb-20">
+      <SociotechnicalGraph client:load />
+    </div>
+
+    <!-- Quick Jump Chips -->
+    <div class="mb-10 sm:mb-14 overflow-x-auto pb-2 scrollbar-none">
+      <div class="flex items-center gap-2 min-w-max">
+        <span class="text-xs font-mono text-gray-400 mr-1">⚡ 바로가기:</span>
+        <a href="#human-computer-section" class="px-3 py-1.5 rounded-full text-xs font-mono bg-[#12161f] border border-gray-800 hover:border-blue-500/50 hover:text-blue-300 text-gray-300 transition-all">
+          1. 인간 컴퓨터의 기계화
+        </a>
+        <a href="#fractured-geography" class="px-3 py-1.5 rounded-full text-xs font-mono bg-[#12161f] border border-gray-800 hover:border-amber-500/50 hover:text-amber-300 text-gray-300 transition-all">
+          2. 런던의 분열된 지리학
+        </a>
+        <a href="#portsmouth-panopticon" class="px-3 py-1.5 rounded-full text-xs font-mono bg-[#12161f] border border-gray-800 hover:border-emerald-500/50 hover:text-emerald-300 text-gray-300 transition-all">
+          3. 포츠머스와 파놉티콘 기호
+        </a>
+        <a href="#clement-strife" class="px-3 py-1.5 rounded-full text-xs font-mono bg-[#12161f] border border-gray-800 hover:border-rose-500/50 hover:text-rose-300 text-gray-300 transition-all">
+          4. 람베스의 장인 기술 갈등
+        </a>
+        <a href="#factory-marx" class="px-3 py-1.5 rounded-full text-xs font-mono bg-[#12161f] border border-gray-800 hover:border-purple-500/50 hover:text-purple-300 text-gray-300 transition-all">
+          5. 공장제와 마르크스 주객 전도
+        </a>
+        <a href="#apotheosis-darwin" class="px-3 py-1.5 rounded-full text-xs font-mono bg-[#12161f] border border-gray-800 hover:border-brass-500/50 hover:text-brass-300 text-gray-300 transition-all">
+          6. 지능의 신격화와 다윈
+        </a>
+      </div>
+    </div>
+
+    <!-- Section 1: The Human Computer & Double Meaning of Intelligence -->
+    <div id="human-computer-section" class="bg-[#12161f] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-12 sm:mb-16 scroll-mt-20">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-2xl">👤⚙️</span>
+        <div>
+          <span class="text-xs font-mono uppercase text-blue-400">1824년 콜브룩 연설과 지능의 이중성</span>
+          <h2 class="text-xl sm:text-2xl font-display font-bold text-white text-brass-300 break-keep">
+            "기계가 컴퓨터를 대체하다": 지능(Intelligence)의 근대적 기원
+          </h2>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 text-xs sm:text-sm text-gray-300 font-body-serif leading-relaxed">
+        <div class="lg:col-span-7 space-y-4 break-keep">
+          <p>
+            1824년 초, 런던 왕립천문학회 회장 헨리 콜브룩(Henry Colebrooke)은 배비지에게 초대 금메달을 수여하며 다음과 같은 유명한 말을 남겼습니다:
+          </p>
+          <div class="p-4 bg-[#181e28] border-l-4 border-blue-500 rounded-r-lg">
+            <p class="text-xs sm:text-sm italic text-blue-200 break-keep">
+              "다른 기계적 장치들이 단순한 도구나 육체 노동을 기계로 대체해 왔다면, 배비지 씨의 발명은 지적 과정(Intellectual Process)을 기계적 수행으로 대체한다. 
+              다시 말해, <strong>배비지의 발명은 컴퓨터(Computer)의 자리에 엔진(Engine)을 올려놓았다.</strong>"
+            </p>
+          </div>
+          <p>
+            오늘날 '컴퓨터'는 기계를 가리키지만, 19세기 초 '컴퓨터'는 밤낮으로 고된 천문 계산을 반복하던 <strong>고용된 저임금 인간 계산 노동자</strong>를 의미했습니다. 
+            실제로 배비지 자신도 젊은 시절인 1814년 여름 그리니치 왕립천문대의 '인간 계산원' 자리에 지원했다가 허셜의 만류로 포기한 경험이 있었습니다.
+          </p>
+        </div>
+
+        <div class="lg:col-span-5 bg-[#0d1015] border border-blue-500/30 p-5 rounded-xl space-y-3 font-mono text-xs">
+          <div class="text-blue-300 font-bold">🧠 19세기 '지능(Intelligence)'의 두 얼굴</div>
+          <div class="space-y-2 text-gray-300 font-body-serif">
+            <div class="p-2.5 bg-[#181e28] rounded border border-gray-800">
+              <span class="text-blue-400 font-bold font-mono">1. 정보 처리 능력:</span> 외부 신호를 감지하고 법칙에 따라 연산·해석하는 인지 기능.
+            </div>
+            <div class="p-2.5 bg-[#181e28] rounded border border-gray-800">
+              <span class="text-blue-400 font-bold font-mono">2. 사회적 감시망:</span> 근대 군사·재정 국가가 공장 노동자와 시민 사회를 통제하기 위해 수집하던 '첩보 및 감시(Intelligence)' 체계.
+            </div>
+          </div>
+          <p class="text-[11px] text-gray-400 font-mono mt-2">
+            샤퍼는 배비지의 기계가 이 두 가지 '지능'을 결합하여 노동자를 감시하고 자동화하는 도구로 기획되었음을 밝힙니다.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 2: Fractured London Geography -->
+    <div id="fractured-geography" class="bg-[#12161f] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-12 sm:mb-16 scroll-mt-20">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-2xl">🗺️</span>
+        <div>
+          <span class="text-xs font-mono uppercase text-amber-400">샤퍼의 1830년대 런던 공간 분석</span>
+          <h2 class="text-xl sm:text-2xl font-display font-bold text-white text-brass-300 break-keep">
+            런던의 분열된 지리학 (The Fractured Geography of Intelligence)
+          </h2>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-xs font-mono mb-6">
+        <div class="p-4 bg-[#0d1015] border border-blue-500/30 rounded-xl space-y-2">
+          <div class="text-blue-400 font-bold text-sm">1. 남부 람베스 (Lambeth)</div>
+          <div class="text-gray-300 font-body-serif leading-relaxed">
+            <strong>생산과 기술의 현장</strong>: 조셉 클레먼트와 모즐리의 공방이 위치한 템스강 남쪽. 정밀 자동공구와 톱니바퀴를 직접 깎아내던 숙련 기계공들의 공간.
+          </div>
+        </div>
+        <div class="p-4 bg-[#0d1015] border border-purple-500/30 rounded-xl space-y-2">
+          <div class="text-purple-400 font-bold text-sm">2. 서부 웨스트엔드 (West End)</div>
+          <div class="text-gray-300 font-body-serif leading-relaxed">
+            <strong>스펙터클과 소비</strong>: 애들레이드 갤러리, 왕립학회(소머싯 하우스), 왕립연구소. 교양 있는 상류층에게 자동기계의 경이를 전시하던 무대.
+          </div>
+        </div>
+        <div class="p-4 bg-[#0d1015] border border-amber-500/30 rounded-xl space-y-2">
+          <div class="text-amber-400 font-bold text-sm">3. 북부 메릴본 (Marylebone)</div>
+          <div class="text-gray-300 font-body-serif leading-relaxed">
+            <strong>이론과 살롱</strong>: 도싯 가 1번지. 배비지와 다윈이 거주하며 은빛 숙녀 오토마타와 차분기관을 매개로 새로운 사회 질서와 자연법칙을 토론.
+          </div>
+        </div>
+        <div class="p-4 bg-[#0d1015] border border-rose-500/30 rounded-xl space-y-2">
+          <div class="text-rose-400 font-bold text-sm">4. 동북부 핀스버리 (Finsbury)</div>
+          <div class="text-gray-300 font-body-serif leading-relaxed">
+            <strong>정치와 저항</strong>: 거대한 노동자 계급 밀집 지역. 1832년 배비지가 의회 출마 당시 차티스트와 노동자들로부터 "기계가 우리를 노예로 만든다"는 맹렬한 저항에 직면한 곳.
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 bg-[#181e28] rounded-xl border border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-gray-300">
+        <div>
+          📌 이 4대 공간 권역은 <a href={`${base}/victorian-london`} class="text-brass-400 underline font-bold">빅토리아 런던 사료 지도</a>에서 인터랙티브 좌표로 직접 탐색할 수 있습니다.
+        </div>
+        <a href={`${base}/victorian-london`} class="px-3 py-1.5 rounded-lg bg-brass-500 text-iron-950 font-bold shrink-0">
+          런던 지도에서 보기 →
+        </a>
+      </div>
+    </div>
+
+    <!-- Section 3: Portsmouth System & Mechanical Notation -->
+    <div id="portsmouth-panopticon" class="bg-[#12161f] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-12 sm:mb-16 scroll-mt-20">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-2xl">🚢👁️</span>
+        <div>
+          <span class="text-xs font-mono uppercase text-emerald-400">군사 규율에서 기계 기호학으로</span>
+          <h2 class="text-xl sm:text-2xl font-display font-bold text-white text-brass-300 break-keep">
+            포츠머스 도크야드 시스템과 파놉티콘적 기계 표기법
+          </h2>
+        </div>
+      </div>
+
+      <div class="space-y-4 text-xs sm:text-sm text-gray-300 font-body-serif leading-relaxed break-keep">
+        <p>
+          1795~1807년 영국 해군본부는 <strong>새뮤얼 벤섬(Samuel Bentham, 철학자 제러미 벤섬의 동생)</strong>, 
+          마크 브루넬(Marc Brunel), 헨리 모즐리(Henry Maudslay)를 기용하여 포츠머스 도크야드의 목재 활차 블록 제조 라인을 전면 자동화했습니다. 
+          이는 전통적인 목공 장인들의 자율성과 관행적 부산물 취득을 '절도'로 규정하고, 군사적 감시와 금속 자동 선반으로 노동자를 규율한 인류 최초의 일관 기계 생산 체제였습니다.
+        </p>
+        <div class="p-4 bg-[#181e28] border-l-4 border-emerald-500 rounded-r-lg space-y-2">
+          <p class="text-xs italic text-emerald-200">
+            "새뮤얼 벤섬은 러시아에서 형 제러미 벤섬과 함께 죄수와 노동자를 감시하기 위해 고안했던 <strong>원형 감옥 '파놉티콘(Panopticon)'</strong>의 원리를 
+            포츠머스 도크야드 기계 시스템에 그대로 이식했다."
+          </p>
+          <div class="text-[10px] text-gray-400 text-right">— 사이먼 샤퍼 (1994, p. 211)</div>
+        </div>
+        <p>
+          배비지는 이 포츠머스 시스템에 깊은 영감을 받아 1826년 <strong>『기계의 동작을 기호로 표현하는 방법 (Mechanical Notation)』</strong>을 발표했습니다. 
+          이 표기법은 수천 개의 톱니바퀴와 레버뿐만 아니라 공장 노동자의 시간별 동선을 단 한 장의 차트 속에서 일람(Panoptic Gaze)할 수 있도록 고안된 
+          <strong>"보편 경영 관리 테크놀로지(Technology of Universal Management)"</strong>였습니다.
+        </p>
+      </div>
+    </div>
+
+    <!-- Section 4: Conflict with Joseph Clement -->
+    <div id="clement-strife" class="bg-[#12161f] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-12 sm:mb-16 scroll-mt-20">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-2xl">⚔️</span>
+        <div>
+          <span class="text-xs font-mono uppercase text-rose-400">1822–1834년 람베스 공방의 투쟁</span>
+          <h2 class="text-xl sm:text-2xl font-display font-bold text-white text-brass-300 break-keep">
+            조셉 클레먼트와의 갈등: 지적 창조권 vs 장인의 도구 소유권
+          </h2>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center text-xs sm:text-sm text-gray-300 font-body-serif leading-relaxed">
+        <div class="lg:col-span-7 space-y-4 break-keep">
+          <p>
+            배비지는 계산 기계의 성패가 마스터 엔지니어 조셉 클레먼트(Joseph Clement)의 손에 달려 있음을 알고 있었습니다. 
+            그러나 1829년부터 작업장 이전과 도구 소유권을 둘러싸고 파국적인 분쟁이 터졌습니다.
+          </p>
+          <div class="p-4 bg-[#181a24] border-l-4 border-rose-500 rounded-r-lg space-y-2">
+            <p class="text-xs italic text-rose-200">
+              "배비지는 기계 제작에 필요한 도구와 선반까지 모두 자신의 소유라 주장했지만, 클레먼트는 자신이 직접 개량한 자동 선반과 공구는 장인의 고유 재산이라며 
+              기계 부품 제작을 중단하고 노동자들을 해고했다."
+            </p>
+          </div>
+          <p>
+            배비지는 1834년 웰링턴 공작에게 보낸 탄원서에서 <strong>"내 발명에 대한 처분권은 오직 내 정신이 낳은 절대적 창조물로서 신성불가침하다"</strong>고 선언했습니다. 
+            샤퍼는 배비지가 기계를 '순수한 정신적 지능의 산물'로 포장하기 위해, 람베스 기계공들의 체화된 손기술과 숙련 노동을 의도적으로 지워버리는 
+            <strong>'보이지 않는 노동(Invisible Labour)'의 정치학</strong>을 구사했다고 날카롭게 비판합니다.
+          </p>
+        </div>
+
+        <div class="lg:col-span-5 bg-[#0e1117] border border-gray-800 p-5 rounded-xl space-y-3 font-mono text-xs">
+          <div class="text-brass-400 font-bold">🎨 드 모르간의 풍자화 (1839)</div>
+          <p class="text-gray-400 font-body-serif text-[11px] leading-relaxed">
+            수학자 오거스터스 드 모르간은 선반(Lathe) 앞에 서서 손에 로그 함수 공식을 쥐고 깎아내는 배비지의 모습을 풍자 캐리커처로 남겼습니다.
+          </p>
+          <div class="p-2.5 bg-[#181e28] rounded border border-gray-800 text-[10px] text-gray-300">
+            "이 캐리커처는 기계적 해석학이 곧 자동 공구의 작업과 같으며, 공장 시스템을 통제하는 최고 관리자의 모습임을 가장 상징적으로 보여준다."
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 5: Factory Tourism & Marx Critique -->
+    <div id="factory-marx" class="bg-[#12161f] border border-gray-800 rounded-2xl p-6 sm:p-8 mb-12 sm:mb-16 scroll-mt-20">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-2xl">🏭📜</span>
+        <div>
+          <span class="text-xs font-mono uppercase text-purple-400">유어의 유토피아와 마르크스의 전복</span>
+          <h2 class="text-xl sm:text-2xl font-display font-bold text-white text-brass-300 break-keep">
+            공장 투어리즘과 『자본론』: 자동인형이 주체인가, 노동자가 주체인가?
+          </h2>
+        </div>
+      </div>
+
+      <div class="space-y-4 text-xs sm:text-sm text-gray-300 font-body-serif leading-relaxed break-keep">
+        <p>
+          1830~1840년대 영국에서는 앤드루 유어(Andrew Ure)의 『공장의 철학』(1835)과 같은 공장 관광 안내서가 대유행했습니다. 
+          유어는 랭커셔의 면방직 공장을 <strong>"자본과 과학이 결합하여 노동자를 감시와 민첩성으로 순치시키는 거대한 자동인형"</strong>이자 완벽한 과학적 유토피아로 칭송했습니다.
+        </p>
+        <div class="p-4 bg-[#181e28] border-l-4 border-purple-500 rounded-r-lg space-y-2">
+          <p class="text-xs italic text-purple-200">
+            "마르크스는 『자본론』 제1권(MEW 23, S. 544)에서 유어의 이중적 정의를 정확히 꼬집었다: 
+            '하나의 서술에서 결합된 집단 노동자는 지배적인 주체(übergreifendes Subjekt)이고 기계는 객체이다. 
+            그러나 다른 서술에서 자동인형 자체가 주체이며, 노동자들은 단지 기계에 부속된 의식 있는 기관(bewußte Organe)에 불과하다.'"
+          </p>
+        </div>
+        <p>
+          샤퍼는 마르크스가 포착한 이 모순이야말로 배비지 계산 기계의 본질이라고 짚습니다. 
+          공장주와 자본가는 기계에 '지능'과 '영혼'을 부여함으로써 잉여가치의 원천이 자본의 지능에서 나온 것처럼 물신화하고, 
+          노동자의 육체와 지성을 '살아있는 기계 부품'으로 전락시켰다는 것입니다.
+        </p>
+      </div>
+    </div>
+
+    <!-- Section 6: Apotheosis & Darwin -->
+    <div id="apotheosis-darwin" class="bg-[#12161f] border border-gray-800 rounded-2xl p-6 sm:p-8 scroll-mt-20">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-2xl">🌌🌱</span>
+        <div>
+          <span class="text-xs font-mono uppercase text-brass-400">지능의 신격화에서 자연선택설로</span>
+          <h2 class="text-xl sm:text-2xl font-display font-bold text-white text-brass-300 break-keep">
+            기계 지능의 신격화: 『제9 브리지워터 논문』과 찰스 다윈
+          </h2>
+        </div>
+      </div>
+
+      <div class="space-y-4 text-xs sm:text-sm text-gray-300 font-body-serif leading-relaxed break-keep">
+        <p>
+          케임브리지의 보수적 신학자 윌리엄 휴얼(William Whewell)은 1834년 브리지워터 논문에서 
+          "기계적 분석은 기차를 타고 역을 드나드는 것과 같아 인간 정신을 훈련시키지 못하며, 기계론자들은 신의 우주 행정을 논할 자격이 없다"고 배비지를 비난했습니다.
+        </p>
+        <p>
+          이에 배비지는 1837년 <strong>『제9 브리지워터 논문』</strong>을 발표하며 기계의 두 가지 능력인 <strong>'기억(Memory)'과 '예측(Foresight)'</strong>을 신의 섭리와 연결했습니다:
+        </p>
+        <div class="p-4 bg-[#0d1015] border border-brass-500/30 rounded-xl space-y-2">
+          <h4 class="text-brass-300 font-bold text-xs font-mono">⚙️ 100만 번째 기적의 시연 (The Miracle Trick)</h4>
+          <p class="text-xs text-gray-300">
+            기계가 1부터 100만까지 1씩 증가하다가 100만 1번째에 10,000씩 건너뛰는 숫자를 출력할 때, 
+            관찰자는 이를 '자연법칙을 깨는 기적'이라 부르지만 설계자에게는 사전에 코딩된 고차원 법칙에 불과합니다.
+          </p>
+        </div>
+        <p>
+          도싯 가 살롱에서 이 시연을 직접 목격한 <strong>찰스 다윈(Charles Darwin)</strong>은 
+          신이 매 순간 개별 생물을 창조하는 '특수 창조설'을 기각하고, 
+          <strong>"사전 프로그래밍된 거대한 자연법칙의 전개로서의 종의 기원(Origin of Species by Natural Law)"</strong>이라는 진화론적 모델을 확립하는 데 결정적 영감을 얻었습니다.
+        </p>
+      </div>
+
+      <div class="mt-8 pt-6 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-gray-400">
+        <div>
+          📖 사료 서지: Simon Schaffer, <em>Critical Inquiry</em> 21 (1994), pp. 203–227
+        </div>
+        <a href={`${base}/sources`} class="text-brass-400 hover:underline">
+          원문 사료 도서관 바로가기 →
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>

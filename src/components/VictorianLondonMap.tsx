@@ -281,6 +281,68 @@ export const LOCATIONS: LocationItem[] = [
     summary: '본초자오선(0° 0\' 0")이 위치한 세계 천문 항해의 기준점. 영국 해군본부 『항해역서(Nautical Almanac)』의 수많은 수작업 수표 오류가 배비지로 하여금 "신이여, 이 계산들이 증기(기계)로 이루어졌으면 좋으련만!"이라고 외치게 만든 근원지입니다.',
     significance: '차분기관 탄생의 직접적 동기(수표의 오류 제거)를 부여한 장소.',
     connections: ['도싯 가 1번지', '소머싯 하우스']
+  },
+  {
+    id: 'admiralty-museum',
+    name: '소머싯 하우스 해군박물관 (Admiralty Museum)',
+    nameEn: 'Admiralty Museum at Somerset House',
+    category: 'landmark',
+    categoryLabel: '학술 & 산업 랜드마크',
+    lat: 51.5113,
+    lng: -0.1165,
+    period: '1830년대',
+    victorianAddress: 'Somerset House, Strand, London',
+    modernAddress: 'Strand, London WC2R 1LA',
+    summary: '헨리 모즐리가 포츠머스 도크야드를 위해 제작한 전설적인 활차 블록 가공 기계들이 전시된 곳. 배비지의 기계 표기법과 일관 생산 시스템의 직접적 모델이 되었습니다.',
+    significance: '영국 기계공구 산업과 군사·재정 국가(Fiscal-military state)의 정밀 기술 과시장.',
+    connections: ['조셉 클레먼트 공방', '소머싯 하우스']
+  },
+  {
+    id: 'adelaide-gallery',
+    name: '애들레이드 갤러리 (Adelaide Gallery)',
+    nameEn: 'Adelaide Gallery of Practical Science',
+    category: 'landmark',
+    categoryLabel: '학술 & 산업 랜드마크',
+    lat: 51.5098,
+    lng: -0.1245,
+    period: '1834년',
+    victorianAddress: 'Lowther Arcade, Strand, London',
+    modernAddress: 'Strand / William IV Street area, London WC2',
+    summary: '전기학자이자 쇼맨 프랜시스 왓킨스가 제작한 2대의 차분기관 작동 모형과 자카드 직조기가 일반 대중과 상류층에게 시연된 런던 최고의 신기술 쇼룸입니다.',
+    significance: '웨스트엔드 대중에게 기계 지능과 자동화의 경이를 교육·선전하던 중심 무대.',
+    connections: ['도싯 가 1번지', '킹스 칼리지 런던 박물관']
+  },
+  {
+    id: 'kings-college-museum',
+    name: '킹스 칼리지 런던 박물관 (차분기관 1호 전시)',
+    nameEn: "King's College London Museum",
+    category: 'landmark',
+    categoryLabel: '학술 & 산업 랜드마크',
+    lat: 51.5118,
+    lng: -0.116,
+    period: '1843년 이후',
+    victorianAddress: "King's College, Strand, London",
+    modernAddress: "Strand Building, King's College London, WC2R 2LS",
+    summary: '1834년 클레먼트와의 결렬로 정부가 차분기관 1호 프로젝트를 중단한 후, 조립된 1832년 시험 모델이 보존·공개 전시된 대학 박물관입니다.',
+    significance: '배비지의 계산 기계가 국가적 기념비로서 대중의 시선 속에 영구 안치된 공간.',
+    connections: ['소머싯 하우스', '1862년 만국박람회']
+  },
+  {
+    id: 'finsbury-hustings',
+    name: '핀스버리 선거구 유세장 (Finsbury Hustings)',
+    nameEn: 'Finsbury Parliamentary Hustings',
+    category: 'landmark',
+    categoryLabel: '학술 & 산업 랜드마크',
+    lat: 51.524,
+    lng: -0.105,
+    period: '1832년 12월',
+    victorianAddress: 'Finsbury Borough Hustings, Northeast London',
+    modernAddress: 'Clerkenwell Green / Finsbury area, London EC1',
+    summary: '배비지가 의회 개혁법 통과 후 과학자 대표로 출마했던 급진파 노동자 선거구. 차티스트와 노동자들로부터 "기계가 인간을 도구로 만든다"는 거센 항의를 받았습니다.',
+    quote: '노동자들은 우리를 도구와 기계로 만들려는 선거 운동에 맞서 분연히 저항했다.',
+    quoteSource: '1832년 핀스버리 급진파 신문',
+    significance: '배비지의 기술 관료적 이상과 노동자 계급의 기계 파괴/차티스트 운동이 정면 충돌한 정치적 현장.',
+    connections: ['도싯 가 1번지', '대영박물관 열람실']
   }
 ];
 
